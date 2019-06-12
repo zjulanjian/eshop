@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Spring MVC上传文件示例</title>
+    <meta charset="UTF-8" />
+</head>
+<body>
+<form action="/fileUploadGo" modelAttribute="command" enctype="multipart/form-data" method="POST">
+    请选择一个文件上传 :
+    <input type="file" name="file"/>
+    <input type="submit" value="提交上传"/>
+</form>
+</body>
+</html>

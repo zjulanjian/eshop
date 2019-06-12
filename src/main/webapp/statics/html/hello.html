@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hello</title>
+    <script src="/statics/js/jquery-3.1.1.min.js"></script>
+</head>
+<body>
+ hello
+ <a href="/fileUploadPage">上传</a>
+    <input type="text" name="username">
+    <br>
+    <button>提交ajax</button>
+    <script>
+        $(function (){
+
+            $("button").click(function (){
+                var object = {'userName':$('input[name="username"]').val()};
+                console.log("object: " + object)
+                $.ajax({
+                    url:'/user/ajax',
+                    cache:false,
+                    dataType:'json',
+                    type:'post',
+                    data:JSON.stringify(object),
+                    contentType:'application/json;charset=utf-8',
+                    success:function (object){
+                        console.log(object)
+                    },
+                    error:function (e) {
+                        console.log(e)
+                    }
+                });
+            });
+        })
+    </script>
+</body>
+</html>

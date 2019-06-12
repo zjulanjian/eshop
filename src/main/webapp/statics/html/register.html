@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Spring MVC</title>
+    <meta charset="UTF-8"/>
+</head>
+<body>
+
+<h2>用户注册</h2>
+<!--
+modelAttribute="command"代表Spring标签需要获取的对象的key值，默认就是command
+input 代表用户输入的内容会绑定在获取的对象的username属性上，如果没有此属性对应则报错
+-->
+<form modelAttribute="command" method="POST" action="/selectUserController/selectUser">
+    <table>
+        <tr>
+            <td><label path="username">用户名：</label></td>
+            <td><input path="username" name="username" /></td>
+        </tr>
+        <tr>
+            <td><label path="password">密码：</label></td>
+            <td><input type="password" name="password"></td>
+        </tr>
+        <!--<tr>
+            <td></td>
+            <td><hidden path="id" value="101" /></td>
+        </tr>
+        <tr>
+            <td><label path="textarea">地址：</label></td>
+            <td><textarea path="textarea" rows="5" cols="30" /></td>
+        </tr>
+        <tr>
+            <td><label path="checkbox">订阅新闻：</label></td>
+            <td><checkbox path="checkbox" /></td>
+        </tr>
+        <tr>
+            <td><label path="checkboxes">爱好：</label></td>
+            <td><checkboxes items="" path="checkboxes" /></td>
+        </tr>
+        <tr>
+            <td><label path="checkboxes">爱好：</label></td>
+            <td>
+                <radiobutton path="sex" value="M" label="男" />
+                <radiobutton path="sex" value="F" label="女" />
+            </td>
+        </tr>
+        <tr>
+            <td><label path="city">城市：</label></td>
+            <td>
+                <select path="city">
+                    <option value="NONE" label="请选择..." />
+                    <options items="" />
+                </select>
+            </td>
+        </tr>-->
+        <tr>
+            <td colspan="2">
+                <input type="submit" value="提交"/>
+            </td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

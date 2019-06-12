@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bj186.crm.mapper.OrderMapper">
+  <resultMap id="BaseResultMap" type="com.bj186.crm.pojo.Order">
+    <id column="order_id" jdbcType="INTEGER" property="orderId" />
+    <result column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="order_number" jdbcType="VARCHAR" property="orderNumber" />
+    <result column="order_createtime" jdbcType="TIMESTAMP" property="orderCreatetime" />
+    <result column="order_note" jdbcType="VARCHAR" property="orderNote" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    order_id, user_id, order_number, order_createtime, order_note
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from orders
+    where order_id = #{orderId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from orders
+    where order_id = #{orderId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.bj186.crm.pojo.Order">
+    insert into orders (order_id, user_id, order_number, 
+      order_createtime, order_note)
+    values (#{orderId,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, #{orderNumber,jdbcType=VARCHAR}, 
+      #{orderCreatetime,jdbcType=TIMESTAMP}, #{orderNote,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.bj186.crm.pojo.Order">
+    insert into orders
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="orderId != null">
+        order_id,
+      </if>
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="orderNumber != null">
+        order_number,
+      </if>
+      <if test="orderCreatetime != null">
+        order_createtime,
+      </if>
+      <if test="orderNote != null">
+        order_note,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="orderId != null">
+        #{orderId,jdbcType=INTEGER},
+      </if>
+      <if test="userId != null">
+        #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="orderNumber != null">
+        #{orderNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="orderCreatetime != null">
+        #{orderCreatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="orderNote != null">
+        #{orderNote,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.bj186.crm.pojo.Order">
+    update orders
+    <set>
+      <if test="userId != null">
+        user_id = #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="orderNumber != null">
+        order_number = #{orderNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="orderCreatetime != null">
+        order_createtime = #{orderCreatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="orderNote != null">
+        order_note = #{orderNote,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where order_id = #{orderId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.bj186.crm.pojo.Order">
+    update orders
+    set user_id = #{userId,jdbcType=INTEGER},
+      order_number = #{orderNumber,jdbcType=VARCHAR},
+      order_createtime = #{orderCreatetime,jdbcType=TIMESTAMP},
+      order_note = #{orderNote,jdbcType=VARCHAR}
+    where order_id = #{orderId,jdbcType=INTEGER}
+  </update>
+</mapper>
