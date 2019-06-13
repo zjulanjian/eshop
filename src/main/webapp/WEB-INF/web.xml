@@ -11,6 +11,10 @@
             <param-name>contextConfigLocation</param-name>
             <param-value>classpath:config/spring.xml</param-value>
         </init-param>
+        <init-param> <!--防止中文乱码-->
+            <param-name>encoding</param-name>
+            <param-value>utf-8</param-value>
+        </init-param>
         <load-on-startup>1</load-on-startup>
     </servlet>
     <servlet-mapping>
