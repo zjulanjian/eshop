@@ -18,6 +18,7 @@
 <head>
     <base href="<%=basePath%>">
     <title>user</title>
+
 </head>
 <body>
     <h2>这是单个用户信息页面</h2>
