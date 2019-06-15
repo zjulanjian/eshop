@@ -44,4 +44,47 @@
       </if>
     </trim>
   </insert>
+  <resultMap id="BaseResultMap" type="com.bj186.fms.pojo.LoanSchedule">
+    <result column="loginName" jdbcType="VARCHAR" property="loginname" />
+    <result column="loanType" jdbcType="VARCHAR" property="loantype" />
+    <result column="createTime" jdbcType="DATE" property="createtime" />
+    <result column="status" jdbcType="VARCHAR" property="status" />
+  </resultMap>
+  <insert id="insert" parameterType="com.bj186.fms.pojo.LoanSchedule">
+    insert into loanschedule (loginName, loanType, createTime, 
+      status)
+    values (#{loginname,jdbcType=VARCHAR}, #{loantype,jdbcType=VARCHAR}, #{createtime,jdbcType=DATE}, 
+      #{status,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.bj186.fms.pojo.LoanSchedule">
+    insert into loanschedule
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="loginname != null">
+        loginName,
+      </if>
+      <if test="loantype != null">
+        loanType,
+      </if>
+      <if test="createtime != null">
+        createTime,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="loginname != null">
+        #{loginname,jdbcType=VARCHAR},
+      </if>
+      <if test="loantype != null">
+        #{loantype,jdbcType=VARCHAR},
+      </if>
+      <if test="createtime != null">
+        #{createtime,jdbcType=DATE},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
 </mapper>

@@ -15,6 +15,8 @@ public class LoanApprovalInfo {
 
     private String provefile;
 
+    private String comment;
+
     public String getIdnumber() {
         return idnumber;
     }
@@ -69,5 +71,13 @@ public class LoanApprovalInfo {
 
     public void setProvefile(String provefile) {
         this.provefile = provefile == null ? null : provefile.trim();
+    }
+
+    public String getComment() {
+        return comment;
+    }
+
+    public void setComment(String comment) {
+        this.comment = comment == null ? null : comment.trim();
     }
 }

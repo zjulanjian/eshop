@@ -10,6 +10,84 @@
     <result column="status" jdbcType="VARCHAR" property="status" />
     <result column="proveFile" jdbcType="VARCHAR" property="provefile" />
   </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.bj186.fms.pojo.LoanApprovalInfo">
+    <result column="comment" jdbcType="LONGVARCHAR" property="comment" />
+  </resultMap>
+  <sql id="Blob_Column_List">
+    comment
+  </sql>
+  <insert id="insert" parameterType="com.bj186.fms.pojo.LoanApprovalInfo">
+    insert into loanapprovalinfo (IDnumber, name, loanType, 
+      capital, cardid, status, 
+      proveFile, comment)
+    values (#{idnumber,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{loantype,jdbcType=VARCHAR}, 
+      #{capital,jdbcType=DECIMAL}, #{cardid,jdbcType=VARCHAR}, #{status,jdbcType=VARCHAR}, 
+      #{provefile,jdbcType=VARCHAR}, #{comment,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.bj186.fms.pojo.LoanApprovalInfo">
+    insert into loanapprovalinfo
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="idnumber != null">
+        IDnumber,
+      </if>
+      <if test="name != null">
+        name,
+      </if>
+      <if test="loantype != null">
+        loanType,
+      </if>
+      <if test="capital != null">
+        capital,
+      </if>
+      <if test="cardid != null">
+        cardid,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="provefile != null">
+        proveFile,
+      </if>
+      <if test="comment != null">
+        comment,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="idnumber != null">
+        #{idnumber,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="loantype != null">
+        #{loantype,jdbcType=VARCHAR},
+      </if>
+      <if test="capital != null">
+        #{capital,jdbcType=DECIMAL},
+      </if>
+      <if test="cardid != null">
+        #{cardid,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="provefile != null">
+        #{provefile,jdbcType=VARCHAR},
+      </if>
+      <if test="comment != null">
+        #{comment,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <resultMap id="BaseResultMap" type="com.bj186.fms.pojo.LoanApprovalInfo">
+    <result column="IDnumber" jdbcType="VARCHAR" property="idnumber" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="loanType" jdbcType="VARCHAR" property="loantype" />
+    <result column="capital" jdbcType="DECIMAL" property="capital" />
+    <result column="cardid" jdbcType="VARCHAR" property="cardid" />
+    <result column="status" jdbcType="VARCHAR" property="status" />
+    <result column="proveFile" jdbcType="VARCHAR" property="provefile" />
+  </resultMap>
   <insert id="insert" parameterType="com.bj186.fms.pojo.LoanApprovalInfo">
     insert into loanapprovalinfo (IDnumber, name, loanType, 
       capital, cardid, status, 

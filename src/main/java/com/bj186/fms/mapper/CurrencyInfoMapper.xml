@@ -125,4 +125,128 @@
       createTime = #{createtime,jdbcType=TIMESTAMP}
     where ciid = #{ciid,jdbcType=INTEGER}
   </update>
+  <resultMap id="BaseResultMap" type="com.bj186.fms.pojo.CurrencyInfo">
+    <id column="ciid" jdbcType="INTEGER" property="ciid" />
+    <result column="currencyGroup" jdbcType="VARCHAR" property="currencygroup" />
+    <result column="buyin" jdbcType="DOUBLE" property="buyin" />
+    <result column="sellout" jdbcType="DOUBLE" property="sellout" />
+    <result column="maxRate" jdbcType="DOUBLE" property="maxrate" />
+    <result column="middleRate" jdbcType="DOUBLE" property="middlerate" />
+    <result column="minRate" jdbcType="DOUBLE" property="minrate" />
+    <result column="createTime" jdbcType="TIMESTAMP" property="createtime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    ciid, currencyGroup, buyin, sellout, maxRate, middleRate, minRate, createTime
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from currencyinfo
+    where ciid = #{ciid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from currencyinfo
+    where ciid = #{ciid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.bj186.fms.pojo.CurrencyInfo">
+    insert into currencyinfo (ciid, currencyGroup, buyin, 
+      sellout, maxRate, middleRate, 
+      minRate, createTime)
+    values (#{ciid,jdbcType=INTEGER}, #{currencygroup,jdbcType=VARCHAR}, #{buyin,jdbcType=DOUBLE}, 
+      #{sellout,jdbcType=DOUBLE}, #{maxrate,jdbcType=DOUBLE}, #{middlerate,jdbcType=DOUBLE}, 
+      #{minrate,jdbcType=DOUBLE}, #{createtime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.bj186.fms.pojo.CurrencyInfo">
+    insert into currencyinfo
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="ciid != null">
+        ciid,
+      </if>
+      <if test="currencygroup != null">
+        currencyGroup,
+      </if>
+      <if test="buyin != null">
+        buyin,
+      </if>
+      <if test="sellout != null">
+        sellout,
+      </if>
+      <if test="maxrate != null">
+        maxRate,
+      </if>
+      <if test="middlerate != null">
+        middleRate,
+      </if>
+      <if test="minrate != null">
+        minRate,
+      </if>
+      <if test="createtime != null">
+        createTime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="ciid != null">
+        #{ciid,jdbcType=INTEGER},
+      </if>
+      <if test="currencygroup != null">
+        #{currencygroup,jdbcType=VARCHAR},
+      </if>
+      <if test="buyin != null">
+        #{buyin,jdbcType=DOUBLE},
+      </if>
+      <if test="sellout != null">
+        #{sellout,jdbcType=DOUBLE},
+      </if>
+      <if test="maxrate != null">
+        #{maxrate,jdbcType=DOUBLE},
+      </if>
+      <if test="middlerate != null">
+        #{middlerate,jdbcType=DOUBLE},
+      </if>
+      <if test="minrate != null">
+        #{minrate,jdbcType=DOUBLE},
+      </if>
+      <if test="createtime != null">
+        #{createtime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.bj186.fms.pojo.CurrencyInfo">
+    update currencyinfo
+    <set>
+      <if test="currencygroup != null">
+        currencyGroup = #{currencygroup,jdbcType=VARCHAR},
+      </if>
+      <if test="buyin != null">
+        buyin = #{buyin,jdbcType=DOUBLE},
+      </if>
+      <if test="sellout != null">
+        sellout = #{sellout,jdbcType=DOUBLE},
+      </if>
+      <if test="maxrate != null">
+        maxRate = #{maxrate,jdbcType=DOUBLE},
+      </if>
+      <if test="middlerate != null">
+        middleRate = #{middlerate,jdbcType=DOUBLE},
+      </if>
+      <if test="minrate != null">
+        minRate = #{minrate,jdbcType=DOUBLE},
+      </if>
+      <if test="createtime != null">
+        createTime = #{createtime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where ciid = #{ciid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.bj186.fms.pojo.CurrencyInfo">
+    update currencyinfo
+    set currencyGroup = #{currencygroup,jdbcType=VARCHAR},
+      buyin = #{buyin,jdbcType=DOUBLE},
+      sellout = #{sellout,jdbcType=DOUBLE},
+      maxRate = #{maxrate,jdbcType=DOUBLE},
+      middleRate = #{middlerate,jdbcType=DOUBLE},
+      minRate = #{minrate,jdbcType=DOUBLE},
+      createTime = #{createtime,jdbcType=TIMESTAMP}
+    where ciid = #{ciid,jdbcType=INTEGER}
+  </update>
 </mapper>

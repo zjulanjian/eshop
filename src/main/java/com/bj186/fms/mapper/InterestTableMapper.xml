@@ -90,4 +90,93 @@
       interestValue = #{interestvalue,jdbcType=DOUBLE}
     where interestID = #{interestid,jdbcType=INTEGER}
   </update>
+  <resultMap id="BaseResultMap" type="com.bj186.fms.pojo.InterestTable">
+    <id column="interestID" jdbcType="INTEGER" property="interestid" />
+    <result column="depositType" jdbcType="VARCHAR" property="deposittype" />
+    <result column="cycle" jdbcType="VARCHAR" property="cycle" />
+    <result column="time" jdbcType="TIMESTAMP" property="time" />
+    <result column="interestValue" jdbcType="DOUBLE" property="interestvalue" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    interestID, depositType, cycle, time, interestValue
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from interesttable
+    where interestID = #{interestid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from interesttable
+    where interestID = #{interestid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.bj186.fms.pojo.InterestTable">
+    insert into interesttable (interestID, depositType, cycle, 
+      time, interestValue)
+    values (#{interestid,jdbcType=INTEGER}, #{deposittype,jdbcType=VARCHAR}, #{cycle,jdbcType=VARCHAR}, 
+      #{time,jdbcType=TIMESTAMP}, #{interestvalue,jdbcType=DOUBLE})
+  </insert>
+  <insert id="insertSelective" parameterType="com.bj186.fms.pojo.InterestTable">
+    insert into interesttable
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="interestid != null">
+        interestID,
+      </if>
+      <if test="deposittype != null">
+        depositType,
+      </if>
+      <if test="cycle != null">
+        cycle,
+      </if>
+      <if test="time != null">
+        time,
+      </if>
+      <if test="interestvalue != null">
+        interestValue,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="interestid != null">
+        #{interestid,jdbcType=INTEGER},
+      </if>
+      <if test="deposittype != null">
+        #{deposittype,jdbcType=VARCHAR},
+      </if>
+      <if test="cycle != null">
+        #{cycle,jdbcType=VARCHAR},
+      </if>
+      <if test="time != null">
+        #{time,jdbcType=TIMESTAMP},
+      </if>
+      <if test="interestvalue != null">
+        #{interestvalue,jdbcType=DOUBLE},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.bj186.fms.pojo.InterestTable">
+    update interesttable
+    <set>
+      <if test="deposittype != null">
+        depositType = #{deposittype,jdbcType=VARCHAR},
+      </if>
+      <if test="cycle != null">
+        cycle = #{cycle,jdbcType=VARCHAR},
+      </if>
+      <if test="time != null">
+        time = #{time,jdbcType=TIMESTAMP},
+      </if>
+      <if test="interestvalue != null">
+        interestValue = #{interestvalue,jdbcType=DOUBLE},
+      </if>
+    </set>
+    where interestID = #{interestid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.bj186.fms.pojo.InterestTable">
+    update interesttable
+    set depositType = #{deposittype,jdbcType=VARCHAR},
+      cycle = #{cycle,jdbcType=VARCHAR},
+      time = #{time,jdbcType=TIMESTAMP},
+      interestValue = #{interestvalue,jdbcType=DOUBLE}
+    where interestID = #{interestid,jdbcType=INTEGER}
+  </update>
 </mapper>
