@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bj186.fms.mapper.LoanMapper">
+  <resultMap id="BaseResultMap" type="com.bj186.fms.pojo.Loan">
+    <id column="loanid" jdbcType="INTEGER" property="loanid" />
+    <result column="IDnumber" jdbcType="VARCHAR" property="idnumber" />
+    <result column="loanType" jdbcType="VARCHAR" property="loantype" />
+    <result column="proveFile" jdbcType="VARCHAR" property="provefile" />
+    <result column="capital" jdbcType="DECIMAL" property="capital" />
+    <result column="status" jdbcType="VARCHAR" property="status" />
+    <result column="createTime" jdbcType="DATE" property="createtime" />
+    <result column="cardID" jdbcType="VARCHAR" property="cardid" />
+    <result column="editTime" jdbcType="DATE" property="edittime" />
+    <result column="comment" jdbcType="VARCHAR" property="comment" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    loanid, IDnumber, loanType, proveFile, capital, status, createTime, cardID, editTime, 
+    comment
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from loan
+    where loanid = #{loanid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from loan
+    where loanid = #{loanid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.bj186.fms.pojo.Loan">
+    insert into loan (loanid, IDnumber, loanType, 
+      proveFile, capital, status, 
+      createTime, cardID, editTime, 
+      comment)
+    values (#{loanid,jdbcType=INTEGER}, #{idnumber,jdbcType=VARCHAR}, #{loantype,jdbcType=VARCHAR}, 
+      #{provefile,jdbcType=VARCHAR}, #{capital,jdbcType=DECIMAL}, #{status,jdbcType=VARCHAR}, 
+      #{createtime,jdbcType=DATE}, #{cardid,jdbcType=VARCHAR}, #{edittime,jdbcType=DATE}, 
+      #{comment,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.bj186.fms.pojo.Loan">
+    insert into loan
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="loanid != null">
+        loanid,
+      </if>
+      <if test="idnumber != null">
+        IDnumber,
+      </if>
+      <if test="loantype != null">
+        loanType,
+      </if>
+      <if test="provefile != null">
+        proveFile,
+      </if>
+      <if test="capital != null">
+        capital,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="createtime != null">
+        createTime,
+      </if>
+      <if test="cardid != null">
+        cardID,
+      </if>
+      <if test="edittime != null">
+        editTime,
+      </if>
+      <if test="comment != null">
+        comment,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="loanid != null">
+        #{loanid,jdbcType=INTEGER},
+      </if>
+      <if test="idnumber != null">
+        #{idnumber,jdbcType=VARCHAR},
+      </if>
+      <if test="loantype != null">
+        #{loantype,jdbcType=VARCHAR},
+      </if>
+      <if test="provefile != null">
+        #{provefile,jdbcType=VARCHAR},
+      </if>
+      <if test="capital != null">
+        #{capital,jdbcType=DECIMAL},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="createtime != null">
+        #{createtime,jdbcType=DATE},
+      </if>
+      <if test="cardid != null">
+        #{cardid,jdbcType=VARCHAR},
+      </if>
+      <if test="edittime != null">
+        #{edittime,jdbcType=DATE},
+      </if>
+      <if test="comment != null">
+        #{comment,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.bj186.fms.pojo.Loan">
+    update loan
+    <set>
+      <if test="idnumber != null">
+        IDnumber = #{idnumber,jdbcType=VARCHAR},
+      </if>
+      <if test="loantype != null">
+        loanType = #{loantype,jdbcType=VARCHAR},
+      </if>
+      <if test="provefile != null">
+        proveFile = #{provefile,jdbcType=VARCHAR},
+      </if>
+      <if test="capital != null">
+        capital = #{capital,jdbcType=DECIMAL},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="createtime != null">
+        createTime = #{createtime,jdbcType=DATE},
+      </if>
+      <if test="cardid != null">
+        cardID = #{cardid,jdbcType=VARCHAR},
+      </if>
+      <if test="edittime != null">
+        editTime = #{edittime,jdbcType=DATE},
+      </if>
+      <if test="comment != null">
+        comment = #{comment,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where loanid = #{loanid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.bj186.fms.pojo.Loan">
+    update loan
+    set IDnumber = #{idnumber,jdbcType=VARCHAR},
+      loanType = #{loantype,jdbcType=VARCHAR},
+      proveFile = #{provefile,jdbcType=VARCHAR},
+      capital = #{capital,jdbcType=DECIMAL},
+      status = #{status,jdbcType=VARCHAR},
+      createTime = #{createtime,jdbcType=DATE},
+      cardID = #{cardid,jdbcType=VARCHAR},
+      editTime = #{edittime,jdbcType=DATE},
+      comment = #{comment,jdbcType=VARCHAR}
+    where loanid = #{loanid,jdbcType=INTEGER}
+  </update>
+</mapper>
