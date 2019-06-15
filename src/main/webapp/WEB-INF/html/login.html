@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>login</title>
+	<link rel="shortcut icon" href="/fms/statics/img/SE.ico">
+	<link rel="stylesheet" href="/fms/statics/css/normalize.css">
+	<link rel="stylesheet" type="text/css" href="/fms/statics/css/login.css">
+</head>
+<body>
+	<!-- header start -->
+	<div class="header">
+		<div class="header-wrap">
+			<h1>
+				<img src="/fms/statics/img/logo.png" alt="logo">
+			</h1>
+		</div>
+	</div>
+
+	<!-- main start -->
+	<div class="main">
+		<div class="main-wrap">
+			<!-- form parts -->
+			<div class="dialog">
+				<h3 class="login-head">Sign In</h3>
+				<form action="#" id="login">
+					<!-- username -->
+					<p class="mt30">
+						<label for="username">
+							Username:
+						</label>
+						<input type="text" placeholder="username" id="username">
+						<!-- 用户名信息反馈 -->
+						<span class="user-tip"></span>
+					</p>
+					<!-- password -->
+					<p>
+						<label for="password">
+							Password:
+						</label>
+						<input type="password" placeholder="password" id="password">
+						<!-- 密码信息反馈 -->
+						<span class="pass-tip"></span>
+					</p>
+					<button id="submit-btn">Sign In</button>
+				</form>
+
+				<!-- 底部的忘记密码与注册 -->
+				<div class="bottom">
+					<a href="#">
+						Forget password 
+					</a>
+					<a href="/fms/statics/index/registerpage.do">
+						Register
+					</a>
+				</div>	
+			</div>
+			
+		</div>
+	</div>
+
+	<!-- footer start -->
+	<div class="footer">
+		<div class="footer-wrap">
+			<ul class="text">
+				<li><a href="#">网站申明</a></li>
+				<li><a href="#">网站地图</a></li>
+				<li><a href="#">联系我们</a></li>
+				<li><a href="#" class="noborder">客服热线：15207</a></li>
+			</ul><br>
+			<ul class="copyright">
+				<li>
+					<a href="#">
+						第五小组SE银行版权所有
+					</a>
+				</li>
+				<li>
+					<a href="#" class="noborder">
+						川ICP备000000
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="/fms/statics/js/jquery-2.1.4.min.js"></script>
+	<script type="text/javascript" src="/fms/statics/js/login.js"></script>
+</body>
+</html>
