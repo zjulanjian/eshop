@@ -3,7 +3,7 @@ package com.bj186.fms.pojo;
 import java.util.Date;
 
 public class CurrencyInfo {
-    private Integer ciid;
+    private Integer currencyinfoid;
 
     private String currencygroup;
 
@@ -19,12 +19,12 @@ public class CurrencyInfo {
 
     private Date createtime;
 
-    public Integer getCiid() {
-        return ciid;
+    public Integer getCurrencyinfoid() {
+        return currencyinfoid;
     }
 
-    public void setCiid(Integer ciid) {
-        this.ciid = ciid;
+    public void setCurrencyinfoid(Integer currencyinfoid) {
+        this.currencyinfoid = currencyinfoid;
     }
 
     public String getCurrencygroup() {

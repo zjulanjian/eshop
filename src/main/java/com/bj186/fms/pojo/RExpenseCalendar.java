@@ -3,7 +3,7 @@ package com.bj186.fms.pojo;
 import java.util.Date;
 
 public class RExpenseCalendar {
-    private Integer recid;
+    private Integer recalendarid;
 
     private Integer raccountid;
 
@@ -11,12 +11,12 @@ public class RExpenseCalendar {
 
     private Date createtime;
 
-    public Integer getRecid() {
-        return recid;
+    public Integer getRecalendarid() {
+        return recalendarid;
     }
 
-    public void setRecid(Integer recid) {
-        this.recid = recid;
+    public void setRecalendarid(Integer recalendarid) {
+        this.recalendarid = recalendarid;
     }
 
     public Integer getRaccountid() {

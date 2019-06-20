@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bj186.fms.mapper.BidDetailMapper">
+  <resultMap id="BaseResultMap" type="com.bj186.fms.pojo.BidDetail">
+    <id column="bidDetiailID" jdbcType="INTEGER" property="biddetiailid" />
+    <result column="bidID" jdbcType="INTEGER" property="bidid" />
+    <result column="projectName" jdbcType="VARCHAR" property="projectname" />
+    <result column="description" jdbcType="VARCHAR" property="description" />
+    <result column="totalFunds" jdbcType="DOUBLE" property="totalfunds" />
+    <result column="unitPrice" jdbcType="DOUBLE" property="unitprice" />
+    <result column="totalQuantity" jdbcType="INTEGER" property="totalquantity" />
+    <result column="createTime" jdbcType="DATE" property="createtime" />
+    <result column="endTime" jdbcType="DATE" property="endtime" />
+    <result column="purchasedQuantity" jdbcType="INTEGER" property="purchasedquantity" />
+    <result column="remainingQuantity" jdbcType="INTEGER" property="remainingquantity" />
+    <result column="qualificationCertificate" jdbcType="VARCHAR" property="qualificationcertificate" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    bidDetiailID, bidID, projectName, description, totalFunds, unitPrice, totalQuantity, 
+    createTime, endTime, purchasedQuantity, remainingQuantity, qualificationCertificate
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from biddetail
+    where bidDetiailID = #{biddetiailid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from biddetail
+    where bidDetiailID = #{biddetiailid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.bj186.fms.pojo.BidDetail">
+    insert into biddetail (bidDetiailID, bidID, projectName, 
+      description, totalFunds, unitPrice, 
+      totalQuantity, createTime, endTime, 
+      purchasedQuantity, remainingQuantity, qualificationCertificate
+      )
+    values (#{biddetiailid,jdbcType=INTEGER}, #{bidid,jdbcType=INTEGER}, #{projectname,jdbcType=VARCHAR}, 
+      #{description,jdbcType=VARCHAR}, #{totalfunds,jdbcType=DOUBLE}, #{unitprice,jdbcType=DOUBLE}, 
+      #{totalquantity,jdbcType=INTEGER}, #{createtime,jdbcType=DATE}, #{endtime,jdbcType=DATE}, 
+      #{purchasedquantity,jdbcType=INTEGER}, #{remainingquantity,jdbcType=INTEGER}, #{qualificationcertificate,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.bj186.fms.pojo.BidDetail">
+    insert into biddetail
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="biddetiailid != null">
+        bidDetiailID,
+      </if>
+      <if test="bidid != null">
+        bidID,
+      </if>
+      <if test="projectname != null">
+        projectName,
+      </if>
+      <if test="description != null">
+        description,
+      </if>
+      <if test="totalfunds != null">
+        totalFunds,
+      </if>
+      <if test="unitprice != null">
+        unitPrice,
+      </if>
+      <if test="totalquantity != null">
+        totalQuantity,
+      </if>
+      <if test="createtime != null">
+        createTime,
+      </if>
+      <if test="endtime != null">
+        endTime,
+      </if>
+      <if test="purchasedquantity != null">
+        purchasedQuantity,
+      </if>
+      <if test="remainingquantity != null">
+        remainingQuantity,
+      </if>
+      <if test="qualificationcertificate != null">
+        qualificationCertificate,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="biddetiailid != null">
+        #{biddetiailid,jdbcType=INTEGER},
+      </if>
+      <if test="bidid != null">
+        #{bidid,jdbcType=INTEGER},
+      </if>
+      <if test="projectname != null">
+        #{projectname,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="totalfunds != null">
+        #{totalfunds,jdbcType=DOUBLE},
+      </if>
+      <if test="unitprice != null">
+        #{unitprice,jdbcType=DOUBLE},
+      </if>
+      <if test="totalquantity != null">
+        #{totalquantity,jdbcType=INTEGER},
+      </if>
+      <if test="createtime != null">
+        #{createtime,jdbcType=DATE},
+      </if>
+      <if test="endtime != null">
+        #{endtime,jdbcType=DATE},
+      </if>
+      <if test="purchasedquantity != null">
+        #{purchasedquantity,jdbcType=INTEGER},
+      </if>
+      <if test="remainingquantity != null">
+        #{remainingquantity,jdbcType=INTEGER},
+      </if>
+      <if test="qualificationcertificate != null">
+        #{qualificationcertificate,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.bj186.fms.pojo.BidDetail">
+    update biddetail
+    <set>
+      <if test="bidid != null">
+        bidID = #{bidid,jdbcType=INTEGER},
+      </if>
+      <if test="projectname != null">
+        projectName = #{projectname,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        description = #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="totalfunds != null">
+        totalFunds = #{totalfunds,jdbcType=DOUBLE},
+      </if>
+      <if test="unitprice != null">
+        unitPrice = #{unitprice,jdbcType=DOUBLE},
+      </if>
+      <if test="totalquantity != null">
+        totalQuantity = #{totalquantity,jdbcType=INTEGER},
+      </if>
+      <if test="createtime != null">
+        createTime = #{createtime,jdbcType=DATE},
+      </if>
+      <if test="endtime != null">
+        endTime = #{endtime,jdbcType=DATE},
+      </if>
+      <if test="purchasedquantity != null">
+        purchasedQuantity = #{purchasedquantity,jdbcType=INTEGER},
+      </if>
+      <if test="remainingquantity != null">
+        remainingQuantity = #{remainingquantity,jdbcType=INTEGER},
+      </if>
+      <if test="qualificationcertificate != null">
+        qualificationCertificate = #{qualificationcertificate,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where bidDetiailID = #{biddetiailid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.bj186.fms.pojo.BidDetail">
+    update biddetail
+    set bidID = #{bidid,jdbcType=INTEGER},
+      projectName = #{projectname,jdbcType=VARCHAR},
+      description = #{description,jdbcType=VARCHAR},
+      totalFunds = #{totalfunds,jdbcType=DOUBLE},
+      unitPrice = #{unitprice,jdbcType=DOUBLE},
+      totalQuantity = #{totalquantity,jdbcType=INTEGER},
+      createTime = #{createtime,jdbcType=DATE},
+      endTime = #{endtime,jdbcType=DATE},
+      purchasedQuantity = #{purchasedquantity,jdbcType=INTEGER},
+      remainingQuantity = #{remainingquantity,jdbcType=INTEGER},
+      qualificationCertificate = #{qualificationcertificate,jdbcType=VARCHAR}
+    where bidDetiailID = #{biddetiailid,jdbcType=INTEGER}
+  </update>
+</mapper>

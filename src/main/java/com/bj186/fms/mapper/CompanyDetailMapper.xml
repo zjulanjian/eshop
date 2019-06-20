@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bj186.fms.mapper.CompanyDetailMapper">
+  <resultMap id="BaseResultMap" type="com.bj186.fms.pojo.CompanyDetail">
+    <result column="companyID" jdbcType="INTEGER" property="companyid" />
+    <result column="capital" jdbcType="DOUBLE" property="capital" />
+    <result column="industry" jdbcType="VARCHAR" property="industry" />
+    <result column="registerTime" jdbcType="DATE" property="registertime" />
+    <result column="creditLevel" jdbcType="VARCHAR" property="creditlevel" />
+    <result column="legalPersonName" jdbcType="VARCHAR" property="legalpersonname" />
+    <result column="legalPersonIDNumber" jdbcType="VARCHAR" property="legalpersonidnumber" />
+    <result column="guaranteeCompany" jdbcType="VARCHAR" property="guaranteecompany" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.bj186.fms.pojo.CompanyDetail">
+    <result column="license" jdbcType="LONGVARBINARY" property="license" />
+  </resultMap>
+  <sql id="Blob_Column_List">
+    license
+  </sql>
+  <insert id="insert" parameterType="com.bj186.fms.pojo.CompanyDetail">
+    insert into companydetail (companyID, capital, industry, 
+      registerTime, creditLevel, legalPersonName, 
+      legalPersonIDNumber, guaranteeCompany, 
+      license)
+    values (#{companyid,jdbcType=INTEGER}, #{capital,jdbcType=DOUBLE}, #{industry,jdbcType=VARCHAR}, 
+      #{registertime,jdbcType=DATE}, #{creditlevel,jdbcType=VARCHAR}, #{legalpersonname,jdbcType=VARCHAR}, 
+      #{legalpersonidnumber,jdbcType=VARCHAR}, #{guaranteecompany,jdbcType=VARCHAR}, 
+      #{license,jdbcType=LONGVARBINARY})
+  </insert>
+  <insert id="insertSelective" parameterType="com.bj186.fms.pojo.CompanyDetail">
+    insert into companydetail
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="companyid != null">
+        companyID,
+      </if>
+      <if test="capital != null">
+        capital,
+      </if>
+      <if test="industry != null">
+        industry,
+      </if>
+      <if test="registertime != null">
+        registerTime,
+      </if>
+      <if test="creditlevel != null">
+        creditLevel,
+      </if>
+      <if test="legalpersonname != null">
+        legalPersonName,
+      </if>
+      <if test="legalpersonidnumber != null">
+        legalPersonIDNumber,
+      </if>
+      <if test="guaranteecompany != null">
+        guaranteeCompany,
+      </if>
+      <if test="license != null">
+        license,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="companyid != null">
+        #{companyid,jdbcType=INTEGER},
+      </if>
+      <if test="capital != null">
+        #{capital,jdbcType=DOUBLE},
+      </if>
+      <if test="industry != null">
+        #{industry,jdbcType=VARCHAR},
+      </if>
+      <if test="registertime != null">
+        #{registertime,jdbcType=DATE},
+      </if>
+      <if test="creditlevel != null">
+        #{creditlevel,jdbcType=VARCHAR},
+      </if>
+      <if test="legalpersonname != null">
+        #{legalpersonname,jdbcType=VARCHAR},
+      </if>
+      <if test="legalpersonidnumber != null">
+        #{legalpersonidnumber,jdbcType=VARCHAR},
+      </if>
+      <if test="guaranteecompany != null">
+        #{guaranteecompany,jdbcType=VARCHAR},
+      </if>
+      <if test="license != null">
+        #{license,jdbcType=LONGVARBINARY},
+      </if>
+    </trim>
+  </insert>
+</mapper>

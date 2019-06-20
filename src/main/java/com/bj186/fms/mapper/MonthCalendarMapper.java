@@ -3,13 +3,13 @@ package com.bj186.fms.mapper;
 import com.bj186.fms.pojo.MonthCalendar;
 
 public interface MonthCalendarMapper {
-    int deleteByPrimaryKey(Integer mid);
+    int deleteByPrimaryKey(Integer mcalendarid);
 
     int insert(MonthCalendar record);
 
     int insertSelective(MonthCalendar record);
 
-    MonthCalendar selectByPrimaryKey(Integer mid);
+    MonthCalendar selectByPrimaryKey(Integer mcalendarid);
 
     int updateByPrimaryKeySelective(MonthCalendar record);
 

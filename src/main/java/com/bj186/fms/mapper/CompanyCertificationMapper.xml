@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bj186.fms.mapper.CompanyCertificationMapper">
+  <resultMap id="BaseResultMap" type="com.bj186.fms.pojo.CompanyCertification">
+    <id column="cCertificationID" jdbcType="INTEGER" property="ccertificationid" />
+    <result column="companyID" jdbcType="INTEGER" property="companyid" />
+    <result column="status" jdbcType="VARCHAR" property="status" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    cCertificationID, companyID, status
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from companycertification
+    where cCertificationID = #{ccertificationid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from companycertification
+    where cCertificationID = #{ccertificationid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.bj186.fms.pojo.CompanyCertification">
+    insert into companycertification (cCertificationID, companyID, status
+      )
+    values (#{ccertificationid,jdbcType=INTEGER}, #{companyid,jdbcType=INTEGER}, #{status,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.bj186.fms.pojo.CompanyCertification">
+    insert into companycertification
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="ccertificationid != null">
+        cCertificationID,
+      </if>
+      <if test="companyid != null">
+        companyID,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="ccertificationid != null">
+        #{ccertificationid,jdbcType=INTEGER},
+      </if>
+      <if test="companyid != null">
+        #{companyid,jdbcType=INTEGER},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.bj186.fms.pojo.CompanyCertification">
+    update companycertification
+    <set>
+      <if test="companyid != null">
+        companyID = #{companyid,jdbcType=INTEGER},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where cCertificationID = #{ccertificationid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.bj186.fms.pojo.CompanyCertification">
+    update companycertification
+    set companyID = #{companyid,jdbcType=INTEGER},
+      status = #{status,jdbcType=VARCHAR}
+    where cCertificationID = #{ccertificationid,jdbcType=INTEGER}
+  </update>
+</mapper>

@@ -3,13 +3,13 @@ package com.bj186.fms.mapper;
 import com.bj186.fms.pojo.FExpenseCalendar;
 
 public interface FExpenseCalendarMapper {
-    int deleteByPrimaryKey(Integer fecid);
+    int deleteByPrimaryKey(Integer fecalendarid);
 
     int insert(FExpenseCalendar record);
 
     int insertSelective(FExpenseCalendar record);
 
-    FExpenseCalendar selectByPrimaryKey(Integer fecid);
+    FExpenseCalendar selectByPrimaryKey(Integer fecalendarid);
 
     int updateByPrimaryKeySelective(FExpenseCalendar record);
 

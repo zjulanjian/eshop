@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bj186.fms.mapper.CreditCardMapper">
+  <resultMap id="BaseResultMap" type="com.bj186.fms.pojo.CreditCard">
+    <id column="cAccountID" jdbcType="INTEGER" property="caccountid" />
+    <result column="IDnumber" jdbcType="VARCHAR" property="idnumber" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="creditLevel" jdbcType="VARCHAR" property="creditlevel" />
+    <result column="capital" jdbcType="DECIMAL" property="capital" />
+    <result column="status" jdbcType="VARCHAR" property="status" />
+    <result column="createTime" jdbcType="DATE" property="createtime" />
+    <result column="cardType" jdbcType="VARCHAR" property="cardtype" />
+    <result column="city" jdbcType="VARCHAR" property="city" />
+    <result column="province" jdbcType="VARCHAR" property="province" />
+    <result column="moneyType" jdbcType="VARCHAR" property="moneytype" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    cAccountID, IDnumber, password, creditLevel, capital, status, createTime, cardType, 
+    city, province, moneyType
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from creditcard
+    where cAccountID = #{caccountid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from creditcard
+    where cAccountID = #{caccountid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.bj186.fms.pojo.CreditCard">
+    insert into creditcard (cAccountID, IDnumber, password, 
+      creditLevel, capital, status, 
+      createTime, cardType, city, 
+      province, moneyType)
+    values (#{caccountid,jdbcType=INTEGER}, #{idnumber,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
+      #{creditlevel,jdbcType=VARCHAR}, #{capital,jdbcType=DECIMAL}, #{status,jdbcType=VARCHAR}, 
+      #{createtime,jdbcType=DATE}, #{cardtype,jdbcType=VARCHAR}, #{city,jdbcType=VARCHAR}, 
+      #{province,jdbcType=VARCHAR}, #{moneytype,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.bj186.fms.pojo.CreditCard">
+    insert into creditcard
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="caccountid != null">
+        cAccountID,
+      </if>
+      <if test="idnumber != null">
+        IDnumber,
+      </if>
+      <if test="password != null">
+        password,
+      </if>
+      <if test="creditlevel != null">
+        creditLevel,
+      </if>
+      <if test="capital != null">
+        capital,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="createtime != null">
+        createTime,
+      </if>
+      <if test="cardtype != null">
+        cardType,
+      </if>
+      <if test="city != null">
+        city,
+      </if>
+      <if test="province != null">
+        province,
+      </if>
+      <if test="moneytype != null">
+        moneyType,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="caccountid != null">
+        #{caccountid,jdbcType=INTEGER},
+      </if>
+      <if test="idnumber != null">
+        #{idnumber,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null">
+        #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="creditlevel != null">
+        #{creditlevel,jdbcType=VARCHAR},
+      </if>
+      <if test="capital != null">
+        #{capital,jdbcType=DECIMAL},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="createtime != null">
+        #{createtime,jdbcType=DATE},
+      </if>
+      <if test="cardtype != null">
+        #{cardtype,jdbcType=VARCHAR},
+      </if>
+      <if test="city != null">
+        #{city,jdbcType=VARCHAR},
+      </if>
+      <if test="province != null">
+        #{province,jdbcType=VARCHAR},
+      </if>
+      <if test="moneytype != null">
+        #{moneytype,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.bj186.fms.pojo.CreditCard">
+    update creditcard
+    <set>
+      <if test="idnumber != null">
+        IDnumber = #{idnumber,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null">
+        password = #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="creditlevel != null">
+        creditLevel = #{creditlevel,jdbcType=VARCHAR},
+      </if>
+      <if test="capital != null">
+        capital = #{capital,jdbcType=DECIMAL},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="createtime != null">
+        createTime = #{createtime,jdbcType=DATE},
+      </if>
+      <if test="cardtype != null">
+        cardType = #{cardtype,jdbcType=VARCHAR},
+      </if>
+      <if test="city != null">
+        city = #{city,jdbcType=VARCHAR},
+      </if>
+      <if test="province != null">
+        province = #{province,jdbcType=VARCHAR},
+      </if>
+      <if test="moneytype != null">
+        moneyType = #{moneytype,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where cAccountID = #{caccountid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.bj186.fms.pojo.CreditCard">
+    update creditcard
+    set IDnumber = #{idnumber,jdbcType=VARCHAR},
+      password = #{password,jdbcType=VARCHAR},
+      creditLevel = #{creditlevel,jdbcType=VARCHAR},
+      capital = #{capital,jdbcType=DECIMAL},
+      status = #{status,jdbcType=VARCHAR},
+      createTime = #{createtime,jdbcType=DATE},
+      cardType = #{cardtype,jdbcType=VARCHAR},
+      city = #{city,jdbcType=VARCHAR},
+      province = #{province,jdbcType=VARCHAR},
+      moneyType = #{moneytype,jdbcType=VARCHAR}
+    where cAccountID = #{caccountid,jdbcType=INTEGER}
+  </update>
+</mapper>

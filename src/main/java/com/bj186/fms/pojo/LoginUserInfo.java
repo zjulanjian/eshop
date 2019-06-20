@@ -15,7 +15,7 @@ public class LoginUserInfo {
 
     private String photo;
 
-    private String loginname;
+    private String username;
 
     private String password;
 
@@ -77,12 +77,12 @@ public class LoginUserInfo {
         this.photo = photo == null ? null : photo.trim();
     }
 
-    public String getLoginname() {
-        return loginname;
+    public String getUsername() {
+        return username;
     }
 
-    public void setLoginname(String loginname) {
-        this.loginname = loginname == null ? null : loginname.trim();
+    public void setUsername(String username) {
+        this.username = username == null ? null : username.trim();
     }
 
     public String getPassword() {

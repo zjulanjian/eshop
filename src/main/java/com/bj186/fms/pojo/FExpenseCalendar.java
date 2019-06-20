@@ -3,7 +3,7 @@ package com.bj186.fms.pojo;
 import java.util.Date;
 
 public class FExpenseCalendar {
-    private Integer fecid;
+    private Integer fecalendarid;
 
     private Integer faccountid;
 
@@ -11,12 +11,12 @@ public class FExpenseCalendar {
 
     private Date createtime;
 
-    public Integer getFecid() {
-        return fecid;
+    public Integer getFecalendarid() {
+        return fecalendarid;
     }
 
-    public void setFecid(Integer fecid) {
-        this.fecid = fecid;
+    public void setFecalendarid(Integer fecalendarid) {
+        this.fecalendarid = fecalendarid;
     }
 
     public Integer getFaccountid() {

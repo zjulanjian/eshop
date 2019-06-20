@@ -4,14 +4,14 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
-    <servlet>
+   <!-- <servlet>
         <servlet-name>dispatcher</servlet-name>
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
         <init-param>
             <param-name>contextConfigLocation</param-name>
             <param-value>classpath:config/spring.xml</param-value>
         </init-param>
-        <init-param> <!--防止中文乱码-->
+        <init-param> &lt;!&ndash;防止中文乱码&ndash;&gt;
             <param-name>encoding</param-name>
             <param-value>utf-8</param-value>
         </init-param>
@@ -20,5 +20,5 @@
     <servlet-mapping>
         <servlet-name>dispatcher</servlet-name>
         <url-pattern>/</url-pattern>
-    </servlet-mapping>
+    </servlet-mapping>-->
 </web-app>

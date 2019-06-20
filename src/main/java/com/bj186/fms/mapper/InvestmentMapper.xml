@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bj186.fms.mapper.InvestmentMapper">
+  <resultMap id="BaseResultMap" type="com.bj186.fms.pojo.Investment">
+    <id column="investmentID" jdbcType="INTEGER" property="investmentid" />
+    <result column="userID" jdbcType="INTEGER" property="userid" />
+    <result column="bidID" jdbcType="INTEGER" property="bidid" />
+    <result column="investTime" jdbcType="DATE" property="investtime" />
+    <result column="amount" jdbcType="DOUBLE" property="amount" />
+    <result column="status" jdbcType="VARCHAR" property="status" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    investmentID, userID, bidID, investTime, amount, status
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from investment
+    where investmentID = #{investmentid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from investment
+    where investmentID = #{investmentid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.bj186.fms.pojo.Investment">
+    insert into investment (investmentID, userID, bidID, 
+      investTime, amount, status
+      )
+    values (#{investmentid,jdbcType=INTEGER}, #{userid,jdbcType=INTEGER}, #{bidid,jdbcType=INTEGER}, 
+      #{investtime,jdbcType=DATE}, #{amount,jdbcType=DOUBLE}, #{status,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.bj186.fms.pojo.Investment">
+    insert into investment
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="investmentid != null">
+        investmentID,
+      </if>
+      <if test="userid != null">
+        userID,
+      </if>
+      <if test="bidid != null">
+        bidID,
+      </if>
+      <if test="investtime != null">
+        investTime,
+      </if>
+      <if test="amount != null">
+        amount,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="investmentid != null">
+        #{investmentid,jdbcType=INTEGER},
+      </if>
+      <if test="userid != null">
+        #{userid,jdbcType=INTEGER},
+      </if>
+      <if test="bidid != null">
+        #{bidid,jdbcType=INTEGER},
+      </if>
+      <if test="investtime != null">
+        #{investtime,jdbcType=DATE},
+      </if>
+      <if test="amount != null">
+        #{amount,jdbcType=DOUBLE},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.bj186.fms.pojo.Investment">
+    update investment
+    <set>
+      <if test="userid != null">
+        userID = #{userid,jdbcType=INTEGER},
+      </if>
+      <if test="bidid != null">
+        bidID = #{bidid,jdbcType=INTEGER},
+      </if>
+      <if test="investtime != null">
+        investTime = #{investtime,jdbcType=DATE},
+      </if>
+      <if test="amount != null">
+        amount = #{amount,jdbcType=DOUBLE},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where investmentID = #{investmentid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.bj186.fms.pojo.Investment">
+    update investment
+    set userID = #{userid,jdbcType=INTEGER},
+      bidID = #{bidid,jdbcType=INTEGER},
+      investTime = #{investtime,jdbcType=DATE},
+      amount = #{amount,jdbcType=DOUBLE},
+      status = #{status,jdbcType=VARCHAR}
+    where investmentID = #{investmentid,jdbcType=INTEGER}
+  </update>
+</mapper>

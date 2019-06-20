@@ -3,7 +3,7 @@ package com.bj186.fms.pojo;
 import java.util.Date;
 
 public class MonthCalendar {
-    private Integer mid;
+    private Integer mcalendarid;
 
     private Integer caccountid;
 
@@ -15,12 +15,12 @@ public class MonthCalendar {
 
     private Date createtime;
 
-    public Integer getMid() {
-        return mid;
+    public Integer getMcalendarid() {
+        return mcalendarid;
     }
 
-    public void setMid(Integer mid) {
-        this.mid = mid;
+    public void setMcalendarid(Integer mcalendarid) {
+        this.mcalendarid = mcalendarid;
     }
 
     public Integer getCaccountid() {
