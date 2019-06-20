@@ -150,4 +150,10 @@
       fundType = #{fundtype,jdbcType=VARCHAR}
     where fundID = #{fundid,jdbcType=INTEGER}
   </update>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from fund
+  </select>
+
 </mapper>

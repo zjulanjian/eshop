@@ -2,6 +2,8 @@ package com.bj186.fms.mapper;
 
 import com.bj186.fms.pojo.Fund;
 
+import java.util.List;
+
 public interface FundMapper {
     int deleteByPrimaryKey(Integer fundid);
 
@@ -14,4 +16,6 @@ public interface FundMapper {
     int updateByPrimaryKeySelective(Fund record);
 
     int updateByPrimaryKey(Fund record);
+
+    List<Fund> selectAll();
 }

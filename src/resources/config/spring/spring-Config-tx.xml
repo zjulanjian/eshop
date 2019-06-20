@@ -19,7 +19,7 @@
 
     <!--apo配置-->
     <aop:config>
-        <aop:pointcut id="pt" expression="execution( * com.bj186.crm.service.impl.*.*(..))"></aop:pointcut>
+        <aop:pointcut id="pt" expression="execution( * com.bj186.fms.service.impl.*.*(..))"></aop:pointcut>
         <aop:advisor advice-ref="tran" pointcut-ref="pt"></aop:advisor>
     </aop:config>
 
