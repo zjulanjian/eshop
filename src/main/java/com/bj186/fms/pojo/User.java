@@ -3,7 +3,7 @@ package com.bj186.fms.pojo;
 import java.util.Date;
 
 public class User {
-    private Integer userid;
+    private Integer userID;
 
     private String username;
 
@@ -11,18 +11,18 @@ public class User {
 
     private String status;
 
-    private Date createtime;
+    private Date createTime;
 
-    private Date edittime;
+    private Date editTime;
 
-    private String usertype;
+    private String userType;
 
-    public Integer getUserid() {
-        return userid;
+    public Integer getUserID() {
+        return userID;
     }
 
-    public void setUserid(Integer userid) {
-        this.userid = userid;
+    public void setUserID(Integer userID) {
+        this.userID = userID;
     }
 
     public String getUsername() {
@@ -49,27 +49,27 @@ public class User {
         this.status = status == null ? null : status.trim();
     }
 
-    public Date getCreatetime() {
-        return createtime;
+    public Date getCreateTime() {
+        return createTime;
     }
 
-    public void setCreatetime(Date createtime) {
-        this.createtime = createtime;
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
     }
 
-    public Date getEdittime() {
-        return edittime;
+    public Date getEditTime() {
+        return editTime;
     }
 
-    public void setEdittime(Date edittime) {
-        this.edittime = edittime;
+    public void setEditTime(Date editTime) {
+        this.editTime = editTime;
     }
 
-    public String getUsertype() {
-        return usertype;
+    public String getUserType() {
+        return userType;
     }
 
-    public void setUsertype(String usertype) {
-        this.usertype = usertype == null ? null : usertype.trim();
+    public void setUserType(String userType) {
+        this.userType = userType == null ? null : userType.trim();
     }
 }

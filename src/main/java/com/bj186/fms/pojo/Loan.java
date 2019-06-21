@@ -3,56 +3,56 @@ package com.bj186.fms.pojo;
 import java.util.Date;
 
 public class Loan {
-    private Integer loanid;
+    private Integer loanID;
 
-    private String idnumber;
+    private String IDnumber;
 
-    private String loantype;
+    private String loanType;
 
-    private String provefile;
+    private String proveFile;
 
     private Long capital;
 
     private String status;
 
-    private Date createtime;
+    private Date createTime;
 
-    private String cardid;
+    private String cardID;
 
-    private Date edittime;
+    private Date editTime;
 
     private String comment;
 
-    public Integer getLoanid() {
-        return loanid;
+    public Integer getLoanID() {
+        return loanID;
     }
 
-    public void setLoanid(Integer loanid) {
-        this.loanid = loanid;
+    public void setLoanID(Integer loanID) {
+        this.loanID = loanID;
     }
 
-    public String getIdnumber() {
-        return idnumber;
+    public String getIDnumber() {
+        return IDnumber;
     }
 
-    public void setIdnumber(String idnumber) {
-        this.idnumber = idnumber == null ? null : idnumber.trim();
+    public void setIDnumber(String IDnumber) {
+        this.IDnumber = IDnumber == null ? null : IDnumber.trim();
     }
 
-    public String getLoantype() {
-        return loantype;
+    public String getLoanType() {
+        return loanType;
     }
 
-    public void setLoantype(String loantype) {
-        this.loantype = loantype == null ? null : loantype.trim();
+    public void setLoanType(String loanType) {
+        this.loanType = loanType == null ? null : loanType.trim();
     }
 
-    public String getProvefile() {
-        return provefile;
+    public String getProveFile() {
+        return proveFile;
     }
 
-    public void setProvefile(String provefile) {
-        this.provefile = provefile == null ? null : provefile.trim();
+    public void setProveFile(String proveFile) {
+        this.proveFile = proveFile == null ? null : proveFile.trim();
     }
 
     public Long getCapital() {
@@ -71,28 +71,28 @@ public class Loan {
         this.status = status == null ? null : status.trim();
     }
 
-    public Date getCreatetime() {
-        return createtime;
+    public Date getCreateTime() {
+        return createTime;
     }
 
-    public void setCreatetime(Date createtime) {
-        this.createtime = createtime;
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
     }
 
-    public String getCardid() {
-        return cardid;
+    public String getCardID() {
+        return cardID;
     }
 
-    public void setCardid(String cardid) {
-        this.cardid = cardid == null ? null : cardid.trim();
+    public void setCardID(String cardID) {
+        this.cardID = cardID == null ? null : cardID.trim();
     }
 
-    public Date getEdittime() {
-        return edittime;
+    public Date getEditTime() {
+        return editTime;
     }
 
-    public void setEdittime(Date edittime) {
-        this.edittime = edittime;
+    public void setEditTime(Date editTime) {
+        this.editTime = editTime;
     }
 
     public String getComment() {

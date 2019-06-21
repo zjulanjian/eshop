@@ -1,0 +1,13 @@
+{
+  "title": "", //相册标题
+  "id": 123, //相册id
+  "start": 0, //初始显示的图片序号，默认0
+  "data": [   //相册包含的图片，数组格式
+    {
+      "alt": "图片名",
+      "pid": 666, //图片id
+      "src": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1561099024846&di=0a312c9e52f2f3f1944a08963d7b685b&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201604%2F22%2F20160422215945_QhK53.thumb.700_0.jpeg", //原图地址
+      "thumb": "" //缩略图地址
+    }
+  ]
+}

@@ -1,7 +1,7 @@
 package com.bj186.fms.pojo;
 
 public class Mortgage {
-    private Integer bidid;
+    private Integer bidID;
 
     private byte[] estate;
 
@@ -13,12 +13,12 @@ public class Mortgage {
 
     private byte[] others;
 
-    public Integer getBidid() {
-        return bidid;
+    public Integer getBidID() {
+        return bidID;
     }
 
-    public void setBidid(Integer bidid) {
-        this.bidid = bidid;
+    public void setBidID(Integer bidID) {
+        this.bidID = bidID;
     }
 
     public byte[] getEstate() {

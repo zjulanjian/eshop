@@ -3,40 +3,40 @@ package com.bj186.fms.pojo;
 import java.util.Date;
 
 public class MonthCalendar {
-    private Integer mcalendarid;
+    private Integer mCalendarID;
 
-    private Integer caccountid;
+    private Integer cAccountID;
 
-    private String expensetype;
+    private String expenseType;
 
     private String gno;
 
     private Long capital;
 
-    private Date createtime;
+    private Date createTime;
 
-    public Integer getMcalendarid() {
-        return mcalendarid;
+    public Integer getmCalendarID() {
+        return mCalendarID;
     }
 
-    public void setMcalendarid(Integer mcalendarid) {
-        this.mcalendarid = mcalendarid;
+    public void setmCalendarID(Integer mCalendarID) {
+        this.mCalendarID = mCalendarID;
     }
 
-    public Integer getCaccountid() {
-        return caccountid;
+    public Integer getcAccountID() {
+        return cAccountID;
     }
 
-    public void setCaccountid(Integer caccountid) {
-        this.caccountid = caccountid;
+    public void setcAccountID(Integer cAccountID) {
+        this.cAccountID = cAccountID;
     }
 
-    public String getExpensetype() {
-        return expensetype;
+    public String getExpenseType() {
+        return expenseType;
     }
 
-    public void setExpensetype(String expensetype) {
-        this.expensetype = expensetype == null ? null : expensetype.trim();
+    public void setExpenseType(String expenseType) {
+        this.expenseType = expenseType == null ? null : expenseType.trim();
     }
 
     public String getGno() {
@@ -55,11 +55,11 @@ public class MonthCalendar {
         this.capital = capital;
     }
 
-    public Date getCreatetime() {
-        return createtime;
+    public Date getCreateTime() {
+        return createTime;
     }
 
-    public void setCreatetime(Date createtime) {
-        this.createtime = createtime;
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
     }
 }

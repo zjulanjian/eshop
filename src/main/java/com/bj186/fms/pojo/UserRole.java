@@ -1,33 +1,33 @@
 package com.bj186.fms.pojo;
 
 public class UserRole {
-    private Integer userroleid;
+    private Integer userRoleID;
 
-    private Integer roleid;
+    private Integer roleID;
 
-    private Integer userid;
+    private Integer userID;
 
-    public Integer getUserroleid() {
-        return userroleid;
+    public Integer getUserRoleID() {
+        return userRoleID;
     }
 
-    public void setUserroleid(Integer userroleid) {
-        this.userroleid = userroleid;
+    public void setUserRoleID(Integer userRoleID) {
+        this.userRoleID = userRoleID;
     }
 
-    public Integer getRoleid() {
-        return roleid;
+    public Integer getRoleID() {
+        return roleID;
     }
 
-    public void setRoleid(Integer roleid) {
-        this.roleid = roleid;
+    public void setRoleID(Integer roleID) {
+        this.roleID = roleID;
     }
 
-    public Integer getUserid() {
-        return userid;
+    public Integer getUserID() {
+        return userID;
     }
 
-    public void setUserid(Integer userid) {
-        this.userid = userid;
+    public void setUserID(Integer userID) {
+        this.userID = userID;
     }
 }

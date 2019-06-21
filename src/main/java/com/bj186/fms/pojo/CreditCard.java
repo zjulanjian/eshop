@@ -3,42 +3,42 @@ package com.bj186.fms.pojo;
 import java.util.Date;
 
 public class CreditCard {
-    private Integer caccountid;
+    private Integer cAccountID;
 
-    private String idnumber;
+    private String IDnumber;
 
     private String password;
 
-    private String creditlevel;
+    private String creditLevel;
 
     private Long capital;
 
     private String status;
 
-    private Date createtime;
+    private Date createTime;
 
-    private String cardtype;
+    private String cardType;
 
     private String city;
 
     private String province;
 
-    private String moneytype;
+    private String moneyType;
 
-    public Integer getCaccountid() {
-        return caccountid;
+    public Integer getcAccountID() {
+        return cAccountID;
     }
 
-    public void setCaccountid(Integer caccountid) {
-        this.caccountid = caccountid;
+    public void setcAccountID(Integer cAccountID) {
+        this.cAccountID = cAccountID;
     }
 
-    public String getIdnumber() {
-        return idnumber;
+    public String getIDnumber() {
+        return IDnumber;
     }
 
-    public void setIdnumber(String idnumber) {
-        this.idnumber = idnumber == null ? null : idnumber.trim();
+    public void setIDnumber(String IDnumber) {
+        this.IDnumber = IDnumber == null ? null : IDnumber.trim();
     }
 
     public String getPassword() {
@@ -49,12 +49,12 @@ public class CreditCard {
         this.password = password == null ? null : password.trim();
     }
 
-    public String getCreditlevel() {
-        return creditlevel;
+    public String getCreditLevel() {
+        return creditLevel;
     }
 
-    public void setCreditlevel(String creditlevel) {
-        this.creditlevel = creditlevel == null ? null : creditlevel.trim();
+    public void setCreditLevel(String creditLevel) {
+        this.creditLevel = creditLevel == null ? null : creditLevel.trim();
     }
 
     public Long getCapital() {
@@ -73,20 +73,20 @@ public class CreditCard {
         this.status = status == null ? null : status.trim();
     }
 
-    public Date getCreatetime() {
-        return createtime;
+    public Date getCreateTime() {
+        return createTime;
     }
 
-    public void setCreatetime(Date createtime) {
-        this.createtime = createtime;
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
     }
 
-    public String getCardtype() {
-        return cardtype;
+    public String getCardType() {
+        return cardType;
     }
 
-    public void setCardtype(String cardtype) {
-        this.cardtype = cardtype == null ? null : cardtype.trim();
+    public void setCardType(String cardType) {
+        this.cardType = cardType == null ? null : cardType.trim();
     }
 
     public String getCity() {
@@ -105,11 +105,11 @@ public class CreditCard {
         this.province = province == null ? null : province.trim();
     }
 
-    public String getMoneytype() {
-        return moneytype;
+    public String getMoneyType() {
+        return moneyType;
     }
 
-    public void setMoneytype(String moneytype) {
-        this.moneytype = moneytype == null ? null : moneytype.trim();
+    public void setMoneyType(String moneyType) {
+        this.moneyType = moneyType == null ? null : moneyType.trim();
     }
 }

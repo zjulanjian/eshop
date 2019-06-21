@@ -3,36 +3,36 @@ package com.bj186.fms.pojo;
 import java.util.Date;
 
 public class CurrencyInfo {
-    private Integer currencyinfoid;
+    private Integer currencyInfoID;
 
-    private String currencygroup;
+    private String currencyGroup;
 
     private Double buyin;
 
     private Double sellout;
 
-    private Double maxrate;
+    private Double maxRate;
 
-    private Double middlerate;
+    private Double middleRate;
 
-    private Double minrate;
+    private Double minRate;
 
-    private Date createtime;
+    private Date createTime;
 
-    public Integer getCurrencyinfoid() {
-        return currencyinfoid;
+    public Integer getCurrencyInfoID() {
+        return currencyInfoID;
     }
 
-    public void setCurrencyinfoid(Integer currencyinfoid) {
-        this.currencyinfoid = currencyinfoid;
+    public void setCurrencyInfoID(Integer currencyInfoID) {
+        this.currencyInfoID = currencyInfoID;
     }
 
-    public String getCurrencygroup() {
-        return currencygroup;
+    public String getCurrencyGroup() {
+        return currencyGroup;
     }
 
-    public void setCurrencygroup(String currencygroup) {
-        this.currencygroup = currencygroup == null ? null : currencygroup.trim();
+    public void setCurrencyGroup(String currencyGroup) {
+        this.currencyGroup = currencyGroup == null ? null : currencyGroup.trim();
     }
 
     public Double getBuyin() {
@@ -51,35 +51,35 @@ public class CurrencyInfo {
         this.sellout = sellout;
     }
 
-    public Double getMaxrate() {
-        return maxrate;
+    public Double getMaxRate() {
+        return maxRate;
     }
 
-    public void setMaxrate(Double maxrate) {
-        this.maxrate = maxrate;
+    public void setMaxRate(Double maxRate) {
+        this.maxRate = maxRate;
     }
 
-    public Double getMiddlerate() {
-        return middlerate;
+    public Double getMiddleRate() {
+        return middleRate;
     }
 
-    public void setMiddlerate(Double middlerate) {
-        this.middlerate = middlerate;
+    public void setMiddleRate(Double middleRate) {
+        this.middleRate = middleRate;
     }
 
-    public Double getMinrate() {
-        return minrate;
+    public Double getMinRate() {
+        return minRate;
     }
 
-    public void setMinrate(Double minrate) {
-        this.minrate = minrate;
+    public void setMinRate(Double minRate) {
+        this.minRate = minRate;
     }
 
-    public Date getCreatetime() {
-        return createtime;
+    public Date getCreateTime() {
+        return createTime;
     }
 
-    public void setCreatetime(Date createtime) {
-        this.createtime = createtime;
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
     }
 }

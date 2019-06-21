@@ -3,52 +3,52 @@ package com.bj186.fms.pojo;
 import java.util.Date;
 
 public class BidDetail {
-    private Integer biddetiailid;
+    private Integer bidDetiailID;
 
-    private Integer bidid;
+    private Integer bidID;
 
-    private String projectname;
+    private String projectName;
 
     private String description;
 
-    private Double totalfunds;
+    private Double totalFunds;
 
-    private Double unitprice;
+    private Double unitPrice;
 
-    private Integer totalquantity;
+    private Integer totalQuantity;
 
-    private Date createtime;
+    private Date createTime;
 
-    private Date endtime;
+    private Date endTime;
 
-    private Integer purchasedquantity;
+    private Integer purchasedQuantity;
 
-    private Integer remainingquantity;
+    private Integer remainingQuantity;
 
-    private String qualificationcertificate;
+    private String qualificationCertificate;
 
-    public Integer getBiddetiailid() {
-        return biddetiailid;
+    public Integer getBidDetiailID() {
+        return bidDetiailID;
     }
 
-    public void setBiddetiailid(Integer biddetiailid) {
-        this.biddetiailid = biddetiailid;
+    public void setBidDetiailID(Integer bidDetiailID) {
+        this.bidDetiailID = bidDetiailID;
     }
 
-    public Integer getBidid() {
-        return bidid;
+    public Integer getBidID() {
+        return bidID;
     }
 
-    public void setBidid(Integer bidid) {
-        this.bidid = bidid;
+    public void setBidID(Integer bidID) {
+        this.bidID = bidID;
     }
 
-    public String getProjectname() {
-        return projectname;
+    public String getProjectName() {
+        return projectName;
     }
 
-    public void setProjectname(String projectname) {
-        this.projectname = projectname == null ? null : projectname.trim();
+    public void setProjectName(String projectName) {
+        this.projectName = projectName == null ? null : projectName.trim();
     }
 
     public String getDescription() {
@@ -59,67 +59,67 @@ public class BidDetail {
         this.description = description == null ? null : description.trim();
     }
 
-    public Double getTotalfunds() {
-        return totalfunds;
+    public Double getTotalFunds() {
+        return totalFunds;
     }
 
-    public void setTotalfunds(Double totalfunds) {
-        this.totalfunds = totalfunds;
+    public void setTotalFunds(Double totalFunds) {
+        this.totalFunds = totalFunds;
     }
 
-    public Double getUnitprice() {
-        return unitprice;
+    public Double getUnitPrice() {
+        return unitPrice;
     }
 
-    public void setUnitprice(Double unitprice) {
-        this.unitprice = unitprice;
+    public void setUnitPrice(Double unitPrice) {
+        this.unitPrice = unitPrice;
     }
 
-    public Integer getTotalquantity() {
-        return totalquantity;
+    public Integer getTotalQuantity() {
+        return totalQuantity;
     }
 
-    public void setTotalquantity(Integer totalquantity) {
-        this.totalquantity = totalquantity;
+    public void setTotalQuantity(Integer totalQuantity) {
+        this.totalQuantity = totalQuantity;
     }
 
-    public Date getCreatetime() {
-        return createtime;
+    public Date getCreateTime() {
+        return createTime;
     }
 
-    public void setCreatetime(Date createtime) {
-        this.createtime = createtime;
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
     }
 
-    public Date getEndtime() {
-        return endtime;
+    public Date getEndTime() {
+        return endTime;
     }
 
-    public void setEndtime(Date endtime) {
-        this.endtime = endtime;
+    public void setEndTime(Date endTime) {
+        this.endTime = endTime;
     }
 
-    public Integer getPurchasedquantity() {
-        return purchasedquantity;
+    public Integer getPurchasedQuantity() {
+        return purchasedQuantity;
     }
 
-    public void setPurchasedquantity(Integer purchasedquantity) {
-        this.purchasedquantity = purchasedquantity;
+    public void setPurchasedQuantity(Integer purchasedQuantity) {
+        this.purchasedQuantity = purchasedQuantity;
     }
 
-    public Integer getRemainingquantity() {
-        return remainingquantity;
+    public Integer getRemainingQuantity() {
+        return remainingQuantity;
     }
 
-    public void setRemainingquantity(Integer remainingquantity) {
-        this.remainingquantity = remainingquantity;
+    public void setRemainingQuantity(Integer remainingQuantity) {
+        this.remainingQuantity = remainingQuantity;
     }
 
-    public String getQualificationcertificate() {
-        return qualificationcertificate;
+    public String getQualificationCertificate() {
+        return qualificationCertificate;
     }
 
-    public void setQualificationcertificate(String qualificationcertificate) {
-        this.qualificationcertificate = qualificationcertificate == null ? null : qualificationcertificate.trim();
+    public void setQualificationCertificate(String qualificationCertificate) {
+        this.qualificationCertificate = qualificationCertificate == null ? null : qualificationCertificate.trim();
     }
 }

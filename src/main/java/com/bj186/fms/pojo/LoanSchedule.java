@@ -5,9 +5,9 @@ import java.util.Date;
 public class LoanSchedule {
     private String username;
 
-    private String loantype;
+    private String loanType;
 
-    private Date createtime;
+    private Date createTime;
 
     private String status;
 
@@ -19,20 +19,20 @@ public class LoanSchedule {
         this.username = username == null ? null : username.trim();
     }
 
-    public String getLoantype() {
-        return loantype;
+    public String getLoanType() {
+        return loanType;
     }
 
-    public void setLoantype(String loantype) {
-        this.loantype = loantype == null ? null : loantype.trim();
+    public void setLoanType(String loanType) {
+        this.loanType = loanType == null ? null : loanType.trim();
     }
 
-    public Date getCreatetime() {
-        return createtime;
+    public Date getCreateTime() {
+        return createTime;
     }
 
-    public void setCreatetime(Date createtime) {
-        this.createtime = createtime;
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
     }
 
     public String getStatus() {

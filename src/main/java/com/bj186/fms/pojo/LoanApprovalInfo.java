@@ -1,11 +1,11 @@
 package com.bj186.fms.pojo;
 
 public class LoanApprovalInfo {
-    private String idnumber;
+    private String IDnumber;
 
     private String name;
 
-    private String loantype;
+    private String loanType;
 
     private Long capital;
 
@@ -13,16 +13,16 @@ public class LoanApprovalInfo {
 
     private String status;
 
-    private String provefile;
+    private String proveFile;
 
     private String comment;
 
-    public String getIdnumber() {
-        return idnumber;
+    public String getIDnumber() {
+        return IDnumber;
     }
 
-    public void setIdnumber(String idnumber) {
-        this.idnumber = idnumber == null ? null : idnumber.trim();
+    public void setIDnumber(String IDnumber) {
+        this.IDnumber = IDnumber == null ? null : IDnumber.trim();
     }
 
     public String getName() {
@@ -33,12 +33,12 @@ public class LoanApprovalInfo {
         this.name = name == null ? null : name.trim();
     }
 
-    public String getLoantype() {
-        return loantype;
+    public String getLoanType() {
+        return loanType;
     }
 
-    public void setLoantype(String loantype) {
-        this.loantype = loantype == null ? null : loantype.trim();
+    public void setLoanType(String loanType) {
+        this.loanType = loanType == null ? null : loanType.trim();
     }
 
     public Long getCapital() {
@@ -65,12 +65,12 @@ public class LoanApprovalInfo {
         this.status = status == null ? null : status.trim();
     }
 
-    public String getProvefile() {
-        return provefile;
+    public String getProveFile() {
+        return proveFile;
     }
 
-    public void setProvefile(String provefile) {
-        this.provefile = provefile == null ? null : provefile.trim();
+    public void setProveFile(String proveFile) {
+        this.proveFile = proveFile == null ? null : proveFile.trim();
     }
 
     public String getComment() {

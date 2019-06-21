@@ -3,28 +3,28 @@ package com.bj186.fms.pojo;
 import java.util.Date;
 
 public class RExpenseCalendar {
-    private Integer recalendarid;
+    private Integer reCalendarID;
 
-    private Integer raccountid;
+    private Integer rAccountID;
 
     private Long capital;
 
-    private Date createtime;
+    private Date createTime;
 
-    public Integer getRecalendarid() {
-        return recalendarid;
+    public Integer getReCalendarID() {
+        return reCalendarID;
     }
 
-    public void setRecalendarid(Integer recalendarid) {
-        this.recalendarid = recalendarid;
+    public void setReCalendarID(Integer reCalendarID) {
+        this.reCalendarID = reCalendarID;
     }
 
-    public Integer getRaccountid() {
-        return raccountid;
+    public Integer getrAccountID() {
+        return rAccountID;
     }
 
-    public void setRaccountid(Integer raccountid) {
-        this.raccountid = raccountid;
+    public void setrAccountID(Integer rAccountID) {
+        this.rAccountID = rAccountID;
     }
 
     public Long getCapital() {
@@ -35,11 +35,11 @@ public class RExpenseCalendar {
         this.capital = capital;
     }
 
-    public Date getCreatetime() {
-        return createtime;
+    public Date getCreateTime() {
+        return createTime;
     }
 
-    public void setCreatetime(Date createtime) {
-        this.createtime = createtime;
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
     }
 }

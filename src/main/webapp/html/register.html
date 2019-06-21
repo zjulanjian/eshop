@@ -1,119 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>register</title>
-	<link rel="shortcut icon" href="/fms/statics/img/SE.ico">
-	<link rel="stylesheet" href="/fms/statics/css/register.css">
+    <meta charset="UTF-8">
+    <title>注册</title>
+    <script src="../statics/js/jquery-1.11.3.min.js" type="text/javascript"></script>
+    <script src="../layui/layui.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="../layui/css/layui.css">
+    <script src="../statics/js/assets/data.js"></script>
+    <script src="../statics/js/assets/province.js"></script>
+    <script type="text/javascript">
+        var defaults = {
+            s1: 'provid',
+            s2: 'cityid',
+            s3: 'areaid',
+            v1: null,
+            v2: null,
+            v3: null
+        };
+    </script>
 </head>
-<body>
-	<!-- 头部 -->
-	<div class="header">
-		<div class="head-wrap">
-			<div class="head-left">
-				<div class="logo">
-					<h1 class="logo-h1">
-						<a href="#" class="logo-a">
-							<img src="/fms/statics/img/logo.png" alt="logo" class="logo-img">
-						</a>
-					</h1>
-				</div>
-			</div>
-		</div>
-	</div>
+<style>
+    body{
+        margin: 0;
+    }
+    #reg{
+        margin-left: 40%;
+        margin-top: 5%;
+    }
+</style>
+<body >
+<div class="layui-inline" id="reg">
+<div class="layui-tab layui-tab-card" style="width: 420px;height: 500px">
+    <ul class="layui-tab-title">
+        <li class="layui-this">企业注册</li>
+        <li>个人注册</li>
+    </ul>
+    <div class="layui-tab-content">
+        <div class="layui-tab-item layui-show">
+            <form class="layui-form">
+                  <div class="layui-form-item">
+                      <label class="layui-form-label">会员名:</label>
+                        <div class="layui-input-inline">
+                           <input class="layui-input" required type="text"/>
+                        </div>
+                  </div>
 
-	<div class="main">
-		<div class="container">
-			<h2 class="account-title">用户注册</h2>
-			<form action="" class="account-form" method="post" id="account" enctype="multipart/form-data">
-				<p class="account-p">
-					<label for="loginname" class="account-label">
-						用户名:
-					</label>
-					<input type="text" name="loginname" class="account-input" placeholder="请输入用户名">
-				</p>
-				<p class="account-p">
-					<label for="password" class="account-label">
-						密码:
-					</label>
-					<input type="password" name="password" class="account-input" placeholder="请输入密码">
-				</p>
-				<p class="account-p">
-					<label for="card-num" class="account-label">
-						身份证号码:
-					</label>
-					<input type="text" name="idnumber" class="account-input" placeholder="请输入身份证号码">
-				</p>
-				<p class="account-p">
-					<label for="name" class="account-label">
-						姓名:
-					</label>
-					<input type="text" name="name" class="account-input" placeholder="姓名">
-				</p>
-				<p class="account-p">
-					<label for="sex" class="account-label">
-						性别:
-					</label>
-					<input type="radio" name="sex" class="account-input" value="1" checked="true">
-					<label class="sex-label">男</label>
-					<input type="radio" name="sex" class="account-input" value="0">
-					<label class="sex-label">女</label>
-				</p>
-				<p class="account-p">
-					<label for="address" class="account-label">
-						家庭地址:
-					</label>
-					<input type="text" name="address" class="account-input" placeholder="家庭地址">
-				</p>
-				<p class="account-p">
-					<label for="contact" class="account-label">
-						联系方式:
-					</label>
-					<input type="text" name="phone" class="account-input" placeholder="联系方式">
-				</p>
-				<p class="account-p">
-					<label for="email" class="account-label">
-						email:
-					</label>
-					<input type="text" name="email" class="account-input" placeholder="email">
-				</p>
-				<div class="file">
-					<input type="file" id="file"  name="file" class="file-input">
-					<div class="pic-show">上传头像</div>
-				</div>
-				<p class="account-p">
-					<input type="submit" id="subBtn" value="submit">
-					<input type="reset" id="reset" value="cancel">
-				</p>
-			</form>
-		</div>
-	</div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">密码:</label>
+                    <div class="layui-input-inline">
+                        <input class="layui-input" required type="password"/>
+                    </div>
+                </div>
 
-	<!-- 尾部 -->
-	<div class="footer">
-		<div class="footer-wrap">
-			<ul class="text">
-				<li><a href="#">网站申明</a></li>
-				<li><a href="#">网站地图</a></li>
-				<li><a href="#">联系我们</a></li>
-				<li><a href="#" class="noborder">客服热线：15207</a></li>
-			</ul><br>
-			<ul class="copyright">
-				<li>
-					<a href="#">
-						第五小组SE银行版权所有
-					</a>
-				</li>
-				<li>
-					<a href="#" class="noborder">
-						川ICP备000000
-					</a>
-				</li>
-			</ul>
-		</div>
-	</div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">选择省:</label>
+                    <div class="layui-input-inline">
+                        <select name="provid" id="provid" lay-filter="provid">
+                            <option value="">请选择省</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">选择市:</label>
+                    <div class="layui-input-inline">
+                        <select name="cityid" id="cityid" lay-filter="cityid">
+                            <option value="">请选择市</option>
+                        </select>
+                    </div>
+                </div>
 
-	<script type="text/javascript" src="/fms/statics/js/jquery.js"></script>
-	<script type="text/javascript" src="/fms/statics/js/register.js"></script>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">选择县/区:</label>
+                    <div class="layui-input-inline">
+                        <select name="areaid" id="areaid" lay-filter="areaid">
+                            <option value="">请选择县/区</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="layui-form-item">
+                    <label class="layui-form-label">手机号:</label>
+                    <div class="layui-input-inline">
+                        <input class="layui-input" required type="text"/>
+                    </div>
+                </div>
+
+                <div class="layui-form-item">
+                    <label class="layui-form-label">验证码:</label>
+                    <div class="layui-input-inline">
+                        <input class="layui-input" required type="text"/>
+                    </div>
+                    <div class="layui-form-mid layui-word-aux">验证码图片</div>
+                </div>
+
+
+                <div class="layui-form-item">
+                      <div class="layui-input-block">
+                             <button class="layui-btn" lay-submit lay-filter="formDemo">注册</button>
+                             <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                      </div>
+                </div>
+            </form>
+        </div>
+        <div class="layui-tab-item">
+            <form class="layui-form">
+                 <div class="layui-form-item">
+                     <label class="layui-form-label">手机号:</label>
+                     <div class="layui-input-inline">
+                         <input class="layui-input" type="text" required placeholder="输入手机号"/>
+                     </div>
+                     <button class="layui-form-mid layui-btn">发送短信</button>
+                 </div>
+
+                <div class="layui-form-item">
+                    <label class="layui-form-label">验证码:</label>
+                    <div class="layui-input-inline">
+                        <input type="text" class="layui-input">
+                    </div>
+                </div>
+
+                <div class="layui-form-item">
+                    <div class="layui-input-block">
+                        <button class="layui-btn" lay-submit lay-filter="formDemo">注册</button>
+                        <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</div>
+<script>
+    layui.use(['element','form'], function(){
+        var form=layui.form,
+            element = layui.element;
+        //监听Tab切换，以改变地址hash值
+        element.on('tab(test1)', function(){
+            location.hash = 'test1='+ this.getAttribute('lay-id');
+        });
+    });
+</script>
 </body>
 </html>

@@ -1,26 +1,26 @@
 package com.bj186.fms.pojo;
 
 public class CompanyCertification {
-    private Integer ccertificationid;
+    private Integer cCertificationID;
 
-    private Integer companyid;
+    private Integer companyID;
 
     private String status;
 
-    public Integer getCcertificationid() {
-        return ccertificationid;
+    public Integer getcCertificationID() {
+        return cCertificationID;
     }
 
-    public void setCcertificationid(Integer ccertificationid) {
-        this.ccertificationid = ccertificationid;
+    public void setcCertificationID(Integer cCertificationID) {
+        this.cCertificationID = cCertificationID;
     }
 
-    public Integer getCompanyid() {
-        return companyid;
+    public Integer getCompanyID() {
+        return companyID;
     }
 
-    public void setCompanyid(Integer companyid) {
-        this.companyid = companyid;
+    public void setCompanyID(Integer companyID) {
+        this.companyID = companyID;
     }
 
     public String getStatus() {

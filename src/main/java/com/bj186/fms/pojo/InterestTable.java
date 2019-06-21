@@ -3,30 +3,30 @@ package com.bj186.fms.pojo;
 import java.util.Date;
 
 public class InterestTable {
-    private Integer interestid;
+    private Integer interestID;
 
-    private String deposittype;
+    private String depositType;
 
     private String cycle;
 
     private Date time;
 
-    private Double interestvalue;
+    private Double interestValue;
 
-    public Integer getInterestid() {
-        return interestid;
+    public Integer getInterestID() {
+        return interestID;
     }
 
-    public void setInterestid(Integer interestid) {
-        this.interestid = interestid;
+    public void setInterestID(Integer interestID) {
+        this.interestID = interestID;
     }
 
-    public String getDeposittype() {
-        return deposittype;
+    public String getDepositType() {
+        return depositType;
     }
 
-    public void setDeposittype(String deposittype) {
-        this.deposittype = deposittype == null ? null : deposittype.trim();
+    public void setDepositType(String depositType) {
+        this.depositType = depositType == null ? null : depositType.trim();
     }
 
     public String getCycle() {
@@ -45,11 +45,11 @@ public class InterestTable {
         this.time = time;
     }
 
-    public Double getInterestvalue() {
-        return interestvalue;
+    public Double getInterestValue() {
+        return interestValue;
     }
 
-    public void setInterestvalue(Double interestvalue) {
-        this.interestvalue = interestvalue;
+    public void setInterestValue(Double interestValue) {
+        this.interestValue = interestValue;
     }
 }

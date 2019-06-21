@@ -1,43 +1,43 @@
 package com.bj186.fms.pojo;
 
 public class RoleResourcePermission {
-    private Integer rrpermissionid;
+    private Integer rrPermissionID;
 
-    private Integer roleid;
+    private Integer roleID;
 
-    private Integer resourceid;
+    private Integer resourceID;
 
-    private Integer permissionid;
+    private Integer permissionID;
 
-    public Integer getRrpermissionid() {
-        return rrpermissionid;
+    public Integer getRrPermissionID() {
+        return rrPermissionID;
     }
 
-    public void setRrpermissionid(Integer rrpermissionid) {
-        this.rrpermissionid = rrpermissionid;
+    public void setRrPermissionID(Integer rrPermissionID) {
+        this.rrPermissionID = rrPermissionID;
     }
 
-    public Integer getRoleid() {
-        return roleid;
+    public Integer getRoleID() {
+        return roleID;
     }
 
-    public void setRoleid(Integer roleid) {
-        this.roleid = roleid;
+    public void setRoleID(Integer roleID) {
+        this.roleID = roleID;
     }
 
-    public Integer getResourceid() {
-        return resourceid;
+    public Integer getResourceID() {
+        return resourceID;
     }
 
-    public void setResourceid(Integer resourceid) {
-        this.resourceid = resourceid;
+    public void setResourceID(Integer resourceID) {
+        this.resourceID = resourceID;
     }
 
-    public Integer getPermissionid() {
-        return permissionid;
+    public Integer getPermissionID() {
+        return permissionID;
     }
 
-    public void setPermissionid(Integer permissionid) {
-        this.permissionid = permissionid;
+    public void setPermissionID(Integer permissionID) {
+        this.permissionID = permissionID;
     }
 }

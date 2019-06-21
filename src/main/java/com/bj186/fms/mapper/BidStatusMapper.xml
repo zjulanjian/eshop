@@ -2,29 +2,29 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.bj186.fms.mapper.BidStatusMapper">
   <resultMap id="BaseResultMap" type="com.bj186.fms.pojo.BidStatus">
-    <result column="bidID" jdbcType="INTEGER" property="bidid" />
-    <result column="statusID" jdbcType="INTEGER" property="statusid" />
+    <result column="bidID" jdbcType="INTEGER" property="bidID" />
+    <result column="statusID" jdbcType="INTEGER" property="statusID" />
   </resultMap>
   <insert id="insert" parameterType="com.bj186.fms.pojo.BidStatus">
     insert into bid_status (bidID, statusID)
-    values (#{bidid,jdbcType=INTEGER}, #{statusid,jdbcType=INTEGER})
+    values (#{bidID,jdbcType=INTEGER}, #{statusID,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" parameterType="com.bj186.fms.pojo.BidStatus">
     insert into bid_status
     <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="bidid != null">
+      <if test="bidID != null">
         bidID,
       </if>
-      <if test="statusid != null">
+      <if test="statusID != null">
         statusID,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="bidid != null">
-        #{bidid,jdbcType=INTEGER},
+      <if test="bidID != null">
+        #{bidID,jdbcType=INTEGER},
       </if>
-      <if test="statusid != null">
-        #{statusid,jdbcType=INTEGER},
+      <if test="statusID != null">
+        #{statusID,jdbcType=INTEGER},
       </if>
     </trim>
   </insert>

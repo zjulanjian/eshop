@@ -3,46 +3,46 @@ package com.bj186.fms.pojo;
 import java.util.Date;
 
 public class Bid {
-    private Integer bidid;
+    private Integer bidID;
 
-    private Integer companyid;
+    private Integer companyID;
 
-    private Date createtime;
+    private Date createTime;
 
-    private Date endtime;
+    private Date endTime;
 
     private Double amount;
 
-    public Integer getBidid() {
-        return bidid;
+    public Integer getBidID() {
+        return bidID;
     }
 
-    public void setBidid(Integer bidid) {
-        this.bidid = bidid;
+    public void setBidID(Integer bidID) {
+        this.bidID = bidID;
     }
 
-    public Integer getCompanyid() {
-        return companyid;
+    public Integer getCompanyID() {
+        return companyID;
     }
 
-    public void setCompanyid(Integer companyid) {
-        this.companyid = companyid;
+    public void setCompanyID(Integer companyID) {
+        this.companyID = companyID;
     }
 
-    public Date getCreatetime() {
-        return createtime;
+    public Date getCreateTime() {
+        return createTime;
     }
 
-    public void setCreatetime(Date createtime) {
-        this.createtime = createtime;
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
     }
 
-    public Date getEndtime() {
-        return endtime;
+    public Date getEndTime() {
+        return endTime;
     }
 
-    public void setEndtime(Date endtime) {
-        this.endtime = endtime;
+    public void setEndTime(Date endTime) {
+        this.endTime = endTime;
     }
 
     public Double getAmount() {

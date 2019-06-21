@@ -3,103 +3,103 @@ package com.bj186.fms.pojo;
 import java.util.Date;
 
 public class Fund {
-    private Integer fundid;
+    private Integer fundID;
 
-    private String fundname;
+    private String fundName;
 
-    private Date createtime;
+    private Date createTime;
 
-    private Double unitnetvalue;
+    private Double unitNetValue;
 
-    private Double cumulativenetvalue;
+    private Double cumulativeNetValue;
 
-    private Double dailygrowthrate;
+    private Double dailyGrowthRate;
 
-    private Double monthlygrowthrate;
+    private Double monthlyGrowthRate;
 
-    private Double yearlygrowthrate;
+    private Double yearlyGrowthRate;
 
-    private Double feesrate;
+    private Double feesRate;
 
-    private String fundtype;
+    private String fundType;
 
-    public Integer getFundid() {
-        return fundid;
+    public Integer getFundID() {
+        return fundID;
     }
 
-    public void setFundid(Integer fundid) {
-        this.fundid = fundid;
+    public void setFundID(Integer fundID) {
+        this.fundID = fundID;
     }
 
-    public String getFundname() {
-        return fundname;
+    public String getFundName() {
+        return fundName;
     }
 
-    public void setFundname(String fundname) {
-        this.fundname = fundname == null ? null : fundname.trim();
+    public void setFundName(String fundName) {
+        this.fundName = fundName == null ? null : fundName.trim();
     }
 
-    public Date getCreatetime() {
-        return createtime;
+    public Date getCreateTime() {
+        return createTime;
     }
 
-    public void setCreatetime(Date createtime) {
-        this.createtime = createtime;
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
     }
 
-    public Double getUnitnetvalue() {
-        return unitnetvalue;
+    public Double getUnitNetValue() {
+        return unitNetValue;
     }
 
-    public void setUnitnetvalue(Double unitnetvalue) {
-        this.unitnetvalue = unitnetvalue;
+    public void setUnitNetValue(Double unitNetValue) {
+        this.unitNetValue = unitNetValue;
     }
 
-    public Double getCumulativenetvalue() {
-        return cumulativenetvalue;
+    public Double getCumulativeNetValue() {
+        return cumulativeNetValue;
     }
 
-    public void setCumulativenetvalue(Double cumulativenetvalue) {
-        this.cumulativenetvalue = cumulativenetvalue;
+    public void setCumulativeNetValue(Double cumulativeNetValue) {
+        this.cumulativeNetValue = cumulativeNetValue;
     }
 
-    public Double getDailygrowthrate() {
-        return dailygrowthrate;
+    public Double getDailyGrowthRate() {
+        return dailyGrowthRate;
     }
 
-    public void setDailygrowthrate(Double dailygrowthrate) {
-        this.dailygrowthrate = dailygrowthrate;
+    public void setDailyGrowthRate(Double dailyGrowthRate) {
+        this.dailyGrowthRate = dailyGrowthRate;
     }
 
-    public Double getMonthlygrowthrate() {
-        return monthlygrowthrate;
+    public Double getMonthlyGrowthRate() {
+        return monthlyGrowthRate;
     }
 
-    public void setMonthlygrowthrate(Double monthlygrowthrate) {
-        this.monthlygrowthrate = monthlygrowthrate;
+    public void setMonthlyGrowthRate(Double monthlyGrowthRate) {
+        this.monthlyGrowthRate = monthlyGrowthRate;
     }
 
-    public Double getYearlygrowthrate() {
-        return yearlygrowthrate;
+    public Double getYearlyGrowthRate() {
+        return yearlyGrowthRate;
     }
 
-    public void setYearlygrowthrate(Double yearlygrowthrate) {
-        this.yearlygrowthrate = yearlygrowthrate;
+    public void setYearlyGrowthRate(Double yearlyGrowthRate) {
+        this.yearlyGrowthRate = yearlyGrowthRate;
     }
 
-    public Double getFeesrate() {
-        return feesrate;
+    public Double getFeesRate() {
+        return feesRate;
     }
 
-    public void setFeesrate(Double feesrate) {
-        this.feesrate = feesrate;
+    public void setFeesRate(Double feesRate) {
+        this.feesRate = feesRate;
     }
 
-    public String getFundtype() {
-        return fundtype;
+    public String getFundType() {
+        return fundType;
     }
 
-    public void setFundtype(String fundtype) {
-        this.fundtype = fundtype == null ? null : fundtype.trim();
+    public void setFundType(String fundType) {
+        this.fundType = fundType == null ? null : fundType.trim();
     }
 }

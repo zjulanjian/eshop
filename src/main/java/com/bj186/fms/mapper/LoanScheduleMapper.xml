@@ -3,14 +3,14 @@
 <mapper namespace="com.bj186.fms.mapper.LoanScheduleMapper">
   <resultMap id="BaseResultMap" type="com.bj186.fms.pojo.LoanSchedule">
     <result column="username" jdbcType="VARCHAR" property="username" />
-    <result column="loanType" jdbcType="VARCHAR" property="loantype" />
-    <result column="createTime" jdbcType="DATE" property="createtime" />
+    <result column="loanType" jdbcType="VARCHAR" property="loanType" />
+    <result column="createTime" jdbcType="DATE" property="createTime" />
     <result column="status" jdbcType="VARCHAR" property="status" />
   </resultMap>
   <insert id="insert" parameterType="com.bj186.fms.pojo.LoanSchedule">
     insert into loanschedule (username, loanType, createTime, 
       status)
-    values (#{username,jdbcType=VARCHAR}, #{loantype,jdbcType=VARCHAR}, #{createtime,jdbcType=DATE}, 
+    values (#{username,jdbcType=VARCHAR}, #{loanType,jdbcType=VARCHAR}, #{createTime,jdbcType=DATE}, 
       #{status,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.bj186.fms.pojo.LoanSchedule">
@@ -19,10 +19,10 @@
       <if test="username != null">
         username,
       </if>
-      <if test="loantype != null">
+      <if test="loanType != null">
         loanType,
       </if>
-      <if test="createtime != null">
+      <if test="createTime != null">
         createTime,
       </if>
       <if test="status != null">
@@ -33,11 +33,11 @@
       <if test="username != null">
         #{username,jdbcType=VARCHAR},
       </if>
-      <if test="loantype != null">
-        #{loantype,jdbcType=VARCHAR},
+      <if test="loanType != null">
+        #{loanType,jdbcType=VARCHAR},
       </if>
-      <if test="createtime != null">
-        #{createtime,jdbcType=DATE},
+      <if test="createTime != null">
+        #{createTime,jdbcType=DATE},
       </if>
       <if test="status != null">
         #{status,jdbcType=VARCHAR},

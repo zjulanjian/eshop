@@ -3,9 +3,9 @@ package com.bj186.fms.pojo;
 import java.util.Date;
 
 public class UserInfo {
-    private String idnumber;
+    private String IDnumber;
 
-    private Integer userid;
+    private Integer userID;
 
     private String name;
 
@@ -19,24 +19,24 @@ public class UserInfo {
 
     private String photo;
 
-    private Date createtime;
+    private Date createTime;
 
-    private Date edittime;
+    private Date editTime;
 
-    public String getIdnumber() {
-        return idnumber;
+    public String getIDnumber() {
+        return IDnumber;
     }
 
-    public void setIdnumber(String idnumber) {
-        this.idnumber = idnumber == null ? null : idnumber.trim();
+    public void setIDnumber(String IDnumber) {
+        this.IDnumber = IDnumber == null ? null : IDnumber.trim();
     }
 
-    public Integer getUserid() {
-        return userid;
+    public Integer getUserID() {
+        return userID;
     }
 
-    public void setUserid(Integer userid) {
-        this.userid = userid;
+    public void setUserID(Integer userID) {
+        this.userID = userID;
     }
 
     public String getName() {
@@ -87,19 +87,19 @@ public class UserInfo {
         this.photo = photo == null ? null : photo.trim();
     }
 
-    public Date getCreatetime() {
-        return createtime;
+    public Date getCreateTime() {
+        return createTime;
     }
 
-    public void setCreatetime(Date createtime) {
-        this.createtime = createtime;
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
     }
 
-    public Date getEdittime() {
-        return edittime;
+    public Date getEditTime() {
+        return editTime;
     }
 
-    public void setEdittime(Date edittime) {
-        this.edittime = edittime;
+    public void setEditTime(Date editTime) {
+        this.editTime = editTime;
     }
 }

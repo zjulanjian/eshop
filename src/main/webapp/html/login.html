@@ -1,89 +1,86 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="iframe-h">
 <head>
-	<meta charset="UTF-8">
-	<title>login</title>
-	<link rel="shortcut icon" href="/fms/statics/img/SE.ico">
-	<link rel="stylesheet" href="/fms/statics/css/normalize.css">
-	<link rel="stylesheet" type="text/css" href="/fms/statics/css/login.css">
+    <meta charset="UTF-8">
+    <title>登录</title>
+    <link rel="stylesheet" href="../statics/css/home.css" type="text/css">
+    <script src="../statics/js/jquery-1.11.3.min.js" type="text/javascript"></script>
+    <script src="../layui/layui.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="../layui/css/layui.css">
 </head>
 <body>
-	<!-- header start -->
-	<div class="header">
-		<div class="header-wrap">
-			<h1>
-				<img src="/fms/statics/img/logo.png" alt="logo">
-			</h1>
-		</div>
-	</div>
+<div class="layui-carousel" id="test1">
+    <div carousel-item>
+        <div><img src="../statics/images/bj.jpg"></div>
+        <div><img src="../statics/images/bj2.jpg"></div>
+        <div><img src="../statics/images/bj3.jpg"></div>
+        <div><img src="../statics/images/bj4.jpg"></div>
+        <div><img src="../statics/images/bj5.jpg"></div>
+    </div>
+</div>
+<!-- 条目中可以是任意内容，如：<img src=""> -->
+<script>
+    layui.use(['carousel','layer'], function(){
+        var $=layui.$,
+             carousel = layui.carousel,
+             layer=layui.layer;
+        //建造实例
+        carousel.render({
+            elem: '#test1'
+            ,width: '100%' //设置容器宽度
+            ,arrow: 'none' //始终显示箭头
+            ,anim: 'fade' //切换动画方式
+            ,full:true
+            ,interval:"2000"
+        });
+        //登录弹出
+        layer.open({
+           type:1,
+            skin: 'demo-class',
+           title:false,
+           content:$('#uid'),
+           closeBtn: 0,
+            anim:1,
+            shade: 0,
+            area:["250px","130px"],
+            resize:false,
+            move: false
+        })
 
-	<!-- main start -->
-	<div class="main">
-		<div class="main-wrap">
-			<!-- form parts -->
-			<div class="dialog">
-				<h3 class="login-head">Sign In</h3>
-				<form action="#" id="login">
-					<!-- username -->
-					<p class="mt30">
-						<label for="username">
-							Username:
-						</label>
-						<input type="text" placeholder="username" id="username">
-						<!-- 用户名信息反馈 -->
-						<span class="user-tip"></span>
-					</p>
-					<!-- password -->
-					<p>
-						<label for="password">
-							Password:
-						</label>
-						<input type="password" placeholder="password" id="password">
-						<!-- 密码信息反馈 -->
-						<span class="pass-tip"></span>
-					</p>
-					<button id="submit-btn">Sign In</button>
-				</form>
+        $(".user").click(function () {
+            var id= $(this).attr("id");
+           layer.open({
+              type:2,
+              title:"请登录",
+              content:"login_from.html?id="+id,
+               area:["450px","300px"],
+               shadeClose: true, //开启遮罩关闭
+               move: false
 
-				<!-- 底部的忘记密码与注册 -->
-				<div class="bottom">
-					<a href="#">
-						Forget password 
-					</a>
-					<a href="/fms/statics/index/registerpage.do">
-						Register
-					</a>
-				</div>	
-			</div>
-			
-		</div>
-	</div>
+           });
+        });
 
-	<!-- footer start -->
-	<div class="footer">
-		<div class="footer-wrap">
-			<ul class="text">
-				<li><a href="#">网站申明</a></li>
-				<li><a href="#">网站地图</a></li>
-				<li><a href="#">联系我们</a></li>
-				<li><a href="#" class="noborder">客服热线：15207</a></li>
-			</ul><br>
-			<ul class="copyright">
-				<li>
-					<a href="#">
-						第五小组SE银行版权所有
-					</a>
-				</li>
-				<li>
-					<a href="#" class="noborder">
-						川ICP备000000
-					</a>
-				</li>
-			</ul>
-		</div>
-	</div>
 
-	<script type="text/javascript" src="/fms/statics/js/jquery-2.1.4.min.js"></script>
-	<script type="text/javascript" src="/fms/statics/js/login.js"></script>
+    });
+
+
+</script>
 </body>
+<div id="uid">
+    <ol>
+        <a href="#" class="user">
+        <li>
+            <i class="layui-icon">&#xe66f;</i>
+            <p>个人</p>
+        </li>
+        </a>
+        <a href="#" class="user">
+        <li>
+            <i class="layui-icon">&#xe770;</i>
+            <p>企业</p>
+        </li>
+        </a>
+    </ol>
+</div>
+
 </html>

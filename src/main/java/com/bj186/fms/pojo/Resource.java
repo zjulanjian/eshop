@@ -1,26 +1,26 @@
 package com.bj186.fms.pojo;
 
 public class Resource {
-    private Integer resourceid;
+    private Integer resourceID;
 
-    private String resourcename;
+    private String resourceName;
 
     private String description;
 
-    public Integer getResourceid() {
-        return resourceid;
+    public Integer getResourceID() {
+        return resourceID;
     }
 
-    public void setResourceid(Integer resourceid) {
-        this.resourceid = resourceid;
+    public void setResourceID(Integer resourceID) {
+        this.resourceID = resourceID;
     }
 
-    public String getResourcename() {
-        return resourcename;
+    public String getResourceName() {
+        return resourceName;
     }
 
-    public void setResourcename(String resourcename) {
-        this.resourcename = resourcename == null ? null : resourcename.trim();
+    public void setResourceName(String resourceName) {
+        this.resourceName = resourceName == null ? null : resourceName.trim();
     }
 
     public String getDescription() {

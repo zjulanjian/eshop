@@ -3,30 +3,30 @@ package com.bj186.fms.pojo;
 import java.util.Date;
 
 public class CompanyDetail {
-    private Integer companyid;
+    private Integer companyID;
 
     private Double capital;
 
     private String industry;
 
-    private Date registertime;
+    private Date registerTime;
 
-    private String creditlevel;
+    private String creditLevel;
 
-    private String legalpersonname;
+    private String legalPersonName;
 
-    private String legalpersonidnumber;
+    private String legalPersonIDNumber;
 
-    private String guaranteecompany;
+    private String guaranteeCompany;
 
     private byte[] license;
 
-    public Integer getCompanyid() {
-        return companyid;
+    public Integer getCompanyID() {
+        return companyID;
     }
 
-    public void setCompanyid(Integer companyid) {
-        this.companyid = companyid;
+    public void setCompanyID(Integer companyID) {
+        this.companyID = companyID;
     }
 
     public Double getCapital() {
@@ -45,44 +45,44 @@ public class CompanyDetail {
         this.industry = industry == null ? null : industry.trim();
     }
 
-    public Date getRegistertime() {
-        return registertime;
+    public Date getRegisterTime() {
+        return registerTime;
     }
 
-    public void setRegistertime(Date registertime) {
-        this.registertime = registertime;
+    public void setRegisterTime(Date registerTime) {
+        this.registerTime = registerTime;
     }
 
-    public String getCreditlevel() {
-        return creditlevel;
+    public String getCreditLevel() {
+        return creditLevel;
     }
 
-    public void setCreditlevel(String creditlevel) {
-        this.creditlevel = creditlevel == null ? null : creditlevel.trim();
+    public void setCreditLevel(String creditLevel) {
+        this.creditLevel = creditLevel == null ? null : creditLevel.trim();
     }
 
-    public String getLegalpersonname() {
-        return legalpersonname;
+    public String getLegalPersonName() {
+        return legalPersonName;
     }
 
-    public void setLegalpersonname(String legalpersonname) {
-        this.legalpersonname = legalpersonname == null ? null : legalpersonname.trim();
+    public void setLegalPersonName(String legalPersonName) {
+        this.legalPersonName = legalPersonName == null ? null : legalPersonName.trim();
     }
 
-    public String getLegalpersonidnumber() {
-        return legalpersonidnumber;
+    public String getLegalPersonIDNumber() {
+        return legalPersonIDNumber;
     }
 
-    public void setLegalpersonidnumber(String legalpersonidnumber) {
-        this.legalpersonidnumber = legalpersonidnumber == null ? null : legalpersonidnumber.trim();
+    public void setLegalPersonIDNumber(String legalPersonIDNumber) {
+        this.legalPersonIDNumber = legalPersonIDNumber == null ? null : legalPersonIDNumber.trim();
     }
 
-    public String getGuaranteecompany() {
-        return guaranteecompany;
+    public String getGuaranteeCompany() {
+        return guaranteeCompany;
     }
 
-    public void setGuaranteecompany(String guaranteecompany) {
-        this.guaranteecompany = guaranteecompany == null ? null : guaranteecompany.trim();
+    public void setGuaranteeCompany(String guaranteeCompany) {
+        this.guaranteeCompany = guaranteeCompany == null ? null : guaranteeCompany.trim();
     }
 
     public byte[] getLicense() {

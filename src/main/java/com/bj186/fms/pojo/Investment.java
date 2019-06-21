@@ -3,48 +3,48 @@ package com.bj186.fms.pojo;
 import java.util.Date;
 
 public class Investment {
-    private Integer investmentid;
+    private Integer investmentID;
 
-    private Integer userid;
+    private Integer userID;
 
-    private Integer bidid;
+    private Integer bidID;
 
-    private Date investtime;
+    private Date investTime;
 
     private Double amount;
 
     private String status;
 
-    public Integer getInvestmentid() {
-        return investmentid;
+    public Integer getInvestmentID() {
+        return investmentID;
     }
 
-    public void setInvestmentid(Integer investmentid) {
-        this.investmentid = investmentid;
+    public void setInvestmentID(Integer investmentID) {
+        this.investmentID = investmentID;
     }
 
-    public Integer getUserid() {
-        return userid;
+    public Integer getUserID() {
+        return userID;
     }
 
-    public void setUserid(Integer userid) {
-        this.userid = userid;
+    public void setUserID(Integer userID) {
+        this.userID = userID;
     }
 
-    public Integer getBidid() {
-        return bidid;
+    public Integer getBidID() {
+        return bidID;
     }
 
-    public void setBidid(Integer bidid) {
-        this.bidid = bidid;
+    public void setBidID(Integer bidID) {
+        this.bidID = bidID;
     }
 
-    public Date getInvesttime() {
-        return investtime;
+    public Date getInvestTime() {
+        return investTime;
     }
 
-    public void setInvesttime(Date investtime) {
-        this.investtime = investtime;
+    public void setInvestTime(Date investTime) {
+        this.investTime = investTime;
     }
 
     public Double getAmount() {

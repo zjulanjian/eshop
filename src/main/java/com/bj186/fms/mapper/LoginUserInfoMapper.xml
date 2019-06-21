@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.bj186.fms.mapper.LoginUserInfoMapper">
   <resultMap id="BaseResultMap" type="com.bj186.fms.pojo.LoginUserInfo">
-    <result column="userID" jdbcType="INTEGER" property="userid" />
+    <result column="userID" jdbcType="INTEGER" property="userID" />
     <result column="name" jdbcType="VARCHAR" property="name" />
     <result column="sex" jdbcType="VARCHAR" property="sex" />
     <result column="address" jdbcType="VARCHAR" property="address" />
@@ -11,22 +11,22 @@
     <result column="photo" jdbcType="VARCHAR" property="photo" />
     <result column="username" jdbcType="VARCHAR" property="username" />
     <result column="password" jdbcType="VARCHAR" property="password" />
-    <result column="userType" jdbcType="VARCHAR" property="usertype" />
+    <result column="userType" jdbcType="VARCHAR" property="userType" />
   </resultMap>
   <insert id="insert" parameterType="com.bj186.fms.pojo.LoginUserInfo">
     insert into loginuserinfo (userID, name, sex, 
       address, phone, email, 
       photo, username, password, 
       userType)
-    values (#{userid,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{sex,jdbcType=VARCHAR}, 
+    values (#{userID,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{sex,jdbcType=VARCHAR}, 
       #{address,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, 
       #{photo,jdbcType=VARCHAR}, #{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
-      #{usertype,jdbcType=VARCHAR})
+      #{userType,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.bj186.fms.pojo.LoginUserInfo">
     insert into loginuserinfo
     <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="userid != null">
+      <if test="userID != null">
         userID,
       </if>
       <if test="name != null">
@@ -53,13 +53,13 @@
       <if test="password != null">
         password,
       </if>
-      <if test="usertype != null">
+      <if test="userType != null">
         userType,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="userid != null">
-        #{userid,jdbcType=INTEGER},
+      <if test="userID != null">
+        #{userID,jdbcType=INTEGER},
       </if>
       <if test="name != null">
         #{name,jdbcType=VARCHAR},
@@ -85,8 +85,8 @@
       <if test="password != null">
         #{password,jdbcType=VARCHAR},
       </if>
-      <if test="usertype != null">
-        #{usertype,jdbcType=VARCHAR},
+      <if test="userType != null">
+        #{userType,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>

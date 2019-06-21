@@ -1,7 +1,7 @@
 package com.bj186.fms.pojo;
 
 public class LoginUserInfo {
-    private Integer userid;
+    private Integer userID;
 
     private String name;
 
@@ -19,14 +19,14 @@ public class LoginUserInfo {
 
     private String password;
 
-    private String usertype;
+    private String userType;
 
-    public Integer getUserid() {
-        return userid;
+    public Integer getUserID() {
+        return userID;
     }
 
-    public void setUserid(Integer userid) {
-        this.userid = userid;
+    public void setUserID(Integer userID) {
+        this.userID = userID;
     }
 
     public String getName() {
@@ -93,11 +93,11 @@ public class LoginUserInfo {
         this.password = password == null ? null : password.trim();
     }
 
-    public String getUsertype() {
-        return usertype;
+    public String getUserType() {
+        return userType;
     }
 
-    public void setUsertype(String usertype) {
-        this.usertype = usertype == null ? null : usertype.trim();
+    public void setUserType(String userType) {
+        this.userType = userType == null ? null : userType.trim();
     }
 }

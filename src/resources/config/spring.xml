@@ -15,14 +15,13 @@
 
        <!-- 配置视图解析器对象 -->
        <bean id="internalResourceViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-              <property name="prefix" value="/WEB-INF/jsp"/>
-              <property name="suffix" value="" />
+              <property name="prefix" value=""/>
+              <property name="suffix" value=""/>
        </bean>
        <!-- 开启springMVC注解支持 -->
        <mvc:annotation-driven/>
        <!-- 前端控制器，哪些静态资源不拦截 -->
        <mvc:default-servlet-handler />
-
 
        <import resource="classpath:config/spring/spring-Config-tx.xml"></import>
        <import resource="classpath:config/spring/spring-Config-jdbc.xml"></import>

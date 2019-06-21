@@ -1,9 +1,9 @@
 package com.bj186.fms.pojo;
 
 public class Company {
-    private Integer companyid;
+    private Integer companyID;
 
-    private String companyname;
+    private String companyName;
 
     private String password;
 
@@ -11,20 +11,20 @@ public class Company {
 
     private String address;
 
-    public Integer getCompanyid() {
-        return companyid;
+    public Integer getCompanyID() {
+        return companyID;
     }
 
-    public void setCompanyid(Integer companyid) {
-        this.companyid = companyid;
+    public void setCompanyID(Integer companyID) {
+        this.companyID = companyID;
     }
 
-    public String getCompanyname() {
-        return companyname;
+    public String getCompanyName() {
+        return companyName;
     }
 
-    public void setCompanyname(String companyname) {
-        this.companyname = companyname == null ? null : companyname.trim();
+    public void setCompanyName(String companyName) {
+        this.companyName = companyName == null ? null : companyName.trim();
     }
 
     public String getPassword() {

@@ -3,13 +3,13 @@ package com.bj186.fms.mapper;
 import com.bj186.fms.pojo.ForeignCurrency;
 
 public interface ForeignCurrencyMapper {
-    int deleteByPrimaryKey(Integer faccountid);
+    int deleteByPrimaryKey(Integer fAccountID);
 
     int insert(ForeignCurrency record);
 
     int insertSelective(ForeignCurrency record);
 
-    ForeignCurrency selectByPrimaryKey(Integer faccountid);
+    ForeignCurrency selectByPrimaryKey(Integer fAccountID);
 
     int updateByPrimaryKeySelective(ForeignCurrency record);
 

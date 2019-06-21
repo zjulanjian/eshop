@@ -2,16 +2,16 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.bj186.fms.mapper.FundMapper">
   <resultMap id="BaseResultMap" type="com.bj186.fms.pojo.Fund">
-    <id column="fundID" jdbcType="INTEGER" property="fundid" />
-    <result column="fundName" jdbcType="VARCHAR" property="fundname" />
-    <result column="createTime" jdbcType="DATE" property="createtime" />
-    <result column="unitNetValue" jdbcType="DOUBLE" property="unitnetvalue" />
-    <result column="cumulativeNetValue" jdbcType="DOUBLE" property="cumulativenetvalue" />
-    <result column="dailyGrowthRate" jdbcType="DOUBLE" property="dailygrowthrate" />
-    <result column="monthlyGrowthRate" jdbcType="DOUBLE" property="monthlygrowthrate" />
-    <result column="yearlyGrowthRate" jdbcType="DOUBLE" property="yearlygrowthrate" />
-    <result column="feesRate" jdbcType="DOUBLE" property="feesrate" />
-    <result column="fundType" jdbcType="VARCHAR" property="fundtype" />
+    <id column="fundID" jdbcType="INTEGER" property="fundID" />
+    <result column="fundName" jdbcType="VARCHAR" property="fundName" />
+    <result column="createTime" jdbcType="DATE" property="createTime" />
+    <result column="unitNetValue" jdbcType="DOUBLE" property="unitNetValue" />
+    <result column="cumulativeNetValue" jdbcType="DOUBLE" property="cumulativeNetValue" />
+    <result column="dailyGrowthRate" jdbcType="DOUBLE" property="dailyGrowthRate" />
+    <result column="monthlyGrowthRate" jdbcType="DOUBLE" property="monthlyGrowthRate" />
+    <result column="yearlyGrowthRate" jdbcType="DOUBLE" property="yearlyGrowthRate" />
+    <result column="feesRate" jdbcType="DOUBLE" property="feesRate" />
+    <result column="fundType" jdbcType="VARCHAR" property="fundType" />
   </resultMap>
   <sql id="Base_Column_List">
     fundID, fundName, createTime, unitNetValue, cumulativeNetValue, dailyGrowthRate, 
@@ -21,139 +21,146 @@
     select 
     <include refid="Base_Column_List" />
     from fund
-    where fundID = #{fundid,jdbcType=INTEGER}
+    where fundID = #{fundID,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from fund
-    where fundID = #{fundid,jdbcType=INTEGER}
+    where fundID = #{fundID,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="com.bj186.fms.pojo.Fund">
     insert into fund (fundID, fundName, createTime, 
       unitNetValue, cumulativeNetValue, dailyGrowthRate, 
       monthlyGrowthRate, yearlyGrowthRate, feesRate, 
       fundType)
-    values (#{fundid,jdbcType=INTEGER}, #{fundname,jdbcType=VARCHAR}, #{createtime,jdbcType=DATE}, 
-      #{unitnetvalue,jdbcType=DOUBLE}, #{cumulativenetvalue,jdbcType=DOUBLE}, #{dailygrowthrate,jdbcType=DOUBLE}, 
-      #{monthlygrowthrate,jdbcType=DOUBLE}, #{yearlygrowthrate,jdbcType=DOUBLE}, #{feesrate,jdbcType=DOUBLE}, 
-      #{fundtype,jdbcType=VARCHAR})
+    values (#{fundID,jdbcType=INTEGER}, #{fundName,jdbcType=VARCHAR}, #{createTime,jdbcType=DATE}, 
+      #{unitNetValue,jdbcType=DOUBLE}, #{cumulativeNetValue,jdbcType=DOUBLE}, #{dailyGrowthRate,jdbcType=DOUBLE}, 
+      #{monthlyGrowthRate,jdbcType=DOUBLE}, #{yearlyGrowthRate,jdbcType=DOUBLE}, #{feesRate,jdbcType=DOUBLE}, 
+      #{fundType,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.bj186.fms.pojo.Fund">
     insert into fund
     <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="fundid != null">
+      <if test="fundID != null">
         fundID,
       </if>
-      <if test="fundname != null">
+      <if test="fundName != null">
         fundName,
       </if>
-      <if test="createtime != null">
+      <if test="createTime != null">
         createTime,
       </if>
-      <if test="unitnetvalue != null">
+      <if test="unitNetValue != null">
         unitNetValue,
       </if>
-      <if test="cumulativenetvalue != null">
+      <if test="cumulativeNetValue != null">
         cumulativeNetValue,
       </if>
-      <if test="dailygrowthrate != null">
+      <if test="dailyGrowthRate != null">
         dailyGrowthRate,
       </if>
-      <if test="monthlygrowthrate != null">
+      <if test="monthlyGrowthRate != null">
         monthlyGrowthRate,
       </if>
-      <if test="yearlygrowthrate != null">
+      <if test="yearlyGrowthRate != null">
         yearlyGrowthRate,
       </if>
-      <if test="feesrate != null">
+      <if test="feesRate != null">
         feesRate,
       </if>
-      <if test="fundtype != null">
+      <if test="fundType != null">
         fundType,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="fundid != null">
-        #{fundid,jdbcType=INTEGER},
+      <if test="fundID != null">
+        #{fundID,jdbcType=INTEGER},
       </if>
-      <if test="fundname != null">
-        #{fundname,jdbcType=VARCHAR},
+      <if test="fundName != null">
+        #{fundName,jdbcType=VARCHAR},
       </if>
-      <if test="createtime != null">
-        #{createtime,jdbcType=DATE},
+      <if test="createTime != null">
+        #{createTime,jdbcType=DATE},
       </if>
-      <if test="unitnetvalue != null">
-        #{unitnetvalue,jdbcType=DOUBLE},
+      <if test="unitNetValue != null">
+        #{unitNetValue,jdbcType=DOUBLE},
       </if>
-      <if test="cumulativenetvalue != null">
-        #{cumulativenetvalue,jdbcType=DOUBLE},
+      <if test="cumulativeNetValue != null">
+        #{cumulativeNetValue,jdbcType=DOUBLE},
       </if>
-      <if test="dailygrowthrate != null">
-        #{dailygrowthrate,jdbcType=DOUBLE},
+      <if test="dailyGrowthRate != null">
+        #{dailyGrowthRate,jdbcType=DOUBLE},
       </if>
-      <if test="monthlygrowthrate != null">
-        #{monthlygrowthrate,jdbcType=DOUBLE},
+      <if test="monthlyGrowthRate != null">
+        #{monthlyGrowthRate,jdbcType=DOUBLE},
       </if>
-      <if test="yearlygrowthrate != null">
-        #{yearlygrowthrate,jdbcType=DOUBLE},
+      <if test="yearlyGrowthRate != null">
+        #{yearlyGrowthRate,jdbcType=DOUBLE},
       </if>
-      <if test="feesrate != null">
-        #{feesrate,jdbcType=DOUBLE},
+      <if test="feesRate != null">
+        #{feesRate,jdbcType=DOUBLE},
       </if>
-      <if test="fundtype != null">
-        #{fundtype,jdbcType=VARCHAR},
+      <if test="fundType != null">
+        #{fundType,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
   <update id="updateByPrimaryKeySelective" parameterType="com.bj186.fms.pojo.Fund">
     update fund
     <set>
-      <if test="fundname != null">
-        fundName = #{fundname,jdbcType=VARCHAR},
+      <if test="fundName != null">
+        fundName = #{fundName,jdbcType=VARCHAR},
       </if>
-      <if test="createtime != null">
-        createTime = #{createtime,jdbcType=DATE},
+      <if test="createTime != null">
+        createTime = #{createTime,jdbcType=DATE},
       </if>
-      <if test="unitnetvalue != null">
-        unitNetValue = #{unitnetvalue,jdbcType=DOUBLE},
+      <if test="unitNetValue != null">
+        unitNetValue = #{unitNetValue,jdbcType=DOUBLE},
       </if>
-      <if test="cumulativenetvalue != null">
-        cumulativeNetValue = #{cumulativenetvalue,jdbcType=DOUBLE},
+      <if test="cumulativeNetValue != null">
+        cumulativeNetValue = #{cumulativeNetValue,jdbcType=DOUBLE},
       </if>
-      <if test="dailygrowthrate != null">
-        dailyGrowthRate = #{dailygrowthrate,jdbcType=DOUBLE},
+      <if test="dailyGrowthRate != null">
+        dailyGrowthRate = #{dailyGrowthRate,jdbcType=DOUBLE},
       </if>
-      <if test="monthlygrowthrate != null">
-        monthlyGrowthRate = #{monthlygrowthrate,jdbcType=DOUBLE},
+      <if test="monthlyGrowthRate != null">
+        monthlyGrowthRate = #{monthlyGrowthRate,jdbcType=DOUBLE},
       </if>
-      <if test="yearlygrowthrate != null">
-        yearlyGrowthRate = #{yearlygrowthrate,jdbcType=DOUBLE},
+      <if test="yearlyGrowthRate != null">
+        yearlyGrowthRate = #{yearlyGrowthRate,jdbcType=DOUBLE},
       </if>
-      <if test="feesrate != null">
-        feesRate = #{feesrate,jdbcType=DOUBLE},
+      <if test="feesRate != null">
+        feesRate = #{feesRate,jdbcType=DOUBLE},
       </if>
-      <if test="fundtype != null">
-        fundType = #{fundtype,jdbcType=VARCHAR},
+      <if test="fundType != null">
+        fundType = #{fundType,jdbcType=VARCHAR},
       </if>
     </set>
-    where fundID = #{fundid,jdbcType=INTEGER}
+    where fundID = #{fundID,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.bj186.fms.pojo.Fund">
     update fund
-    set fundName = #{fundname,jdbcType=VARCHAR},
-      createTime = #{createtime,jdbcType=DATE},
-      unitNetValue = #{unitnetvalue,jdbcType=DOUBLE},
-      cumulativeNetValue = #{cumulativenetvalue,jdbcType=DOUBLE},
-      dailyGrowthRate = #{dailygrowthrate,jdbcType=DOUBLE},
-      monthlyGrowthRate = #{monthlygrowthrate,jdbcType=DOUBLE},
-      yearlyGrowthRate = #{yearlygrowthrate,jdbcType=DOUBLE},
-      feesRate = #{feesrate,jdbcType=DOUBLE},
-      fundType = #{fundtype,jdbcType=VARCHAR}
-    where fundID = #{fundid,jdbcType=INTEGER}
+    set fundName = #{fundName,jdbcType=VARCHAR},
+      createTime = #{createTime,jdbcType=DATE},
+      unitNetValue = #{unitNetValue,jdbcType=DOUBLE},
+      cumulativeNetValue = #{cumulativeNetValue,jdbcType=DOUBLE},
+      dailyGrowthRate = #{dailyGrowthRate,jdbcType=DOUBLE},
+      monthlyGrowthRate = #{monthlyGrowthRate,jdbcType=DOUBLE},
+      yearlyGrowthRate = #{yearlyGrowthRate,jdbcType=DOUBLE},
+      feesRate = #{feesRate,jdbcType=DOUBLE},
+      fundType = #{fundType,jdbcType=VARCHAR}
+    where fundID = #{fundID,jdbcType=INTEGER}
   </update>
+  <!--查询全部基金-->
   <select id="selectAll" resultMap="BaseResultMap">
     select
     <include refid="Base_Column_List" />
     from fund
   </select>
-
+  <!--查询一页基金-->
+  <select id="selectFundsByPage" parameterType="map" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from fund
+    limit #{page,jdbcType=INTEGER}, #{limit,jdbcType=INTEGER}
+  </select>
 </mapper>

@@ -11,7 +11,7 @@
 
     <!--设置pojo包中的实体类自动解析别名-->
     <typeAliases>
-        <package name="com.bj186.crm.pojo"></package>
+        <package name="com.bj186.fms.pojo"></package>
     </typeAliases>
 </configuration>
 

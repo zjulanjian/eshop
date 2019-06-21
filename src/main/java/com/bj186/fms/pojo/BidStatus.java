@@ -1,23 +1,23 @@
 package com.bj186.fms.pojo;
 
 public class BidStatus {
-    private Integer bidid;
+    private Integer bidID;
 
-    private Integer statusid;
+    private Integer statusID;
 
-    public Integer getBidid() {
-        return bidid;
+    public Integer getBidID() {
+        return bidID;
     }
 
-    public void setBidid(Integer bidid) {
-        this.bidid = bidid;
+    public void setBidID(Integer bidID) {
+        this.bidID = bidID;
     }
 
-    public Integer getStatusid() {
-        return statusid;
+    public Integer getStatusID() {
+        return statusID;
     }
 
-    public void setStatusid(Integer statusid) {
-        this.statusid = statusid;
+    public void setStatusID(Integer statusID) {
+        this.statusID = statusID;
     }
 }

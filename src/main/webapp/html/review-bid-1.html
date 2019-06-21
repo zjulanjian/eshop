@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="../layui/css/layui.css">
+
+
+</head>
+<body>
+<div>
+    <h1 id="mockjs">mockjs</h1>
+</div>
+
+<!-- 示例-970 -->
+<fieldset class="layui-elem-field layui-field-title" style="margin-top: 50px;">
+    <legend>初始赋值演示</legend>
+</fieldset>
+
+<form class="layui-form" action="" lay-filter="example">
+    <div class="layui-form-item">
+        <label class="layui-form-label">项目名称</label>
+        <div class="layui-input-block">
+            <input type="text" name="username" lay-verify="title" autocomplete="off" placeholder="请输入标题" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">担保人</label>
+        <div class="layui-input-block">
+            <input type="password" name="password" placeholder="请输入密码" autocomplete="off" class="layui-input">
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">项目类型</label>
+        <div class="layui-input-block">
+            <select name="interest" lay-filter="aihao">
+                <option value=""></option>
+                <option value="0">基金</option>
+                <option value="1">股票</option>
+                <option value="2">游戏</option>
+                <option value="3">音乐</option>
+                <option value="4">旅行</option>
+            </select>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">法定担保人资料</label><br/>
+        <div class="layui-input-block">
+            <div id="layer-photos-demo" class="layer-photos-demo">
+                <img layer-pid="图片id，可以不写" layer-src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1561099024846&di=0a312c9e52f2f3f1944a08963d7b685b&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201604%2F22%2F20160422215945_QhK53.thumb.700_0.jpeg" src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1003383474,2767816176&fm=26&gp=0.jpg" alt="图片名">
+                <img layer-pid="图片id，可以不写" layer-src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1561099281098&di=77fe17cdc7e718d6f493e5b79a543900&imgtype=0&src=http%3A%2F%2Fs13.sinaimg.cn%2Fbmiddle%2F59833a3106ea48ae0692c" src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=698905626,1818873529&fm=26&gp=0.jpg" alt="图片名">
+            </div>
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">审核状态</label>
+        <div class="layui-input-block">
+            <select name="interest" lay-filter="aihao">
+                <option value="">未审核</option>
+                <option value="0">初审</option>
+                <option value="1">复审</option>
+                <option value="2">审核通过</option>
+            </select>
+        </div>
+    </div>
+
+
+    <div class="layui-form-item layui-form-text">
+        <label class="layui-form-label">审核意见</label>
+        <div class="layui-input-block">
+            <textarea placeholder="请输入内容" class="layui-textarea" name="desc"></textarea>
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <div class="layui-input-block">
+            <button class="layui-btn" lay-submit="" lay-filter="demo1">立即提交</button>
+        </div>
+    </div>
+</form>
+
+<script src="../statics/js/jquery-3.1.1.min.js"></script>
+<script src="../statics/js/mock-min.js"></script>
+<script src="../statics/js/server.js"></script>
+<script src="../layui/layui.js" charset="utf-8"></script>
+
+<!-- 注意：如果你直接复制所有代码到本地，上述js路径需要改成你本地的 -->
+<script>
+    $.getJSON('html/photo.json', function(json){
+        layer.photos({
+            photos: json
+            ,anim: 5 //0-6的选择，指定弹出图片动画类型，默认随机（请注意，3.0之前的版本用shift参数）
+        });
+    });
+
+    layui.use(['form', 'layedit', 'laydate'], function(){
+        var form = layui.form
+            ,layer = layui.layer
+            ,layedit = layui.layedit
+            ,laydate = layui.laydate;
+
+        //日期
+        laydate.render({
+            elem: '#date'
+        });
+        laydate.render({
+            elem: '#date1'
+        });
+
+        //创建一个编辑器
+        var editIndex = layedit.build('LAY_demo_editor');
+
+        //自定义验证规则
+        form.verify({
+            title: function(value){
+                if(value.length < 5){
+                    return '标题至少得5个字符啊';
+                }
+            }
+            ,pass: [
+                /^[\S]{6,12}$/
+                ,'密码必须6到12位，且不能出现空格'
+            ]
+            ,content: function(value){
+                layedit.sync(editIndex);
+            }
+        });
+
+        //监听指定开关
+        form.on('switch(switchTest)', function(data){
+            layer.msg('开关checked：'+ (this.checked ? 'true' : 'false'), {
+                offset: '6px'
+            });
+            layer.tips('温馨提示：请注意开关状态的文字可以随意定义，而不仅仅是ON|OFF', data.othis)
+        });
+
+        //监听提交
+        form.on('submit(demo1)', function(data){
+            layer.alert(JSON.stringify(data.field), {
+                title: '最终的提交信息'
+            })
+            return false;
+        });
+
+        //表单初始赋值
+        form.val('example', {
+            "username": "贤心" // "name": "value"
+            ,"password": "123456"
+            ,"interest": 1
+            ,"like[write]": true //复选框选中状态
+            ,"close": true //开关状态
+            ,"sex": "女"
+            ,"desc": "我爱 layui"
+        })
+    });
+</script>
+</body>
+
+
+<script type="text/javascript">
+
+
+
+    //ajax请求
+    $("#mockjs").click(function(){
+        $.ajax({
+            url        : "http://mockjs",    //请求的url地址
+            dataType   : "json",   //返回格式为json
+            async      : true, //请求是否异步，默认为异步，这也是ajax重要特性
+            data       : {},    //参数值
+            type       : "GET",   //请求方式
+            beforeSend : function() {
+                //请求前的处理
+            },
+            success: function(req) {
+                //请求成功时处理
+                console.log(req);
+            },
+            complete: function() {
+                //请求完成的处理
+            },
+            error: function() {
+                //请求出错处理
+            }
+        });
+    });
+</script>
+</html>

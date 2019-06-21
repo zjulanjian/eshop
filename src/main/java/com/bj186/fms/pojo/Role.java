@@ -3,30 +3,30 @@ package com.bj186.fms.pojo;
 import java.util.Date;
 
 public class Role {
-    private Integer roleid;
+    private Integer roleID;
 
-    private String rolename;
+    private String roleName;
 
     private String status;
 
-    private Date createtime;
+    private Date createTime;
 
     private String description;
 
-    public Integer getRoleid() {
-        return roleid;
+    public Integer getRoleID() {
+        return roleID;
     }
 
-    public void setRoleid(Integer roleid) {
-        this.roleid = roleid;
+    public void setRoleID(Integer roleID) {
+        this.roleID = roleID;
     }
 
-    public String getRolename() {
-        return rolename;
+    public String getRoleName() {
+        return roleName;
     }
 
-    public void setRolename(String rolename) {
-        this.rolename = rolename == null ? null : rolename.trim();
+    public void setRoleName(String roleName) {
+        this.roleName = roleName == null ? null : roleName.trim();
     }
 
     public String getStatus() {
@@ -37,12 +37,12 @@ public class Role {
         this.status = status == null ? null : status.trim();
     }
 
-    public Date getCreatetime() {
-        return createtime;
+    public Date getCreateTime() {
+        return createTime;
     }
 
-    public void setCreatetime(Date createtime) {
-        this.createtime = createtime;
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
     }
 
     public String getDescription() {

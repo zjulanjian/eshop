@@ -1,26 +1,26 @@
 package com.bj186.fms.pojo;
 
 public class Permission {
-    private Integer permissionid;
+    private Integer permissionID;
 
-    private String permissionname;
+    private String permissionName;
 
     private String description;
 
-    public Integer getPermissionid() {
-        return permissionid;
+    public Integer getPermissionID() {
+        return permissionID;
     }
 
-    public void setPermissionid(Integer permissionid) {
-        this.permissionid = permissionid;
+    public void setPermissionID(Integer permissionID) {
+        this.permissionID = permissionID;
     }
 
-    public String getPermissionname() {
-        return permissionname;
+    public String getPermissionName() {
+        return permissionName;
     }
 
-    public void setPermissionname(String permissionname) {
-        this.permissionname = permissionname == null ? null : permissionname.trim();
+    public void setPermissionName(String permissionName) {
+        this.permissionName = permissionName == null ? null : permissionName.trim();
     }
 
     public String getDescription() {

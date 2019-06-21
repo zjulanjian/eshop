@@ -2,10 +2,10 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.bj186.fms.mapper.FExpenseCalendarMapper">
   <resultMap id="BaseResultMap" type="com.bj186.fms.pojo.FExpenseCalendar">
-    <id column="feCalendarID" jdbcType="INTEGER" property="fecalendarid" />
-    <result column="fAccountID" jdbcType="INTEGER" property="faccountid" />
+    <id column="feCalendarID" jdbcType="INTEGER" property="feCalendarID" />
+    <result column="fAccountID" jdbcType="INTEGER" property="fAccountID" />
     <result column="capital" jdbcType="DECIMAL" property="capital" />
-    <result column="createTime" jdbcType="DATE" property="createtime" />
+    <result column="createTime" jdbcType="DATE" property="createTime" />
   </resultMap>
   <sql id="Base_Column_List">
     feCalendarID, fAccountID, capital, createTime
@@ -14,69 +14,69 @@
     select 
     <include refid="Base_Column_List" />
     from fexpensecalendar
-    where feCalendarID = #{fecalendarid,jdbcType=INTEGER}
+    where feCalendarID = #{feCalendarID,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from fexpensecalendar
-    where feCalendarID = #{fecalendarid,jdbcType=INTEGER}
+    where feCalendarID = #{feCalendarID,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="com.bj186.fms.pojo.FExpenseCalendar">
     insert into fexpensecalendar (feCalendarID, fAccountID, capital, 
       createTime)
-    values (#{fecalendarid,jdbcType=INTEGER}, #{faccountid,jdbcType=INTEGER}, #{capital,jdbcType=DECIMAL}, 
-      #{createtime,jdbcType=DATE})
+    values (#{feCalendarID,jdbcType=INTEGER}, #{fAccountID,jdbcType=INTEGER}, #{capital,jdbcType=DECIMAL}, 
+      #{createTime,jdbcType=DATE})
   </insert>
   <insert id="insertSelective" parameterType="com.bj186.fms.pojo.FExpenseCalendar">
     insert into fexpensecalendar
     <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="fecalendarid != null">
+      <if test="feCalendarID != null">
         feCalendarID,
       </if>
-      <if test="faccountid != null">
+      <if test="fAccountID != null">
         fAccountID,
       </if>
       <if test="capital != null">
         capital,
       </if>
-      <if test="createtime != null">
+      <if test="createTime != null">
         createTime,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="fecalendarid != null">
-        #{fecalendarid,jdbcType=INTEGER},
+      <if test="feCalendarID != null">
+        #{feCalendarID,jdbcType=INTEGER},
       </if>
-      <if test="faccountid != null">
-        #{faccountid,jdbcType=INTEGER},
+      <if test="fAccountID != null">
+        #{fAccountID,jdbcType=INTEGER},
       </if>
       <if test="capital != null">
         #{capital,jdbcType=DECIMAL},
       </if>
-      <if test="createtime != null">
-        #{createtime,jdbcType=DATE},
+      <if test="createTime != null">
+        #{createTime,jdbcType=DATE},
       </if>
     </trim>
   </insert>
   <update id="updateByPrimaryKeySelective" parameterType="com.bj186.fms.pojo.FExpenseCalendar">
     update fexpensecalendar
     <set>
-      <if test="faccountid != null">
-        fAccountID = #{faccountid,jdbcType=INTEGER},
+      <if test="fAccountID != null">
+        fAccountID = #{fAccountID,jdbcType=INTEGER},
       </if>
       <if test="capital != null">
         capital = #{capital,jdbcType=DECIMAL},
       </if>
-      <if test="createtime != null">
-        createTime = #{createtime,jdbcType=DATE},
+      <if test="createTime != null">
+        createTime = #{createTime,jdbcType=DATE},
       </if>
     </set>
-    where feCalendarID = #{fecalendarid,jdbcType=INTEGER}
+    where feCalendarID = #{feCalendarID,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.bj186.fms.pojo.FExpenseCalendar">
     update fexpensecalendar
-    set fAccountID = #{faccountid,jdbcType=INTEGER},
+    set fAccountID = #{fAccountID,jdbcType=INTEGER},
       capital = #{capital,jdbcType=DECIMAL},
-      createTime = #{createtime,jdbcType=DATE}
-    where feCalendarID = #{fecalendarid,jdbcType=INTEGER}
+      createTime = #{createTime,jdbcType=DATE}
+    where feCalendarID = #{feCalendarID,jdbcType=INTEGER}
   </update>
 </mapper>

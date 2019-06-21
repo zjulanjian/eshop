@@ -3,13 +3,13 @@ package com.bj186.fms.pojo;
 import java.util.Date;
 
 public class RmbBusiness {
-    private Integer raccountid;
+    private Integer rAccountID;
 
-    private String idnumber;
+    private String IDnumber;
 
     private String password;
 
-    private String cardtype;
+    private String cardType;
 
     private Long capital;
 
@@ -17,24 +17,24 @@ public class RmbBusiness {
 
     private String status;
 
-    private Date createtime;
+    private Date createTime;
 
-    private Date edittime;
+    private Date editTime;
 
-    public Integer getRaccountid() {
-        return raccountid;
+    public Integer getrAccountID() {
+        return rAccountID;
     }
 
-    public void setRaccountid(Integer raccountid) {
-        this.raccountid = raccountid;
+    public void setrAccountID(Integer rAccountID) {
+        this.rAccountID = rAccountID;
     }
 
-    public String getIdnumber() {
-        return idnumber;
+    public String getIDnumber() {
+        return IDnumber;
     }
 
-    public void setIdnumber(String idnumber) {
-        this.idnumber = idnumber == null ? null : idnumber.trim();
+    public void setIDnumber(String IDnumber) {
+        this.IDnumber = IDnumber == null ? null : IDnumber.trim();
     }
 
     public String getPassword() {
@@ -45,12 +45,12 @@ public class RmbBusiness {
         this.password = password == null ? null : password.trim();
     }
 
-    public String getCardtype() {
-        return cardtype;
+    public String getCardType() {
+        return cardType;
     }
 
-    public void setCardtype(String cardtype) {
-        this.cardtype = cardtype == null ? null : cardtype.trim();
+    public void setCardType(String cardType) {
+        this.cardType = cardType == null ? null : cardType.trim();
     }
 
     public Long getCapital() {
@@ -77,19 +77,19 @@ public class RmbBusiness {
         this.status = status == null ? null : status.trim();
     }
 
-    public Date getCreatetime() {
-        return createtime;
+    public Date getCreateTime() {
+        return createTime;
     }
 
-    public void setCreatetime(Date createtime) {
-        this.createtime = createtime;
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
     }
 
-    public Date getEdittime() {
-        return edittime;
+    public Date getEditTime() {
+        return editTime;
     }
 
-    public void setEdittime(Date edittime) {
-        this.edittime = edittime;
+    public void setEditTime(Date editTime) {
+        this.editTime = editTime;
     }
 }

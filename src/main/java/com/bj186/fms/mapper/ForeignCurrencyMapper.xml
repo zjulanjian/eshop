@@ -2,15 +2,15 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.bj186.fms.mapper.ForeignCurrencyMapper">
   <resultMap id="BaseResultMap" type="com.bj186.fms.pojo.ForeignCurrency">
-    <id column="fAccountID" jdbcType="INTEGER" property="faccountid" />
-    <result column="IDnumber" jdbcType="VARCHAR" property="idnumber" />
+    <id column="fAccountID" jdbcType="INTEGER" property="fAccountID" />
+    <result column="IDnumber" jdbcType="VARCHAR" property="IDnumber" />
     <result column="password" jdbcType="VARCHAR" property="password" />
     <result column="capital" jdbcType="DECIMAL" property="capital" />
-    <result column="cardType" jdbcType="VARCHAR" property="cardtype" />
+    <result column="cardType" jdbcType="VARCHAR" property="cardType" />
     <result column="interest" jdbcType="DECIMAL" property="interest" />
     <result column="status" jdbcType="VARCHAR" property="status" />
-    <result column="createTime" jdbcType="DATE" property="createtime" />
-    <result column="editTime" jdbcType="DATE" property="edittime" />
+    <result column="createTime" jdbcType="DATE" property="createTime" />
+    <result column="editTime" jdbcType="DATE" property="editTime" />
   </resultMap>
   <sql id="Base_Column_List">
     fAccountID, IDnumber, password, capital, cardType, interest, status, createTime, 
@@ -20,29 +20,29 @@
     select 
     <include refid="Base_Column_List" />
     from foreigncurrency
-    where fAccountID = #{faccountid,jdbcType=INTEGER}
+    where fAccountID = #{fAccountID,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from foreigncurrency
-    where fAccountID = #{faccountid,jdbcType=INTEGER}
+    where fAccountID = #{fAccountID,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="com.bj186.fms.pojo.ForeignCurrency">
     insert into foreigncurrency (fAccountID, IDnumber, password, 
       capital, cardType, interest, 
       status, createTime, editTime
       )
-    values (#{faccountid,jdbcType=INTEGER}, #{idnumber,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
-      #{capital,jdbcType=DECIMAL}, #{cardtype,jdbcType=VARCHAR}, #{interest,jdbcType=DECIMAL}, 
-      #{status,jdbcType=VARCHAR}, #{createtime,jdbcType=DATE}, #{edittime,jdbcType=DATE}
+    values (#{fAccountID,jdbcType=INTEGER}, #{IDnumber,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
+      #{capital,jdbcType=DECIMAL}, #{cardType,jdbcType=VARCHAR}, #{interest,jdbcType=DECIMAL}, 
+      #{status,jdbcType=VARCHAR}, #{createTime,jdbcType=DATE}, #{editTime,jdbcType=DATE}
       )
   </insert>
   <insert id="insertSelective" parameterType="com.bj186.fms.pojo.ForeignCurrency">
     insert into foreigncurrency
     <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="faccountid != null">
+      <if test="fAccountID != null">
         fAccountID,
       </if>
-      <if test="idnumber != null">
+      <if test="IDnumber != null">
         IDnumber,
       </if>
       <if test="password != null">
@@ -51,7 +51,7 @@
       <if test="capital != null">
         capital,
       </if>
-      <if test="cardtype != null">
+      <if test="cardType != null">
         cardType,
       </if>
       <if test="interest != null">
@@ -60,19 +60,19 @@
       <if test="status != null">
         status,
       </if>
-      <if test="createtime != null">
+      <if test="createTime != null">
         createTime,
       </if>
-      <if test="edittime != null">
+      <if test="editTime != null">
         editTime,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="faccountid != null">
-        #{faccountid,jdbcType=INTEGER},
+      <if test="fAccountID != null">
+        #{fAccountID,jdbcType=INTEGER},
       </if>
-      <if test="idnumber != null">
-        #{idnumber,jdbcType=VARCHAR},
+      <if test="IDnumber != null">
+        #{IDnumber,jdbcType=VARCHAR},
       </if>
       <if test="password != null">
         #{password,jdbcType=VARCHAR},
@@ -80,8 +80,8 @@
       <if test="capital != null">
         #{capital,jdbcType=DECIMAL},
       </if>
-      <if test="cardtype != null">
-        #{cardtype,jdbcType=VARCHAR},
+      <if test="cardType != null">
+        #{cardType,jdbcType=VARCHAR},
       </if>
       <if test="interest != null">
         #{interest,jdbcType=DECIMAL},
@@ -89,19 +89,19 @@
       <if test="status != null">
         #{status,jdbcType=VARCHAR},
       </if>
-      <if test="createtime != null">
-        #{createtime,jdbcType=DATE},
+      <if test="createTime != null">
+        #{createTime,jdbcType=DATE},
       </if>
-      <if test="edittime != null">
-        #{edittime,jdbcType=DATE},
+      <if test="editTime != null">
+        #{editTime,jdbcType=DATE},
       </if>
     </trim>
   </insert>
   <update id="updateByPrimaryKeySelective" parameterType="com.bj186.fms.pojo.ForeignCurrency">
     update foreigncurrency
     <set>
-      <if test="idnumber != null">
-        IDnumber = #{idnumber,jdbcType=VARCHAR},
+      <if test="IDnumber != null">
+        IDnumber = #{IDnumber,jdbcType=VARCHAR},
       </if>
       <if test="password != null">
         password = #{password,jdbcType=VARCHAR},
@@ -109,8 +109,8 @@
       <if test="capital != null">
         capital = #{capital,jdbcType=DECIMAL},
       </if>
-      <if test="cardtype != null">
-        cardType = #{cardtype,jdbcType=VARCHAR},
+      <if test="cardType != null">
+        cardType = #{cardType,jdbcType=VARCHAR},
       </if>
       <if test="interest != null">
         interest = #{interest,jdbcType=DECIMAL},
@@ -118,25 +118,25 @@
       <if test="status != null">
         status = #{status,jdbcType=VARCHAR},
       </if>
-      <if test="createtime != null">
-        createTime = #{createtime,jdbcType=DATE},
+      <if test="createTime != null">
+        createTime = #{createTime,jdbcType=DATE},
       </if>
-      <if test="edittime != null">
-        editTime = #{edittime,jdbcType=DATE},
+      <if test="editTime != null">
+        editTime = #{editTime,jdbcType=DATE},
       </if>
     </set>
-    where fAccountID = #{faccountid,jdbcType=INTEGER}
+    where fAccountID = #{fAccountID,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.bj186.fms.pojo.ForeignCurrency">
     update foreigncurrency
-    set IDnumber = #{idnumber,jdbcType=VARCHAR},
+    set IDnumber = #{IDnumber,jdbcType=VARCHAR},
       password = #{password,jdbcType=VARCHAR},
       capital = #{capital,jdbcType=DECIMAL},
-      cardType = #{cardtype,jdbcType=VARCHAR},
+      cardType = #{cardType,jdbcType=VARCHAR},
       interest = #{interest,jdbcType=DECIMAL},
       status = #{status,jdbcType=VARCHAR},
-      createTime = #{createtime,jdbcType=DATE},
-      editTime = #{edittime,jdbcType=DATE}
-    where fAccountID = #{faccountid,jdbcType=INTEGER}
+      createTime = #{createTime,jdbcType=DATE},
+      editTime = #{editTime,jdbcType=DATE}
+    where fAccountID = #{fAccountID,jdbcType=INTEGER}
   </update>
 </mapper>

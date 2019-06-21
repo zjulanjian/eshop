@@ -2,8 +2,8 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.bj186.fms.mapper.PermissionMapper">
   <resultMap id="BaseResultMap" type="com.bj186.fms.pojo.Permission">
-    <id column="permissionID" jdbcType="INTEGER" property="permissionid" />
-    <result column="permissionName" jdbcType="VARCHAR" property="permissionname" />
+    <id column="permissionID" jdbcType="INTEGER" property="permissionID" />
+    <result column="permissionName" jdbcType="VARCHAR" property="permissionName" />
     <result column="description" jdbcType="VARCHAR" property="description" />
   </resultMap>
   <sql id="Base_Column_List">
@@ -13,25 +13,25 @@
     select 
     <include refid="Base_Column_List" />
     from permission
-    where permissionID = #{permissionid,jdbcType=INTEGER}
+    where permissionID = #{permissionID,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from permission
-    where permissionID = #{permissionid,jdbcType=INTEGER}
+    where permissionID = #{permissionID,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="com.bj186.fms.pojo.Permission">
     insert into permission (permissionID, permissionName, description
       )
-    values (#{permissionid,jdbcType=INTEGER}, #{permissionname,jdbcType=VARCHAR}, #{description,jdbcType=VARCHAR}
+    values (#{permissionID,jdbcType=INTEGER}, #{permissionName,jdbcType=VARCHAR}, #{description,jdbcType=VARCHAR}
       )
   </insert>
   <insert id="insertSelective" parameterType="com.bj186.fms.pojo.Permission">
     insert into permission
     <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="permissionid != null">
+      <if test="permissionID != null">
         permissionID,
       </if>
-      <if test="permissionname != null">
+      <if test="permissionName != null">
         permissionName,
       </if>
       <if test="description != null">
@@ -39,11 +39,11 @@
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="permissionid != null">
-        #{permissionid,jdbcType=INTEGER},
+      <if test="permissionID != null">
+        #{permissionID,jdbcType=INTEGER},
       </if>
-      <if test="permissionname != null">
-        #{permissionname,jdbcType=VARCHAR},
+      <if test="permissionName != null">
+        #{permissionName,jdbcType=VARCHAR},
       </if>
       <if test="description != null">
         #{description,jdbcType=VARCHAR},
@@ -53,19 +53,19 @@
   <update id="updateByPrimaryKeySelective" parameterType="com.bj186.fms.pojo.Permission">
     update permission
     <set>
-      <if test="permissionname != null">
-        permissionName = #{permissionname,jdbcType=VARCHAR},
+      <if test="permissionName != null">
+        permissionName = #{permissionName,jdbcType=VARCHAR},
       </if>
       <if test="description != null">
         description = #{description,jdbcType=VARCHAR},
       </if>
     </set>
-    where permissionID = #{permissionid,jdbcType=INTEGER}
+    where permissionID = #{permissionID,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.bj186.fms.pojo.Permission">
     update permission
-    set permissionName = #{permissionname,jdbcType=VARCHAR},
+    set permissionName = #{permissionName,jdbcType=VARCHAR},
       description = #{description,jdbcType=VARCHAR}
-    where permissionID = #{permissionid,jdbcType=INTEGER}
+    where permissionID = #{permissionID,jdbcType=INTEGER}
   </update>
 </mapper>
