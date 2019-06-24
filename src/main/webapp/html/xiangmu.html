@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../layui/layui.js" type="text/javascript"></script>
+    <link href="../layui/css/layui.css" rel="stylesheet" type="text/css">
+    <script src="../../../js/jquery-1.11.3.min.js" type="text/javascript"></script>
+</head>
+<style>
+    #box{
+     margin-left: -50px;
+
+    }
+</style>
+<body>
+
+<form class="layui-form">
+    <div class="layui-form-item">
+        <input  type="hidden" id="uid">
+        <label class="layui-form-label">单价:</label>
+        <div class="layui-input-block">
+            <input type="text" disabled id="unitPrice" class="layui-input" style="font-family: 楷体;font-size: 23px;color: red;width: 50px;text-align: center;background-color: white" >
+        </div>
+    </div>
+
+    <div class="layui-form-item ">
+        <div class="layui-input-inline">
+            <div id="box">
+                <input style="width: 50px; height: 38px; border: 2px white; float: left;" type="button" class="layui-btn" value="-" onclick="reductionOf(this)" />
+                <input style="text-align: center; width: 50px; height: 38px; float: left;" class="layui-input" type="text" value="1" onblur="checkNumber(this)" />
+
+                <input style="width: 50px; height: 38px; border: 2px white;" class="layui-btn" type="button" value="+" onclick="add(this)" />
+            </div>
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <div class="layui-input-block">
+            <button class="layui-btn">确定</button>
+        </div>
+    </div>
+</form>
+<!--<div id="unitPrice" class="layui-inline" style="font-family: 楷体;font-size: 23px">53467890</div>-->
+<!--Addandsubtract-->
+<script>
+
+    layui.use(['layer'],function() {
+        var layer=layui.layer;
+        var $=layui.jquery;
+
+
+
+    })
+
+
+        //减数量
+        function reductionOf(obj) {
+            //减前判断
+            if ($(obj).next().val() == '') {
+                $(obj).next().val(1);
+            }
+            var num=parseInt($(obj).next().val()) - 1;
+            if (num<=0){
+                $(obj).next().val(0);//数值减
+            } else {
+                $(obj).next().val(num);//数值减
+            }
+
+            $(obj).next().val($(obj).next().val());//赋值给框
+        };
+        //加数量
+        function add(obj) {
+            //加前判断
+            if ($(obj).prev().val() == '') {
+                $(obj).prev().val(1);
+            }
+            $(obj).prev().val(parseInt($(obj).prev().val()) + 1);//数值加
+            $(obj).prev().val($(obj).prev().val());//赋值给框
+        };
+        //校验数字格式（只能输入正整数）
+        function checkNumber(obj) {
+            var reg = /^[1-9]\d*$/;
+            if(!reg.test($(obj).val()) || $(obj).val()==''){
+                $(obj).val(1);
+            }
+        }
+
+
+</script>
+</body>
+</html>
