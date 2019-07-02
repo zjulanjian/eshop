@@ -1,5 +1,7 @@
 package com.bj186.fms.pojo;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import java.util.Date;
 
 public class UserInfo {
@@ -19,6 +21,7 @@ public class UserInfo {
 
     private String photo;
 
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone="GMT+8")
     private Date createTime;
 
     private Date editTime;

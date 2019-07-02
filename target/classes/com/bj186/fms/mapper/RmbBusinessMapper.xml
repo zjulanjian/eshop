@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bj186.fms.mapper.RmbBusinessMapper">
+  <resultMap id="BaseResultMap" type="com.bj186.fms.pojo.RmbBusiness">
+    <id column="rAccountID" jdbcType="INTEGER" property="rAccountID" />
+    <result column="IDnumber" jdbcType="VARCHAR" property="IDnumber" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="cardType" jdbcType="VARCHAR" property="cardType" />
+    <result column="capital" jdbcType="DECIMAL" property="capital" />
+    <result column="interest" jdbcType="DOUBLE" property="interest" />
+    <result column="status" jdbcType="VARCHAR" property="status" />
+    <result column="createTime" jdbcType="DATE" property="createTime" />
+    <result column="editTime" jdbcType="DATE" property="editTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    rAccountID, IDnumber, password, cardType, capital, interest, status, createTime, 
+    editTime
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from rmbbusiness
+    where rAccountID = #{rAccountID,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from rmbbusiness
+    where rAccountID = #{rAccountID,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.bj186.fms.pojo.RmbBusiness">
+    insert into rmbbusiness (rAccountID, IDnumber, password, 
+      cardType, capital, interest, 
+      status, createTime, editTime
+      )
+    values (#{rAccountID,jdbcType=INTEGER}, #{IDnumber,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
+      #{cardType,jdbcType=VARCHAR}, #{capital,jdbcType=DECIMAL}, #{interest,jdbcType=DOUBLE}, 
+      #{status,jdbcType=VARCHAR}, #{createTime,jdbcType=DATE}, #{editTime,jdbcType=DATE}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.bj186.fms.pojo.RmbBusiness">
+    insert into rmbbusiness
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="rAccountID != null">
+        rAccountID,
+      </if>
+      <if test="IDnumber != null">
+        IDnumber,
+      </if>
+      <if test="password != null">
+        password,
+      </if>
+      <if test="cardType != null">
+        cardType,
+      </if>
+      <if test="capital != null">
+        capital,
+      </if>
+      <if test="interest != null">
+        interest,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="createTime != null">
+        createTime,
+      </if>
+      <if test="editTime != null">
+        editTime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="rAccountID != null">
+        #{rAccountID,jdbcType=INTEGER},
+      </if>
+      <if test="IDnumber != null">
+        #{IDnumber,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null">
+        #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="cardType != null">
+        #{cardType,jdbcType=VARCHAR},
+      </if>
+      <if test="capital != null">
+        #{capital,jdbcType=DECIMAL},
+      </if>
+      <if test="interest != null">
+        #{interest,jdbcType=DOUBLE},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=DATE},
+      </if>
+      <if test="editTime != null">
+        #{editTime,jdbcType=DATE},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.bj186.fms.pojo.RmbBusiness">
+    update rmbbusiness
+    <set>
+      <if test="IDnumber != null">
+        IDnumber = #{IDnumber,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null">
+        password = #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="cardType != null">
+        cardType = #{cardType,jdbcType=VARCHAR},
+      </if>
+      <if test="capital != null">
+        capital = #{capital,jdbcType=DECIMAL},
+      </if>
+      <if test="interest != null">
+        interest = #{interest,jdbcType=DOUBLE},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        createTime = #{createTime,jdbcType=DATE},
+      </if>
+      <if test="editTime != null">
+        editTime = #{editTime,jdbcType=DATE},
+      </if>
+    </set>
+    where rAccountID = #{rAccountID,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.bj186.fms.pojo.RmbBusiness">
+    update rmbbusiness
+    set IDnumber = #{IDnumber,jdbcType=VARCHAR},
+      password = #{password,jdbcType=VARCHAR},
+      cardType = #{cardType,jdbcType=VARCHAR},
+      capital = #{capital,jdbcType=DECIMAL},
+      interest = #{interest,jdbcType=DOUBLE},
+      status = #{status,jdbcType=VARCHAR},
+      createTime = #{createTime,jdbcType=DATE},
+      editTime = #{editTime,jdbcType=DATE}
+    where rAccountID = #{rAccountID,jdbcType=INTEGER}
+  </update>
+</mapper>

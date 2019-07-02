@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bj186.fms.mapper.UserInfoMapper">
+  <resultMap id="BaseResultMap" type="com.bj186.fms.pojo.UserInfo">
+    <id column="IDnumber" jdbcType="VARCHAR" property="IDnumber" />
+    <result column="userID" jdbcType="INTEGER" property="userID" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="sex" jdbcType="VARCHAR" property="sex" />
+    <result column="address" jdbcType="VARCHAR" property="address" />
+    <result column="phone" jdbcType="VARCHAR" property="phone" />
+    <result column="email" jdbcType="VARCHAR" property="email" />
+    <result column="photo" jdbcType="VARCHAR" property="photo" />
+    <result column="createTime" jdbcType="DATE" property="createTime" />
+    <result column="editTime" jdbcType="DATE" property="editTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    IDnumber, userID, name, sex, address, phone, email, photo, createTime, editTime
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from userinfo
+    where IDnumber = #{IDnumber,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from userinfo
+    where IDnumber = #{IDnumber,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.bj186.fms.pojo.UserInfo">
+    insert into userinfo (IDnumber, userID, name, 
+      sex, address, phone, 
+      email, photo, createTime, 
+      editTime)
+    values (#{IDnumber,jdbcType=VARCHAR}, #{userID,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, 
+      #{sex,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, 
+      #{email,jdbcType=VARCHAR}, #{photo,jdbcType=VARCHAR}, #{createTime,jdbcType=DATE}, 
+      #{editTime,jdbcType=DATE})
+  </insert>
+  <insert id="insertSelective" parameterType="com.bj186.fms.pojo.UserInfo">
+    insert into userinfo
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="IDnumber != null">
+        IDnumber,
+      </if>
+      <if test="userID != null">
+        userID,
+      </if>
+      <if test="name != null">
+        name,
+      </if>
+      <if test="sex != null">
+        sex,
+      </if>
+      <if test="address != null">
+        address,
+      </if>
+      <if test="phone != null">
+        phone,
+      </if>
+      <if test="email != null">
+        email,
+      </if>
+      <if test="photo != null">
+        photo,
+      </if>
+      <if test="createTime != null">
+        createTime,
+      </if>
+      <if test="editTime != null">
+        editTime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="IDnumber != null">
+        #{IDnumber,jdbcType=VARCHAR},
+      </if>
+      <if test="userID != null">
+        #{userID,jdbcType=INTEGER},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null">
+        #{sex,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null">
+        #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null">
+        #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null">
+        #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="photo != null">
+        #{photo,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=DATE},
+      </if>
+      <if test="editTime != null">
+        #{editTime,jdbcType=DATE},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.bj186.fms.pojo.UserInfo">
+    update userinfo
+    <set>
+      <if test="userID != null">
+        userID = #{userID,jdbcType=INTEGER},
+      </if>
+      <if test="name != null">
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null">
+        sex = #{sex,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null">
+        address = #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null">
+        phone = #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null">
+        email = #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="photo != null">
+        photo = #{photo,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        createTime = #{createTime,jdbcType=DATE},
+      </if>
+      <if test="editTime != null">
+        editTime = #{editTime,jdbcType=DATE},
+      </if>
+    </set>
+    where IDnumber = #{IDnumber,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.bj186.fms.pojo.UserInfo">
+    update userinfo
+    set userID = #{userID,jdbcType=INTEGER},
+      name = #{name,jdbcType=VARCHAR},
+      sex = #{sex,jdbcType=VARCHAR},
+      address = #{address,jdbcType=VARCHAR},
+      phone = #{phone,jdbcType=VARCHAR},
+      email = #{email,jdbcType=VARCHAR},
+      photo = #{photo,jdbcType=VARCHAR},
+      createTime = #{createTime,jdbcType=DATE},
+      editTime = #{editTime,jdbcType=DATE}
+    where IDnumber = #{IDnumber,jdbcType=VARCHAR}
+  </update>
+</mapper>

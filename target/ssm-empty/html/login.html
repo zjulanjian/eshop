@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" class="iframe-h">
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+    <link rel="stylesheet" href="../statics/css/home.css" type="text/css">
+    <script src="../statics/js/jquery-1.11.3.min.js" type="text/javascript"></script>
+    <script src="../layui/layui.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="../layui/css/layui.css">
+</head>
+<body>
+<div class="layui-carousel" id="test1">
+    <div carousel-item>
+        <div><img src="../statics/images/bj.jpg"></div>
+        <div><img src="../statics/images/bj2.jpg"></div>
+        <div><img src="../statics/images/bj3.jpg"></div>
+        <div><img src="../statics/images/bj4.jpg"></div>
+        <div><img src="../statics/images/bj5.jpg"></div>
+    </div>
+</div>
+<!-- 条目中可以是任意内容，如：<img src=""> -->
+<script>
+    layui.use(['carousel','layer'], function(){
+        var $=layui.$,
+             carousel = layui.carousel,
+             layer=layui.layer;
+        //建造实例
+        carousel.render({
+            elem: '#test1'
+            ,width: '100%' //设置容器宽度
+            ,arrow: 'none' //始终显示箭头
+            ,anim: 'fade' //切换动画方式
+            ,full:true
+            ,interval:"2000"
+        });
+        //登录弹出
+        layer.open({
+           type:1,
+            skin: 'demo-class',
+           title:false,
+           content:$('#uid'),
+           closeBtn: 0,
+            anim:1,
+            shade: 0,
+            area:["250px","130px"],
+            resize:false,
+            move: false
+        })
+
+        $(".user").click(function () {
+            var id= $(this).attr("id");
+           layer.open({
+              type:2,
+              title:"请登录",
+              content:"login_from.html?id="+id,
+               area:["450px","300px"],
+               shadeClose: true, //开启遮罩关闭
+               move: false
+
+           });
+        });
+
+
+    });
+
+
+</script>
+</body>
+<div id="uid">
+    <ol>
+        <a href="#" class="user">
+        <li>
+            <i class="layui-icon">&#xe66f;</i>
+            <p>个人</p>
+        </li>
+        </a>
+        <a href="#" class="user">
+        <li>
+            <i class="layui-icon">&#xe770;</i>
+            <p>企业</p>
+        </li>
+        </a>
+    </ol>
+</div>
+
+</html>

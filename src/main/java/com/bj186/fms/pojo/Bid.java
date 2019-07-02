@@ -49,7 +49,7 @@ public class Bid {
         return amount;
     }
 
-    public void setAmount(Double amount) {
+    public synchronized void setAmount(Double amount) {
         this.amount = amount;
     }
 }

@@ -1,0 +1,45 @@
+body{
+    background-image: url("../images/bj.jpg");
+}
+#test1 div img{
+    height:100%;
+    width: 100%;
+}
+
+body .demo-class {
+    color:#393D49;
+    border: black;
+    /*background-color: transparent;*/
+    opacity: 0.7;
+    }
+
+#uid{
+    height: 130px;
+    width: 250px;
+    opacity: 1;
+}
+
+#uid li{
+    height: 130px;
+    width: 120px;
+    opacity: 1;
+    float: right;
+}
+
+#uid ol li i{
+     opacity: 1;
+     font-size: 70px;
+     line-height: 100px;
+     margin-left: 20px;
+ }
+
+#uid ol li p{
+    opacity: 1;
+    font-size: 15px;
+    /*line-height: 100px;*/
+    margin-left: 40px;
+    margin-top: -10px;
+}
+#uid ol li:hover {
+  color: red;
+}

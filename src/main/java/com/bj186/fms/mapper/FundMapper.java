@@ -1,6 +1,7 @@
 package com.bj186.fms.mapper;
 
 import com.alibaba.fastjson.JSONObject;
+import com.bj186.fms.entity.PurchasedFunds;
 import com.bj186.fms.pojo.Fund;
 
 import java.util.List;
@@ -21,5 +22,10 @@ public interface FundMapper {
 
     List<Fund> selectAll();
 
-    List<JSONObject> selectFundsByPage(Map<String, Object> map);
+    List<Fund> selectFundsByPage(Map<String, Object> map);
+
+    Fund selectFundByID(Integer fundID);
+
+    List<PurchasedFunds> selectPurchasedFundsByPage(Map<String,Object> map);
+
 }

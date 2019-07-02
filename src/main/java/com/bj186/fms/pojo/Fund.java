@@ -1,5 +1,7 @@
 package com.bj186.fms.pojo;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import java.util.Date;
 
 public class Fund {
@@ -7,7 +9,8 @@ public class Fund {
 
     private String fundName;
 
-    private Date createTime;
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone="GMT+8")
+    private String createTime;
 
     private Double unitNetValue;
 
@@ -39,11 +42,11 @@ public class Fund {
         this.fundName = fundName == null ? null : fundName.trim();
     }
 
-    public Date getCreateTime() {
+    public String getCreateTime() {
         return createTime;
     }
 
-    public void setCreateTime(Date createTime) {
+    public void setCreateTime(String createTime) {
         this.createTime = createTime;
     }
 
@@ -101,5 +104,21 @@ public class Fund {
 
     public void setFundType(String fundType) {
         this.fundType = fundType == null ? null : fundType.trim();
+    }
+
+    @Override
+    public String toString() {
+        return "Fund{" +
+                "fundID=" + fundID +
+                ", fundName='" + fundName + '\'' +
+                ", createTime=" + createTime +
+                ", unitNetValue=" + unitNetValue +
+                ", cumulativeNetValue=" + cumulativeNetValue +
+                ", dailyGrowthRate=" + dailyGrowthRate +
+                ", monthlyGrowthRate=" + monthlyGrowthRate +
+                ", yearlyGrowthRate=" + yearlyGrowthRate +
+                ", feesRate=" + feesRate +
+                ", fundType='" + fundType + '\'' +
+                '}';
     }
 }

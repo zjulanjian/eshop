@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bj186.fms.mapper.BidMapper">
+  <resultMap id="BaseResultMap" type="com.bj186.fms.pojo.Bid">
+    <id column="bidID" jdbcType="INTEGER" property="bidID" />
+    <result column="companyID" jdbcType="INTEGER" property="companyID" />
+    <result column="createTime" jdbcType="DATE" property="createTime" />
+    <result column="endTime" jdbcType="DATE" property="endTime" />
+    <result column="amount" jdbcType="DOUBLE" property="amount" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    bidID, companyID, createTime, endTime, amount
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from bid
+    where bidID = #{bidID,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from bid
+    where bidID = #{bidID,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.bj186.fms.pojo.Bid">
+    insert into bid (bidID, companyID, createTime, 
+      endTime, amount)
+    values (#{bidID,jdbcType=INTEGER}, #{companyID,jdbcType=INTEGER}, #{createTime,jdbcType=DATE}, 
+      #{endTime,jdbcType=DATE}, #{amount,jdbcType=DOUBLE})
+  </insert>
+  <insert id="insertSelective" parameterType="com.bj186.fms.pojo.Bid">
+    insert into bid
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="bidID != null">
+        bidID,
+      </if>
+      <if test="companyID != null">
+        companyID,
+      </if>
+      <if test="createTime != null">
+        createTime,
+      </if>
+      <if test="endTime != null">
+        endTime,
+      </if>
+      <if test="amount != null">
+        amount,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="bidID != null">
+        #{bidID,jdbcType=INTEGER},
+      </if>
+      <if test="companyID != null">
+        #{companyID,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=DATE},
+      </if>
+      <if test="endTime != null">
+        #{endTime,jdbcType=DATE},
+      </if>
+      <if test="amount != null">
+        #{amount,jdbcType=DOUBLE},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.bj186.fms.pojo.Bid">
+    update bid
+    <set>
+      <if test="companyID != null">
+        companyID = #{companyID,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        createTime = #{createTime,jdbcType=DATE},
+      </if>
+      <if test="endTime != null">
+        endTime = #{endTime,jdbcType=DATE},
+      </if>
+      <if test="amount != null">
+        amount = #{amount,jdbcType=DOUBLE},
+      </if>
+    </set>
+    where bidID = #{bidID,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.bj186.fms.pojo.Bid">
+    update bid
+    set companyID = #{companyID,jdbcType=INTEGER},
+      createTime = #{createTime,jdbcType=DATE},
+      endTime = #{endTime,jdbcType=DATE},
+      amount = #{amount,jdbcType=DOUBLE}
+    where bidID = #{bidID,jdbcType=INTEGER}
+  </update>
+</mapper>

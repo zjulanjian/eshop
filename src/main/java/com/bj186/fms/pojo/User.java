@@ -1,5 +1,7 @@
 package com.bj186.fms.pojo;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import java.util.Date;
 
 public class User {
@@ -9,13 +11,18 @@ public class User {
 
     private String password;
 
+    private String transactionPassword;
+
     private String status;
 
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone="GMT+8")
     private Date createTime;
 
     private Date editTime;
 
     private String userType;
+
+    private Double balance;
 
     public Integer getUserID() {
         return userID;
@@ -39,6 +46,14 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password == null ? null : password.trim();
+    }
+
+    public String getTransactionPassword() {
+        return transactionPassword;
+    }
+
+    public void setTransactionPassword(String transactionPassword) {
+        this.transactionPassword = transactionPassword == null ? null : transactionPassword.trim();
     }
 
     public String getStatus() {
@@ -71,5 +86,13 @@ public class User {
 
     public void setUserType(String userType) {
         this.userType = userType == null ? null : userType.trim();
+    }
+
+    public Double getBalance() {
+        return balance;
+    }
+
+    public synchronized void setBalance(Double balance) {
+        this.balance = balance;
     }
 }

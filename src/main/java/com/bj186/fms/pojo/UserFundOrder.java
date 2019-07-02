@@ -1,17 +1,22 @@
 package com.bj186.fms.pojo;
 
-import java.util.Date;
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 
 public class UserFundOrder {
     private Integer uFundOrderID;
 
-    private Integer roleID;
+    private Integer userID;
 
     private Integer fundID;
 
-    private Double amount;
+    private Double amount; //交易金额
 
-    private Date createTime;
+    private Double fees; //交易费用
+
+    private String createTime;
+
+    private Integer status; //订单状态
 
     public Integer getuFundOrderID() {
         return uFundOrderID;
@@ -21,12 +26,12 @@ public class UserFundOrder {
         this.uFundOrderID = uFundOrderID;
     }
 
-    public Integer getRoleID() {
-        return roleID;
+    public Integer getUserID() {
+        return userID;
     }
 
-    public void setRoleID(Integer roleID) {
-        this.roleID = roleID;
+    public void setUserID(Integer userID) {
+        this.userID = userID;
     }
 
     public Integer getFundID() {
@@ -41,15 +46,31 @@ public class UserFundOrder {
         return amount;
     }
 
-    public void setAmount(Double amount) {
+    public synchronized void setAmount(Double amount) {
         this.amount = amount;
     }
 
-    public Date getCreateTime() {
+    public Double getFees() {
+        return fees;
+    }
+
+    public void setFees(Double fees) {
+        this.fees = fees;
+    }
+
+    public String getCreateTime() {
         return createTime;
     }
 
-    public void setCreateTime(Date createTime) {
+    public void setCreateTime(String createTime) {
         this.createTime = createTime;
+    }
+
+    public Integer getStatus() {
+        return status;
+    }
+
+    public void setStatus(Integer status) {
+        this.status = status;
     }
 }

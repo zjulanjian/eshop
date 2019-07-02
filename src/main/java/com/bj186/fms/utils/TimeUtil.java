@@ -1,5 +1,7 @@
 package com.bj186.fms.utils;
 
+import org.junit.jupiter.api.Test;
+
 import java.util.Date;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -30,6 +32,25 @@ public class TimeUtil {
             e.printStackTrace();
         }
         return returnstr;
+    }
+    /**
+     * 将字符串时间格式转换成Date时间格式，参数String类型
+     * 比如字符串时间："2017-12-15 21:49:03"
+     * 转换后的date时间：Fri Dec 15 21:49:03 CST 2017
+     * @param datetime 类型为String
+     * @return
+     */
+    public static Date StringToDate(String datetime){
+        //SimpleDateFormat sdFormat=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        SimpleDateFormat sdFormat=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        Date date = new Date();
+        try {
+            date = sdFormat.parse(datetime);
+        } catch (ParseException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        return date;
     }
 }
 

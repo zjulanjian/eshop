@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bj186.fms.mapper.MonthCalendarMapper">
+  <resultMap id="BaseResultMap" type="com.bj186.fms.pojo.MonthCalendar">
+    <id column="mCalendarID" jdbcType="INTEGER" property="mCalendarID" />
+    <result column="cAccountID" jdbcType="INTEGER" property="cAccountID" />
+    <result column="expenseType" jdbcType="VARCHAR" property="expenseType" />
+    <result column="gno" jdbcType="VARCHAR" property="gno" />
+    <result column="capital" jdbcType="DECIMAL" property="capital" />
+    <result column="createTime" jdbcType="DATE" property="createTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    mCalendarID, cAccountID, expenseType, gno, capital, createTime
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from monthcalendar
+    where mCalendarID = #{mCalendarID,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from monthcalendar
+    where mCalendarID = #{mCalendarID,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.bj186.fms.pojo.MonthCalendar">
+    insert into monthcalendar (mCalendarID, cAccountID, expenseType, 
+      gno, capital, createTime
+      )
+    values (#{mCalendarID,jdbcType=INTEGER}, #{cAccountID,jdbcType=INTEGER}, #{expenseType,jdbcType=VARCHAR}, 
+      #{gno,jdbcType=VARCHAR}, #{capital,jdbcType=DECIMAL}, #{createTime,jdbcType=DATE}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.bj186.fms.pojo.MonthCalendar">
+    insert into monthcalendar
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="mCalendarID != null">
+        mCalendarID,
+      </if>
+      <if test="cAccountID != null">
+        cAccountID,
+      </if>
+      <if test="expenseType != null">
+        expenseType,
+      </if>
+      <if test="gno != null">
+        gno,
+      </if>
+      <if test="capital != null">
+        capital,
+      </if>
+      <if test="createTime != null">
+        createTime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="mCalendarID != null">
+        #{mCalendarID,jdbcType=INTEGER},
+      </if>
+      <if test="cAccountID != null">
+        #{cAccountID,jdbcType=INTEGER},
+      </if>
+      <if test="expenseType != null">
+        #{expenseType,jdbcType=VARCHAR},
+      </if>
+      <if test="gno != null">
+        #{gno,jdbcType=VARCHAR},
+      </if>
+      <if test="capital != null">
+        #{capital,jdbcType=DECIMAL},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=DATE},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.bj186.fms.pojo.MonthCalendar">
+    update monthcalendar
+    <set>
+      <if test="cAccountID != null">
+        cAccountID = #{cAccountID,jdbcType=INTEGER},
+      </if>
+      <if test="expenseType != null">
+        expenseType = #{expenseType,jdbcType=VARCHAR},
+      </if>
+      <if test="gno != null">
+        gno = #{gno,jdbcType=VARCHAR},
+      </if>
+      <if test="capital != null">
+        capital = #{capital,jdbcType=DECIMAL},
+      </if>
+      <if test="createTime != null">
+        createTime = #{createTime,jdbcType=DATE},
+      </if>
+    </set>
+    where mCalendarID = #{mCalendarID,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.bj186.fms.pojo.MonthCalendar">
+    update monthcalendar
+    set cAccountID = #{cAccountID,jdbcType=INTEGER},
+      expenseType = #{expenseType,jdbcType=VARCHAR},
+      gno = #{gno,jdbcType=VARCHAR},
+      capital = #{capital,jdbcType=DECIMAL},
+      createTime = #{createTime,jdbcType=DATE}
+    where mCalendarID = #{mCalendarID,jdbcType=INTEGER}
+  </update>
+</mapper>

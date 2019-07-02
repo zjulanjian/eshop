@@ -1,4 +1,4 @@
-package com.bj186.crm.common;
+package com.bj186.fms.utils;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bj186.fms.mapper.StatusMapper">
+  <resultMap id="BaseResultMap" type="com.bj186.fms.pojo.Status">
+    <id column="statusID" jdbcType="INTEGER" property="statusID" />
+    <result column="bidStatus" jdbcType="VARCHAR" property="bidStatus" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    statusID, bidStatus
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from status
+    where statusID = #{statusID,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from status
+    where statusID = #{statusID,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.bj186.fms.pojo.Status">
+    insert into status (statusID, bidStatus)
+    values (#{statusID,jdbcType=INTEGER}, #{bidStatus,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.bj186.fms.pojo.Status">
+    insert into status
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="statusID != null">
+        statusID,
+      </if>
+      <if test="bidStatus != null">
+        bidStatus,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="statusID != null">
+        #{statusID,jdbcType=INTEGER},
+      </if>
+      <if test="bidStatus != null">
+        #{bidStatus,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.bj186.fms.pojo.Status">
+    update status
+    <set>
+      <if test="bidStatus != null">
+        bidStatus = #{bidStatus,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where statusID = #{statusID,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.bj186.fms.pojo.Status">
+    update status
+    set bidStatus = #{bidStatus,jdbcType=VARCHAR}
+    where statusID = #{statusID,jdbcType=INTEGER}
+  </update>
+</mapper>

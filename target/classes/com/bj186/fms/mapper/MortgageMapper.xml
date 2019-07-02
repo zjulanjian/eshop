@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bj186.fms.mapper.MortgageMapper">
+  <resultMap id="BaseResultMap" type="com.bj186.fms.pojo.Mortgage">
+    <result column="bidID" jdbcType="INTEGER" property="bidID" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.bj186.fms.pojo.Mortgage">
+    <result column="estate" jdbcType="LONGVARBINARY" property="estate" />
+    <result column="car" jdbcType="LONGVARBINARY" property="car" />
+    <result column="stock" jdbcType="LONGVARBINARY" property="stock" />
+    <result column="bond" jdbcType="LONGVARBINARY" property="bond" />
+    <result column="others" jdbcType="LONGVARBINARY" property="others" />
+  </resultMap>
+  <sql id="Blob_Column_List">
+    estate, car, stock, bond, others
+  </sql>
+  <insert id="insert" parameterType="com.bj186.fms.pojo.Mortgage">
+    insert into mortgage (bidID, estate, car, 
+      stock, bond, others
+      )
+    values (#{bidID,jdbcType=INTEGER}, #{estate,jdbcType=LONGVARBINARY}, #{car,jdbcType=LONGVARBINARY}, 
+      #{stock,jdbcType=LONGVARBINARY}, #{bond,jdbcType=LONGVARBINARY}, #{others,jdbcType=LONGVARBINARY}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.bj186.fms.pojo.Mortgage">
+    insert into mortgage
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="bidID != null">
+        bidID,
+      </if>
+      <if test="estate != null">
+        estate,
+      </if>
+      <if test="car != null">
+        car,
+      </if>
+      <if test="stock != null">
+        stock,
+      </if>
+      <if test="bond != null">
+        bond,
+      </if>
+      <if test="others != null">
+        others,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="bidID != null">
+        #{bidID,jdbcType=INTEGER},
+      </if>
+      <if test="estate != null">
+        #{estate,jdbcType=LONGVARBINARY},
+      </if>
+      <if test="car != null">
+        #{car,jdbcType=LONGVARBINARY},
+      </if>
+      <if test="stock != null">
+        #{stock,jdbcType=LONGVARBINARY},
+      </if>
+      <if test="bond != null">
+        #{bond,jdbcType=LONGVARBINARY},
+      </if>
+      <if test="others != null">
+        #{others,jdbcType=LONGVARBINARY},
+      </if>
+    </trim>
+  </insert>
+</mapper>

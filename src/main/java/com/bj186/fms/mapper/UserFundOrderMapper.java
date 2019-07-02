@@ -2,6 +2,8 @@ package com.bj186.fms.mapper;
 
 import com.bj186.fms.pojo.UserFundOrder;
 
+import java.util.Map;
+
 public interface UserFundOrderMapper {
     int deleteByPrimaryKey(Integer uFundOrderID);
 
@@ -14,4 +16,9 @@ public interface UserFundOrderMapper {
     int updateByPrimaryKeySelective(UserFundOrder record);
 
     int updateByPrimaryKey(UserFundOrder record);
+
+    int insertUserFundOrder(Map<String, Object> map);
+
+    int selectOrderByUserID(Integer userID);
+
 }
