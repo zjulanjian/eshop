@@ -6,39 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8ec1362d-f9d5-475d-8458-13d926b456ba" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bj186/fms/controller/FundController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bj186/fms/controller/FundController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bj186/fms/entity/PurchasedFunds.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bj186/fms/entity/PurchasedFunds.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bj186/fms/mapper/FundMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bj186/fms/mapper/FundMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bj186/fms/mapper/FundMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bj186/fms/mapper/FundMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bj186/fms/mapper/UserFundOrderMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bj186/fms/mapper/UserFundOrderMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bj186/fms/mapper/UserFundOrderMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bj186/fms/mapper/UserFundOrderMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bj186/fms/pojo/Bid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bj186/fms/pojo/Bid.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bj186/fms/pojo/Fund.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bj186/fms/pojo/Fund.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bj186/fms/pojo/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bj186/fms/pojo/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bj186/fms/pojo/UserFundOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bj186/fms/pojo/UserFundOrder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bj186/fms/pojo/UserInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bj186/fms/pojo/UserInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bj186/fms/service/FundService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bj186/fms/service/FundService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bj186/fms/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bj186/fms/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bj186/fms/service/impl/FundServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bj186/fms/service/impl/FundServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bj186/fms/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bj186/fms/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bj186/fms/utils/MD5Creater.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bj186/fms/utils/MD5Creater.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bj186/fms/utils/TimeUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bj186/fms/utils/TimeUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/html/fund-announcement.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/fund-announcement.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/html/fund-product.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/fund-product.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/html/fund-purchase.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/fund-purchase.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/html/fund-purchase2.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/fund-purchase2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/html/fund-purchase3.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/fund-purchase3.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/html/fund-sale.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/fund-sale.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/html/fund-sale2.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/fund-sale2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/html/fund-sale3.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/fund-sale3.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/html/user_main.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/user_main.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/statics/css/user_main.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/statics/css/user_main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/concurrent/TestFund.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/concurrent/TestFund.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/concurrent/TestRedis.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/concurrent/TestRedis.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/concurrent/TestTimeConvert.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/concurrent/TestTimeConvert.java" afterDir="false" />
-    </list>
+    <list default="true" id="8ec1362d-f9d5-475d-8458-13d926b456ba" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -136,8 +104,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/bj186/fms/controller/FundController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-7506">
-              <caret line="112" column="72" selection-start-line="112" selection-start-column="72" selection-end-line="112" selection-end-column="72" />
+            <state relative-caret-position="777">
+              <caret line="373" column="15" selection-start-line="373" selection-start-column="15" selection-end-line="373" selection-end-column="15" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -307,7 +275,7 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1696" />
@@ -567,7 +535,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1562034342938" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1562036180810" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/webapp" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -835,7 +803,7 @@
       <workItem from="1561950530745" duration="6016000" />
       <workItem from="1561963768833" duration="19744000" />
       <workItem from="1562029754791" duration="1931000" />
-      <workItem from="1562031785505" duration="2331000" />
+      <workItem from="1562031785505" duration="3528000" />
     </task>
     <task id="LOCAL-00001" summary="第二次提交">
       <created>1560306650622</created>
@@ -964,7 +932,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="274215000" />
+    <option name="totallyTimeSpent" value="275412000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -991,7 +959,7 @@
       <window_info anchor="bottom" id="Application Servers" order="0" weight="0.32884398" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Find" order="2" weight="0.18294051" />
-      <window_info anchor="bottom" id="Run" order="3" sideWeight="0.49755502" visible="true" weight="0.4298541" />
+      <window_info anchor="bottom" id="Run" order="3" sideWeight="0.49755502" visible="true" weight="0.16722783" />
       <window_info anchor="bottom" id="Debug" order="4" sideWeight="0.4987775" weight="0.21773289" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
@@ -1372,8 +1340,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/bj186/fms/controller/FundController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-7506">
-          <caret line="112" column="72" selection-start-line="112" selection-start-column="72" selection-end-line="112" selection-end-column="72" />
+        <state relative-caret-position="777">
+          <caret line="373" column="15" selection-start-line="373" selection-start-column="15" selection-end-line="373" selection-end-column="15" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
