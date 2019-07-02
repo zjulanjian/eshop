@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>预览付款页面</title>
+    <link rel="stylesheet" href="../layui/css/layui.css">
+
+</head>
+<body>
+<div>
+    <h1 id="mockjs" style="margin-left: 100px; width:120px;height: 50px; text-decoration-color: #2E2D3C">基金预览付款</h1>
+</div>
+
+<fieldset class="layui-elem-field layui-field-title" style="margin-top: 30px;">
+    <legend>买基金</legend>
+</fieldset>
+
+    <div class="layui-tab" style="margin-left: 50px;">
+    <ul class="layui-tab-title">
+        <li class="layui-this" style="font-size: large;width:100px;height: 60px;">1.买基金</li>
+        <li class="layui-this" style="font-size: large;width:100px;height: 60px;" >2.预览付款</li>
+        <li class="layui-this" style="font-size: large;width:100px;height: 60px;">3.申请受理</li>
+    </ul>
+    <div class="layui-tab-content">
+        <div class="layui-tab-item ">
+            您已浏览过该内容
+        </div>
+
+        <div class="layui-tab-item layui-show">
+            <table class="layui-hide" id="test"></table>
+            <form class="layui-form" action="" lay-filter="demo2">
+            <div class="layui-form-item">
+                <label class="layui-form-label">请输入基金交易密码</label>
+                <div class="layui-input-inline">
+                    <input type="password" name="password" lay-verify="pass" placeholder="请输入密码" autocomplete="off" class="layui-input">
+                </div>
+                <div class="layui-form-mid layui-word-aux">不能为空</div>
+            </div>
+                <div class="layui-input-inline" style="font-size: smaller;">请输入天天基金网交易系统密码，非银行卡密码。</div>
+            </form>
+            <br/><br/>
+            <div class="layui-form-item">
+                <div class="layui-input-block">
+                    <button class="layui-btn" lay-submit="" lay-filter="demo2">确认付款</button>
+                    <button type="reset" class="layui-btn layui-btn-primary">返回修改</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="layui-tab-item">
+            <form class="layui-form" action="" lay-filter="demo3">
+            <div class="layui-form-item layui-form-text">
+                <label class="layui-form-label">交易结果</label>
+                <div class="layui-input-block">
+                    <textarea placeholder="请输入内容" class="layui-textarea"></textarea>
+                </div>
+            </div>
+                <button type="reset" class="layui-btn layui-btn-primary">返回修改</button>
+            </form>
+        </div>
+        <div class="layui-tab-item">内容4</div>
+    </div>
+    </div>
+
+</body>
+
+<script src="../statics/js/jquery-3.1.1.min.js"></script>
+<script src="../statics/js/mock-min.js"></script>
+<script src="../statics/js/server.js"></script>
+<script src="../layui/layui.js"></script>
+
+<script>
+    layui.use('element', function(){
+        var $ = layui.jquery
+            ,element = layui.element; //Tab的切换功能，切换事件监听等，需要依赖element模块
+
+        //触发事件
+        var active = {
+            tabAdd: function(){
+                //新增一个Tab项
+                element.tabAdd('demo', {
+                    title: '新选项'+ (Math.random()*1000|0) //用于演示
+                    ,content: '内容'+ (Math.random()*1000|0)
+                    ,id: new Date().getTime() //实际使用一般是规定好的id，这里以时间戳模拟下
+                })
+            }
+            ,tabDelete: function(othis){
+                //删除指定Tab项
+                element.tabDelete('demo', '44'); //删除：“商品管理”
+
+
+                othis.addClass('layui-btn-disabled');
+            }
+            ,tabChange: function(){
+                //切换到指定Tab项
+                element.tabChange('demo', '22'); //切换到：用户管理
+            }
+        };
+
+        $('.site-demo-active').on('click', function(){
+            var othis = $(this), type = othis.data('type');
+            active[type] ? active[type].call(this, othis) : '';
+        });
+
+        //Hash地址的定位
+        var layid = location.hash.replace(/^#test=/, '');
+        element.tabChange('test', layid);
+
+        element.on('tab(test)', function(elem){
+            location.hash = 'test='+ $(this).attr('lay-id');
+        });
+
+    });
+</script>
+
+<script>
+    layui.use(['form', 'layedit', 'laydate'], function(){
+        var form = layui.form
+            ,layer = layui.layer
+            ,layedit = layui.layedit
+        //自定义验证规则
+        form.verify({
+            title: function(value){
+                if(value.length < 1){
+                    return '标题至少得1个字符啊';
+                }
+            }
+            ,pass: [
+                /^[\S]{6,12}$/
+                ,'密码必须6到12位，且不能出现空格'
+            ]
+            ,content: function(value){
+                layedit.sync(editIndex);
+            }
+        });
+
+        //监听提交
+        form.on('submit(demo1)', function(data){
+            layer.alert(JSON.stringify(data.field), {
+                title: '最终的提交信息'
+            });
+            $.ajax({
+                url : "/fund-commit",    //请求的url地址
+                dataType : "json",   //返回格式为json
+                async : true, //请求是否异步，默认为异步，这也是ajax重要特性
+                data : JSON.stringify(data),    //参数值
+                type : "POST",   //请求方式
+                contentType: 'application/json;charset=utf-8',
+                success: function(data) {
+                    //请求成功时处理
+                    console.log(data);
+                },
+                error: function() {
+                    //请求出错处理
+                    console.log('error');
+                }
+            });
+            return false;
+        });
+    });
+</script>
+
+
+<script>
+    //从当前页面的url地址中获取参数数据
+    function getRequest() {
+        var url = location.search; //获取url中"?"符后的字串
+        var theRequest = new Object();
+        if(url.indexOf("?") != -1) {
+            var str = url.substr(1);
+            strs = str.split("&");
+            for(var i = 0; i < strs.length; i++) {
+                theRequest[strs[i].split("=")[0]] = unescape(strs[i].split("=")[1]);
+            }
+        }
+        return theRequest;
+    }
+</script>
+
+<script>
+    layui.use('table', function(){
+        var table = layui.table;
+        table.render({
+            elem: '#test'
+            ,url:'/fund-commit'
+            ,cellMinWidth: 100 //全局定义常规单元格的最小宽度，layui 2.2.1 新增
+            ,cols: [[
+                {field:'fundID', width:120, title: '基金编号', sort: true}
+                ,{field:'fundName', width:120, title: '基金名称'}
+                ,{field:'number', title: '交易金额', width: 120, minWidth: 100} //minWidth：局部定义当前单元格的最小宽度，layui 2.2.1 新增
+            ]]
+        });
+    });
+</script>
+
+
+</html>

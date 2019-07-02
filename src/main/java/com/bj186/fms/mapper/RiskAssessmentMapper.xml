@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bj186.fms.mapper.RiskAssessmentMapper">
+  <resultMap id="BaseResultMap" type="com.bj186.fms.pojo.RiskAssessment">
+    <id column="rAssessmentID" jdbcType="INTEGER" property="rAssessmentID" />
+    <result column="companyID" jdbcType="INTEGER" property="companyID" />
+    <result column="businessConditions" jdbcType="VARCHAR" property="businessConditions" />
+    <result column="timeOfEstablished" jdbcType="DATE" property="timeOfEstablished" />
+    <result column="riskIndicator" jdbcType="VARCHAR" property="riskIndicator" />
+    <result column="sourceOfIncome" jdbcType="VARCHAR" property="sourceOfIncome" />
+    <result column="riskLevel" jdbcType="VARCHAR" property="riskLevel" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.bj186.fms.pojo.RiskAssessment">
+    <result column="creditReport" jdbcType="LONGVARBINARY" property="creditReport" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    rAssessmentID, companyID, businessConditions, timeOfEstablished, riskIndicator, sourceOfIncome, 
+    riskLevel
+  </sql>
+  <sql id="Blob_Column_List">
+    creditReport
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="ResultMapWithBLOBs">
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from riskassessment
+    where rAssessmentID = #{rAssessmentID,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from riskassessment
+    where rAssessmentID = #{rAssessmentID,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.bj186.fms.pojo.RiskAssessment">
+    insert into riskassessment (rAssessmentID, companyID, businessConditions, 
+      timeOfEstablished, riskIndicator, sourceOfIncome, 
+      riskLevel, creditReport)
+    values (#{rAssessmentID,jdbcType=INTEGER}, #{companyID,jdbcType=INTEGER}, #{businessConditions,jdbcType=VARCHAR}, 
+      #{timeOfEstablished,jdbcType=DATE}, #{riskIndicator,jdbcType=VARCHAR}, #{sourceOfIncome,jdbcType=VARCHAR}, 
+      #{riskLevel,jdbcType=VARCHAR}, #{creditReport,jdbcType=LONGVARBINARY})
+  </insert>
+  <insert id="insertSelective" parameterType="com.bj186.fms.pojo.RiskAssessment">
+    insert into riskassessment
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="rAssessmentID != null">
+        rAssessmentID,
+      </if>
+      <if test="companyID != null">
+        companyID,
+      </if>
+      <if test="businessConditions != null">
+        businessConditions,
+      </if>
+      <if test="timeOfEstablished != null">
+        timeOfEstablished,
+      </if>
+      <if test="riskIndicator != null">
+        riskIndicator,
+      </if>
+      <if test="sourceOfIncome != null">
+        sourceOfIncome,
+      </if>
+      <if test="riskLevel != null">
+        riskLevel,
+      </if>
+      <if test="creditReport != null">
+        creditReport,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="rAssessmentID != null">
+        #{rAssessmentID,jdbcType=INTEGER},
+      </if>
+      <if test="companyID != null">
+        #{companyID,jdbcType=INTEGER},
+      </if>
+      <if test="businessConditions != null">
+        #{businessConditions,jdbcType=VARCHAR},
+      </if>
+      <if test="timeOfEstablished != null">
+        #{timeOfEstablished,jdbcType=DATE},
+      </if>
+      <if test="riskIndicator != null">
+        #{riskIndicator,jdbcType=VARCHAR},
+      </if>
+      <if test="sourceOfIncome != null">
+        #{sourceOfIncome,jdbcType=VARCHAR},
+      </if>
+      <if test="riskLevel != null">
+        #{riskLevel,jdbcType=VARCHAR},
+      </if>
+      <if test="creditReport != null">
+        #{creditReport,jdbcType=LONGVARBINARY},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.bj186.fms.pojo.RiskAssessment">
+    update riskassessment
+    <set>
+      <if test="companyID != null">
+        companyID = #{companyID,jdbcType=INTEGER},
+      </if>
+      <if test="businessConditions != null">
+        businessConditions = #{businessConditions,jdbcType=VARCHAR},
+      </if>
+      <if test="timeOfEstablished != null">
+        timeOfEstablished = #{timeOfEstablished,jdbcType=DATE},
+      </if>
+      <if test="riskIndicator != null">
+        riskIndicator = #{riskIndicator,jdbcType=VARCHAR},
+      </if>
+      <if test="sourceOfIncome != null">
+        sourceOfIncome = #{sourceOfIncome,jdbcType=VARCHAR},
+      </if>
+      <if test="riskLevel != null">
+        riskLevel = #{riskLevel,jdbcType=VARCHAR},
+      </if>
+      <if test="creditReport != null">
+        creditReport = #{creditReport,jdbcType=LONGVARBINARY},
+      </if>
+    </set>
+    where rAssessmentID = #{rAssessmentID,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.bj186.fms.pojo.RiskAssessment">
+    update riskassessment
+    set companyID = #{companyID,jdbcType=INTEGER},
+      businessConditions = #{businessConditions,jdbcType=VARCHAR},
+      timeOfEstablished = #{timeOfEstablished,jdbcType=DATE},
+      riskIndicator = #{riskIndicator,jdbcType=VARCHAR},
+      sourceOfIncome = #{sourceOfIncome,jdbcType=VARCHAR},
+      riskLevel = #{riskLevel,jdbcType=VARCHAR},
+      creditReport = #{creditReport,jdbcType=LONGVARBINARY}
+    where rAssessmentID = #{rAssessmentID,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.bj186.fms.pojo.RiskAssessment">
+    update riskassessment
+    set companyID = #{companyID,jdbcType=INTEGER},
+      businessConditions = #{businessConditions,jdbcType=VARCHAR},
+      timeOfEstablished = #{timeOfEstablished,jdbcType=DATE},
+      riskIndicator = #{riskIndicator,jdbcType=VARCHAR},
+      sourceOfIncome = #{sourceOfIncome,jdbcType=VARCHAR},
+      riskLevel = #{riskLevel,jdbcType=VARCHAR}
+    where rAssessmentID = #{rAssessmentID,jdbcType=INTEGER}
+  </update>
+</mapper>

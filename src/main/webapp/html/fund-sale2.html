@@ -27,42 +27,27 @@
                 <div class="layui-form-item">
                     <label class="layui-form-label">基金ID</label>
                     <div class="layui-input-block">
-                        <input type="text" name="username" lay-verify="title" autocomplete="off" placeholder="请输入标题" class="layui-input">
+                        <input type="text" name="fundID" lay-verify="title" autocomplete="off" placeholder="请输入标题" class="layui-input">
                     </div>
                 </div>
                 <div class="layui-form-item">
                     <label class="layui-form-label">基金名称</label>
                     <div class="layui-input-block">
-                        <input type="text" name="username" lay-verify="title" autocomplete="off" placeholder="请输入标题" class="layui-input">
+                        <input type="text" name="fundName" lay-verify="title" autocomplete="off" placeholder="请输入标题" class="layui-input">
                     </div>
                 </div>
                 <div class="layui-form-item">
                     <label class="layui-form-label">基金信息</label>
                     <div class="layui-input-block">
-                        <input type="password" name="password" placeholder="请输入密码" autocomplete="off" class="layui-input">
+                        <input type="text" name="fundInfo" placeholder="请输入密码" autocomplete="off" class="layui-input">
                     </div>
                 </div>
 
                 <div class="layui-form-item">
                     <label class="layui-form-label">买入金额</label>
-                    <input type="number" class="layui-input" style="width:120px; float:left" ><label class="layui-form-label" style="margin-left:-60px;">元</label><br/>
+                    <input type="number" name="number" id="number" class="layui-input" style="width:120px; float:left" ><label class="layui-form-label" style="margin-left:-60px;">元</label><br/>
                 </div>
                 <p class="gray f12 mt5" style="margin-left: 110px; color: #3F3F3F; font-size: small">购买金额不能低于 <span id="zdxe" class="red" style="color: red;">100</span> 元<span id="daymax" class="hide">，日累计限额<span class="red">100</span>万元</span></p><br/>
-                <div class="layui-form-item">
-                    <label class="layui-form-label">复选框</label>
-                    <div class="layui-input-block">
-                        <input type="checkbox" name="like[write]" title="写作">
-                        <input type="checkbox" name="like[read]" title="阅读">
-                        <input type="checkbox" name="like[daze]" title="发呆">
-                    </div>
-                </div>
-
-                <div class="layui-form-item">
-                    <label class="layui-form-label">开关</label>
-                    <div class="layui-input-block">
-                        <input type="checkbox" name="close" lay-skin="switch" lay-text="ON|OFF">
-                    </div>
-                </div>
 
                 <div class="layui-form-item">
                     <label class="layui-form-label">选择支付方式</label>
@@ -75,14 +60,14 @@
                 <div class="layui-form-item">
                     <label class="layui-form-label">申购费率</label>
                     <div class="layui-input-block">
-                        <input type="text" name="username" lay-verify="title" autocomplete="off" placeholder="请输入标题" class="layui-input">
+                        <input type="text" name="feesRate" lay-verify="title" autocomplete="off" placeholder="请输入标题" class="layui-input">
                     </div>
                 </div>
 
                 <div class="layui-form-item">
                     <label class="layui-form-label">估算手续费</label>
                     <div class="layui-input-block">
-                        <input type="text" name="username" lay-verify="title" autocomplete="off" placeholder="请输入标题" class="layui-input">
+                        <input type="text" name="fees" lay-verify="title" autocomplete="off" placeholder="请输入标题" class="layui-input">
                     </div>
                 </div>
 
@@ -122,6 +107,7 @@
                     <textarea placeholder="请输入内容" class="layui-textarea"></textarea>
                 </div>
             </div>
+                <button type="reset" class="layui-btn layui-btn-primary">返回修改</button>
             </form>
         </div>
         <div class="layui-tab-item">内容4</div>
@@ -134,33 +120,6 @@
 <script src="../statics/js/mock-min.js"></script>
 <script src="../statics/js/server.js"></script>
 <script src="../layui/layui.js"></script>
-
-<script type="text/javascript">
-
-    //ajax请求
-    $("#mockjs").click(function(){
-        $.ajax({
-            url        : "http://mockjs",    //请求的url地址
-            dataType   : "json",   //返回格式为json
-            async      : true, //请求是否异步，默认为异步，这也是ajax重要特性
-            data       : {},    //参数值
-            type       : "GET",   //请求方式
-            beforeSend : function() {
-                //请求前的处理
-            },
-            success: function(req) {
-                //请求成功时处理
-                console.log(req);
-            },
-            complete: function() {
-                //请求完成的处理
-            },
-            error: function() {
-                //请求出错处理
-            }
-        });
-    });
-</script>
 
 <script>
     layui.use('element', function(){
@@ -211,24 +170,11 @@
         var form = layui.form
             ,layer = layui.layer
             ,layedit = layui.layedit
-            ,laydate = layui.laydate;
-
-        //日期
-        laydate.render({
-            elem: '#date'
-        });
-        laydate.render({
-            elem: '#date1'
-        });
-
-        //创建一个编辑器
-        var editIndex = layedit.build('LAY_demo_editor');
-
         //自定义验证规则
         form.verify({
             title: function(value){
-                if(value.length < 5){
-                    return '标题至少得5个字符啊';
+                if(value.length < 1){
+                    return '标题至少得1个字符啊';
                 }
             }
             ,pass: [
@@ -240,55 +186,79 @@
             }
         });
 
-        //监听指定开关
-        form.on('switch(switchTest)', function(data){
-            layer.msg('开关checked：'+ (this.checked ? 'true' : 'false'), {
-                offset: '6px'
-            });
-            layer.tips('温馨提示：请注意开关状态的文字可以随意定义，而不仅仅是ON|OFF', data.othis)
-        });
-
         //监听提交
         form.on('submit(demo1)', function(data){
-            layer.alert(JSON.stringify(data.field), {
-                title: '最终的提交信息'
-            })
+            var fundID =  $(" input[ name='fundID' ] ").val();
+            $.ajax({
+                url : "/fund-commit?fundID=" + fundID,    //请求的url地址
+                dataType : "json",   //返回格式为json
+                async : true, //请求是否异步，默认为异步，这也是ajax重要特性
+                data : JSON.stringify(data.field),    //参数值
+                type : "POST",   //请求方式
+                contentType: 'application/json;charset=utf-8',
+                success: function(data) {
+                    //请求成功时处理
+                    console.log(data);
+                    window.location.href=data.url+"?userID="+4+ "&fundOrderID=" + data.fundOrderID;
+                },
+                error: function() {
+                    //请求出错处理
+                    console.log('error');
+                }
+            });
             return false;
         });
 
-        //表单初始赋值
-        form.val('example', {
-            "username": "贤心" // "name": "value"
-            ,"password": "123456"
-            ,"interest": 1
-            ,"like[write]": true //复选框选中状态
-            ,"close": true //开关状态
-            ,"sex": "女"
-            ,"desc": "我爱 layui"
-        })
+        var request = getRequest();
+        var fundID = request.fundID;
+        //alert($(" input[ name='number' ] ").val())
+        //从后端取基金fund的值
+        $.ajax({
+            url : "/fund-payment?fundID=" + fundID,    //请求的url地址
+            dataType : "json",   //返回格式为json
+            async : true, //请求是否异步，默认为异步，这也是ajax重要特性
+            data : {},    //参数值
+            type : "GET",   //请求方式
 
+            success: function(data) {
+                //请求成功时处理
+                console.log(data);
+                //表单初始赋值
+                form.val('demo1', {
+                    "fundID": data.fundID // "name": "value"
+                    ,"fundName": data.fundName
+                    ,"fundInfo": data.fundInfo
+                    ,"close": true //开关状态
+                    ,"number": 100
+                    ,"payType": true
+                    ,"feesRate": data.feesRate
+                    ,"fees": data.feesRate*100,
+                })
+            },
+            error: function() {
+                //请求出错处理
+                console.log('error');
+            }
+        });
 
     });
 </script>
 
-<script>
-    layui.use('table', function(){
-        var table = layui.table;
 
-        table.render({
-            elem: '#test'
-            ,url:'/demo/table/user/'
-            ,cellMinWidth: 80 //全局定义常规单元格的最小宽度，layui 2.2.1 新增
-            ,cols: [[
-                {field:'id', width:160, title: '基金编号', sort: true}
-                ,{field:'name', width:160, title: '基金名称'}
-                ,{field:'amount', width:160, title: '买入金额', sort: true}
-                ,{field:'capitalAmount', width:160, title: '大写金额'}
-                ,{field:'paymentMethod', title: '支付方式', width: '30%', minWidth: 160} //minWidth：局部定义当前单元格的最小宽度，layui 2.2.1 新增
-                ,{field:'riskWarning', title: '风险提示', sort: true}
-            ]]
-        });
-    });
+<script>
+    //从当前页面的url地址中获取参数数据
+    function getRequest() {
+        var url = location.search; //获取url中"?"符后的字串
+        var theRequest = new Object();
+        if(url.indexOf("?") != -1) {
+            var str = url.substr(1);
+            strs = str.split("&");
+            for(var i = 0; i < strs.length; i++) {
+                theRequest[strs[i].split("=")[0]] = unescape(strs[i].split("=")[1]);
+            }
+        }
+        return theRequest;
+    }
 </script>
 
 </html>

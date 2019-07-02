@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bj186.fms.mapper.UserFundOrderMapper">
+  <resultMap id="BaseResultMap" type="com.bj186.fms.pojo.UserFundOrder">
+    <id column="uFundOrderID" jdbcType="INTEGER" property="uFundOrderID" />
+    <result column="roleID" jdbcType="INTEGER" property="roleID" />
+    <result column="fundID" jdbcType="INTEGER" property="fundID" />
+    <result column="amount" jdbcType="DOUBLE" property="amount" />
+    <result column="createTime" jdbcType="DATE" property="createTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    uFundOrderID, roleID, fundID, amount, createTime
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from user_fund_order
+    where uFundOrderID = #{uFundOrderID,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from user_fund_order
+    where uFundOrderID = #{uFundOrderID,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.bj186.fms.pojo.UserFundOrder">
+    insert into user_fund_order (uFundOrderID, roleID, fundID, 
+      amount, createTime)
+    values (#{uFundOrderID,jdbcType=INTEGER}, #{roleID,jdbcType=INTEGER}, #{fundID,jdbcType=INTEGER}, 
+      #{amount,jdbcType=DOUBLE}, #{createTime,jdbcType=DATE})
+  </insert>
+  <insert id="insertSelective" parameterType="com.bj186.fms.pojo.UserFundOrder">
+    insert into user_fund_order
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="uFundOrderID != null">
+        uFundOrderID,
+      </if>
+      <if test="roleID != null">
+        roleID,
+      </if>
+      <if test="fundID != null">
+        fundID,
+      </if>
+      <if test="amount != null">
+        amount,
+      </if>
+      <if test="createTime != null">
+        createTime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="uFundOrderID != null">
+        #{uFundOrderID,jdbcType=INTEGER},
+      </if>
+      <if test="roleID != null">
+        #{roleID,jdbcType=INTEGER},
+      </if>
+      <if test="fundID != null">
+        #{fundID,jdbcType=INTEGER},
+      </if>
+      <if test="amount != null">
+        #{amount,jdbcType=DOUBLE},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=DATE},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.bj186.fms.pojo.UserFundOrder">
+    update user_fund_order
+    <set>
+      <if test="roleID != null">
+        roleID = #{roleID,jdbcType=INTEGER},
+      </if>
+      <if test="fundID != null">
+        fundID = #{fundID,jdbcType=INTEGER},
+      </if>
+      <if test="amount != null">
+        amount = #{amount,jdbcType=DOUBLE},
+      </if>
+      <if test="createTime != null">
+        createTime = #{createTime,jdbcType=DATE},
+      </if>
+    </set>
+    where uFundOrderID = #{uFundOrderID,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.bj186.fms.pojo.UserFundOrder">
+    update user_fund_order
+    set roleID = #{roleID,jdbcType=INTEGER},
+      fundID = #{fundID,jdbcType=INTEGER},
+      amount = #{amount,jdbcType=DOUBLE},
+      createTime = #{createTime,jdbcType=DATE}
+    where uFundOrderID = #{uFundOrderID,jdbcType=INTEGER}
+  </update>
+</mapper>

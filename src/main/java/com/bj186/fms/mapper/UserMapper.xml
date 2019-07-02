@@ -5,13 +5,16 @@
     <id column="userID" jdbcType="INTEGER" property="userID" />
     <result column="username" jdbcType="VARCHAR" property="username" />
     <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="transactionPassword" jdbcType="VARCHAR" property="transactionPassword" />
     <result column="status" jdbcType="VARCHAR" property="status" />
     <result column="createTime" jdbcType="DATE" property="createTime" />
     <result column="editTime" jdbcType="DATE" property="editTime" />
     <result column="userType" jdbcType="VARCHAR" property="userType" />
+    <result column="balance" jdbcType="DOUBLE" property="balance" />
   </resultMap>
   <sql id="Base_Column_List">
-    userID, username, password, status, createTime, editTime, userType
+    userID, username, password, transactionPassword, status, createTime, editTime, userType, 
+    balance
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
@@ -25,11 +28,13 @@
   </delete>
   <insert id="insert" parameterType="com.bj186.fms.pojo.User">
     insert into user (userID, username, password, 
-      status, createTime, editTime, 
-      userType)
+      transactionPassword, status, createTime, 
+      editTime, userType, balance
+      )
     values (#{userID,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
-      #{status,jdbcType=VARCHAR}, #{createTime,jdbcType=DATE}, #{editTime,jdbcType=DATE}, 
-      #{userType,jdbcType=VARCHAR})
+      #{transactionPassword,jdbcType=VARCHAR}, #{status,jdbcType=VARCHAR}, #{createTime,jdbcType=DATE}, 
+      #{editTime,jdbcType=DATE}, #{userType,jdbcType=VARCHAR}, #{balance,jdbcType=DOUBLE}
+      )
   </insert>
   <insert id="insertSelective" parameterType="com.bj186.fms.pojo.User">
     insert into user
@@ -43,6 +48,9 @@
       <if test="password != null">
         password,
       </if>
+      <if test="transactionPassword != null">
+        transactionPassword,
+      </if>
       <if test="status != null">
         status,
       </if>
@@ -55,6 +63,9 @@
       <if test="userType != null">
         userType,
       </if>
+      <if test="balance != null">
+        balance,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="userID != null">
@@ -65,6 +76,9 @@
       </if>
       <if test="password != null">
         #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="transactionPassword != null">
+        #{transactionPassword,jdbcType=VARCHAR},
       </if>
       <if test="status != null">
         #{status,jdbcType=VARCHAR},
@@ -78,6 +92,9 @@
       <if test="userType != null">
         #{userType,jdbcType=VARCHAR},
       </if>
+      <if test="balance != null">
+        #{balance,jdbcType=DOUBLE},
+      </if>
     </trim>
   </insert>
   <update id="updateByPrimaryKeySelective" parameterType="com.bj186.fms.pojo.User">
@@ -88,6 +105,9 @@
       </if>
       <if test="password != null">
         password = #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="transactionPassword != null">
+        transactionPassword = #{transactionPassword,jdbcType=VARCHAR},
       </if>
       <if test="status != null">
         status = #{status,jdbcType=VARCHAR},
@@ -101,6 +121,9 @@
       <if test="userType != null">
         userType = #{userType,jdbcType=VARCHAR},
       </if>
+      <if test="balance != null">
+        balance = #{balance,jdbcType=DOUBLE},
+      </if>
     </set>
     where userID = #{userID,jdbcType=INTEGER}
   </update>
@@ -108,10 +131,12 @@
     update user
     set username = #{username,jdbcType=VARCHAR},
       password = #{password,jdbcType=VARCHAR},
+      transactionPassword = #{transactionPassword,jdbcType=VARCHAR},
       status = #{status,jdbcType=VARCHAR},
       createTime = #{createTime,jdbcType=DATE},
       editTime = #{editTime,jdbcType=DATE},
-      userType = #{userType,jdbcType=VARCHAR}
+      userType = #{userType,jdbcType=VARCHAR},
+      balance = #{balance,jdbcType=DOUBLE}
     where userID = #{userID,jdbcType=INTEGER}
   </update>
 </mapper>
